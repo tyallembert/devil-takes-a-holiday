@@ -1,0 +1,70 @@
+@import "variables.scss";
+
+.footerContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    width: 70%;
+    margin: auto;
+    margin-top: 3em;
+    scroll-snap-align: start;
+    .svgContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 20%;
+        .devilDrawing{
+            width: 100%;
+        }
+    }
+    .linksContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        a{
+            color: $color-1;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-bottom: 0.5em;
+            transition: all 150ms ease;
+            &:visited{
+                color: $color-1;
+            }
+            &:hover{
+                color: white;
+                transform: scale(1.02);
+            }
+        }
+    }
+    .socialsContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        height: 30%;
+        a{
+            color: $color-1;
+            height: 50px;
+            width: 50px;
+            border: solid 2px $color-1;
+            border-radius: 100px;
+            margin-bottom: 0.5em;
+            &:visited{
+                color: $color-1;
+            }
+        }
+    }
+    .copywriteInfo{
+        color: $color-1;
+        width: 100%;
+        p{
+            text-align: center;
+        }
+    }
+}

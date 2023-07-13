@@ -1,0 +1,40 @@
+@import 'variables.scss';
+.locationContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    margin: auto;
+    scroll-snap-align: start;
+    color: $color-1;
+    .locationInfo{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        // margin-top: 1em;
+        height: 100%;
+        .locationImage{
+            // width: 45%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+        .locationAddress{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            // align-items: flex-start;
+            margin-left: 2em;
+            width: 60%;
+        }
+        .hoursContainer{
+            margin-top: 1em;
+            .hours{
+                font-size: 0.9em;
+                font-weight: 500;
+                margin: 0.5em 0;
+            }
+        }
+    }
+}

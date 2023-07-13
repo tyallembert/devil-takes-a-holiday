@@ -1,0 +1,11 @@
+
+.App{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    background-color: black;
+    scroll-snap-type: y mandatory;
+    scroll-padding: 0px;
+    height: 100vh;
+    overflow-y: scroll;
+}

@@ -1,0 +1,42 @@
+@import "variables";
+.menuContainer{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: auto;
+    padding-top: 3em;
+    scroll-snap-align: start;
+    .menuTitle{
+        color: $color-1;
+    }
+    .drinkTitle{
+        font-weight: 700;
+        color: $color-1;
+        margin: 1em 0;
+        scroll-snap-align: start;
+    }
+    .drinksContainer{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+        width: 100%;
+        .menuItem{
+            display: flex;
+            flex-basis: 50%;
+            flex-wrap: wrap;
+            color: $color-1;
+            margin-top: 1em;
+            .menuItemName{
+                font-size: 1.2rem;
+                font-weight: 700;
+            }
+            .menuItemPrice{
+                margin-left: 1em;
+                font-size: 1.05rem;
+            }
+            .menuItemDescription{
+                margin-top: 0.5em;
+            }
+        }
+    }
+}
