@@ -1,4 +1,4 @@
-import { BottomText, DevilDrawing, TopText } from "./SVGs"
+import { DevilDrawing } from "./SVGs"
 import "../styles/footer.scss"
 
 const Footer = () => {
@@ -15,15 +15,15 @@ const Footer = () => {
                 <a href="#wine">Wine</a>
             </div>
             <div className="socialsContainer">
-                <a href="">
+                <button>
                     <i className="fab fa-facebook-square"></i>
-                </a>
-                <a href="">
+                </button>
+                <button>
                     <i className="fab fa-facebook-square"></i>
-                </a>
-                <a href="">
+                </button>
+                <button>
                     <i className="fab fa-facebook-square"></i>
-                </a>
+                </button>
             </div>
             <div className="copywriteInfo">
                 <p>© 2023 Devil Takes a Holiday</p>
