@@ -8,4 +8,8 @@
     scroll-padding: 0px;
     height: 100vh;
     overflow-y: scroll;
+    .lightsImage{
+        position: absolute;
+        inset: 0;
+    }
 }

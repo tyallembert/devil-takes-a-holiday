@@ -8,4 +8,33 @@
     min-height: 100vh;
     background-color: black;
     scroll-snap-align: start;
+    .devilDrawing{
+        animation: bounce 3s ease-in-out infinite;
+    }
+}
+
+@media (max-width: 600px){
+    .heroContainer{
+        .devilDrawing{
+            width: 50%;
+        }
+        .topText{
+            width: 80%;
+        }
+        .bottomText{
+            width: 40%;
+        }
+    }
+}
+
+@keyframes bounce{
+    0%{
+        transform: translateY(-3em);
+    }
+    40%{
+        transform: translateY(-3.5em);
+    }
+    100%{
+        transform: translateY(-3em);
+    }
 }

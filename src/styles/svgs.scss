@@ -1,9 +1,9 @@
 @import "variables";
 
 .devilDrawing{
+    position: relative;
     width: 25%;
     transform: translateY(-3em);
-    // animation: devilShrink 1s ease-in-out 1;
     .stroke{
         stroke: $color-1;
     }

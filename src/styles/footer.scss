@@ -49,14 +49,24 @@
         justify-content: space-around;
         height: 30%;
         a{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             color: $color-1;
-            height: 50px;
-            width: 50px;
-            border: solid 2px $color-1;
+            height: 40px;
+            width: 40px;
             border-radius: 100px;
             margin-bottom: 0.5em;
+            transition: all 150ms ease;
+            &:hover{
+                transform: scale(1.1);
+            }
             &:visited{
                 color: $color-1;
+            }
+            img{
+                width: 80%;
             }
         }
     }
@@ -65,6 +75,29 @@
         width: 100%;
         p{
             text-align: center;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .footerContainer{
+        width: 90%;
+        .svgContainer{
+            width: 50%;
+            transform: translateY(2em);
+            margin-bottom: 1em;
+        }
+        .linksContainer{
+            width: 100%;
+            margin-bottom: 1em;
+        }
+        .socialsContainer{
+            flex-direction: row;
+            width: 90%;
+            margin-bottom: 1em;
+        }
+        .copywriteInfo{
+            width: 100%;
         }
     }
 }

@@ -1,5 +1,8 @@
 import { DevilDrawing } from "./SVGs"
 import "../styles/footer.scss"
+import InstagramIcon from "../images/instagram.png"
+import YelpIcon from "../images/yelp.png"
+import MailIcon from "../images/mail.png"
 
 const Footer = () => {
     return (
@@ -15,15 +18,15 @@ const Footer = () => {
                 <a href="#wine">Wine</a>
             </div>
             <div className="socialsContainer">
-                <button>
-                    <i className="fab fa-facebook-square"></i>
-                </button>
-                <button>
-                    <i className="fab fa-facebook-square"></i>
-                </button>
-                <button>
-                    <i className="fab fa-facebook-square"></i>
-                </button>
+                <a href="instagram.com">
+                    <img src={InstagramIcon} alt="Instagram"/>
+                </a>
+                <a href="yelp.com">
+                    <img src={YelpIcon} alt="Instagram"/>
+                </a>
+                <a href="instagram.com">
+                    <img src={MailIcon} alt="Instagram"/>
+                </a>
             </div>
             <div className="copywriteInfo">
                 <p>© 2023 Devil Takes a Holiday</p>
