@@ -5,27 +5,42 @@
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
-    min-height: 100vh;
-    width: 70%;
+    min-height: 95vh;
+    width: 80%;
     margin: auto;
     margin-top: 3em;
     scroll-snap-align: start;
-    .svgContainer{
+    .reserveContainer{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 20%;
-        .devilDrawing{
-            width: 100%;
+        width: 30%;
+        color: white;
+        font-size: 0.9em;
+        .learnMoreButton{
+            border: solid 2px white;
+            border-radius: 100px;
+            padding: 0.8em 1.3em;
+            background-color: black;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2em;
+            margin-top: 2em;
+            transition: all 200ms ease;
+            &:hover{
+                cursor: pointer;
+                background-color: white;
+                color: black;
+                transform: scale(1.1);
+            }
         }
     }
     .linksContainer{
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: center;
-        a{
+        .link{
             color: $color-1;
             text-transform: uppercase;
             text-decoration: none;
@@ -40,6 +55,10 @@
                 color: white;
                 transform: scale(1.02);
             }
+        }
+        .subLink{
+            margin-left: 1em;
+            font-size: 1em;
         }
     }
     .socialsContainer{

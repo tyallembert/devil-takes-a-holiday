@@ -1,0 +1,17 @@
+@import "variables.scss";
+
+.instagramContainer{
+    scroll-snap-align: start;
+    min-height: 100vh;
+    overflow: hidden;
+    .title{
+        width: 80%;
+        margin: auto;
+        color: $color-1;
+        font-size: 3em;
+        transform: translateY(30px);
+    }
+    .instagramFrame{
+        transform: translateY(50px);
+    }
+}

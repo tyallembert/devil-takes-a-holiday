@@ -1,3 +1,4 @@
+@import "variables.scss";
 
 .heroContainer{
     display: flex;
@@ -9,7 +10,18 @@
     background-color: black;
     scroll-snap-align: start;
     .devilDrawing{
-        animation: bounce 3s ease-in-out infinite;
+        // animation: bounce 3s ease-in-out infinite;
+        animation: shrink 1s ease-in;
+    }
+    .timeContainer{
+        display: flex;
+        flex-direction: row;
+        margin-top: 2em;
+        gap: 3em;
+        .time{
+            color: $color-1;
+            font-weight: 500;
+        }
     }
 }
 
@@ -24,6 +36,11 @@
         .bottomText{
             width: 40%;
         }
+        .timeContainer{
+            flex-direction: column;
+            align-items: center;
+            gap: 1em;
+        }
     }
 }
 
@@ -36,5 +53,14 @@
     }
     100%{
         transform: translateY(-3em);
+    }
+}
+
+@keyframes shrink {
+    0%{
+        transform: translateY(-3em) scale(8);
+    }
+    100%{
+        transform: translateY(-3em) scale(1);
     }
 }

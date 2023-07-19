@@ -1,6 +1,8 @@
 import "../styles/menu.scss";
 import menuData from "../data/menu.json";
 import { useState, useEffect } from "react";
+import SearchDrink from "./SearchDrink";
+import DrinkObject from "./DrinkObject";
 
 const Menu = () => {
     const [menu, setMenu] = useState({});
@@ -10,8 +12,9 @@ const Menu = () => {
     }, []);
 
     return (
-        <div className="menuContainer">
+        <div className="menuContainer" id="menu">
             <h1 className="menuTitle">Menu</h1>
+            <SearchDrink />
             {
                 Object.keys(menu).map((drinkType) => {
                     return (
@@ -21,11 +24,11 @@ const Menu = () => {
                             {
                                 Object.keys(menu[drinkType]).map((key) => {
                                     return (
-                                        <div key={key} className="menuItem">
-                                            <div className="menuItemName">{menu[drinkType][key].title},</div>
-                                            <div className="menuItemPrice">{menu[drinkType][key].price}</div>
-                                            <div className="menuItemDescription">{menu[drinkType][key].description}</div>
-                                        </div>
+                                        <DrinkObject key={key} 
+                                        index={key} 
+                                        title={menu[drinkType][key].title} 
+                                        description={menu[drinkType][key].description}
+                                        price={menu[drinkType][key].price} />
                                     );
                                 })
                             }

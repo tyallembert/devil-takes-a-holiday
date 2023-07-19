@@ -12,8 +12,7 @@
     .drinkTitle{
         font-weight: 700;
         color: $color-1;
-        margin-bottom: 1em;
-        margin-top: 2em;
+        margin: 1em 0em;
         text-transform: capitalize;
         scroll-snap-align: start;
     }
@@ -22,25 +21,7 @@
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 1em 5em;
         width: 100%;
-        .menuItem{
-            display: flex;
-            align-items: flex-start;
-            flex-basis: 50%;
-            flex-wrap: wrap;
-            color: $color-1;
-            margin-top: 1em;
-            .menuItemName{
-                font-size: 1.2rem;
-                font-weight: 800;
-            }
-            .menuItemPrice{
-                margin-left: 1em;
-                font-size: 1.05rem;
-            }
-            .menuItemDescription{
-                margin-top: 0.5em;
-            }
-        }
+        margin-bottom: 3em;
     }
 }
 

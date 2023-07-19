@@ -7,15 +7,18 @@ import MailIcon from "../images/mail.png"
 const Footer = () => {
     return (
         <div className="footerContainer">
-            <div className="svgContainer">
-                <DevilDrawing />
+            <div className="reserveContainer">
+                <h2>Thinking about a private event?</h2>
+                <h1>Reserve Now!</h1>
+                <button className="learnMoreButton">Learn More</button>
             </div>
             <div className="linksContainer">
-                <a href="#location">Location</a>
-                <a href="#cocktails">Cocktails</a>
-                <a href="#mocktails">Mocktails</a>
-                <a href="#beer">Beer</a>
-                <a href="#wine">Wine</a>
+                <a className="link" href="#location">Location</a>
+                <a className="link" href="#menu">Menu</a>
+                <a className="link subLink" href="#cocktails">Cocktails</a>
+                <a className="link subLink" href="#mocktails">Mocktails</a>
+                <a className="link subLink" href="#beer">Beer</a>
+                <a className="link subLink" href="#wine">Wine</a>
             </div>
             <div className="socialsContainer">
                 <a href="instagram.com">

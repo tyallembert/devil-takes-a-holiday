@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "../styles/location.scss";
 import { DevilChillin } from "./SVGs"
+import Map from "./Map";
 
 
 const Location = () => {
@@ -41,16 +42,15 @@ const Location = () => {
         }
     }
     return (
-        <div className="locationContainer">
-            {/* <h1 className="locationTitle">Location</h1> */}
+        <div className="locationContainer" id="location">
             <div className="locationInfo">
-                {/* <img className="locationImage" src={drinkIMG}/> */}
                 <DevilChillin />
                 <div className="locationAddress">
                     <h1 className="locationStreet">111 Saint Paul St.</h1>
                     <h2 className="locationCityState">Burlington, VT 05401</h2>
                     <div className="hoursContainer">
-                        {
+                        <Map />
+                        {/* {
                             hours.map((day, i) => {
                                 return (
                                     <div key={i} className={`row ${day.day === today ? "activeDay": null}`}>
@@ -59,7 +59,7 @@ const Location = () => {
                                     </div>
                                 )
                             })
-                        }
+                        } */}
                     </div>
                 </div>
             </div>
