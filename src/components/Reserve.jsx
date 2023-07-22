@@ -19,7 +19,7 @@ const Reserve = () => {
                         <h2>Please provide the following in an email</h2>
                         <div className="itemContainer">
                             <img className="imageIcon" src={CalendarPNG} alt="Calendar"/>
-                            <p className="text">The <span>DATE</span> of the event</p>
+                            <p className="text">The <span>DATE</span> you would like to have the event</p>
                         </div>
                         <div className="itemContainer">
                             <img className="imageIcon" src={ClockPNG} alt="Clock"/>
