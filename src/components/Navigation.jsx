@@ -7,7 +7,9 @@ const Navigation = () => {
 
     const toggleNavigation = () => {
         setShowing(!showing);
-        console.log(showing);
+    }
+    const hideNavigation = () => {
+        setShowing(false);
     }
     return (
         <div className="navigationContainer">
@@ -17,7 +19,7 @@ const Navigation = () => {
                 <div className="line line3"></div>
             </button>
             <div className={showing? "showingNav": "hidingNav"}>
-                <Footer />
+                <Footer hideNavigation={hideNavigation}/>
             </div>
         </div>
     )

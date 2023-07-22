@@ -3,7 +3,7 @@ import bannerData from "../data/top-banner.json";
 import {useState} from "react";
 
 const TopBanner = () => {
-    const [banner, setBanner] = useState(bannerData);
+    const [banner] = useState(bannerData);
     return (
         <div className="topBannerContainer">
             <p>{banner.message}</p>

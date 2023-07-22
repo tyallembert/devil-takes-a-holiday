@@ -2,6 +2,7 @@ import "../styles/searchDrink.scss"
 import {useState, useEffect} from "react";
 import menuData from "../data/menu.json";
 import DrinkObject from "./DrinkObject";
+import SearchPNG from "../images/search.png";
 
 const SearchDrink = () => {
     const [searchActive, setSearchActive] = useState(false);
@@ -54,12 +55,15 @@ const SearchDrink = () => {
 
     return (
         <div className="searchDrinkContainer">
-            <input type="text" 
-            className="searchDrinkInput" 
-            placeholder="Search for a drink"
-            onFocus={handleInFocus}
-            onBlur={handleBlur}
-            onChange={handleInputChange}/>
+            <label className="searchLabel">
+                <input type="text" 
+                className="searchDrinkInput" 
+                placeholder="Search for a drink"
+                onFocus={handleInFocus}
+                onBlur={handleBlur}
+                onChange={handleInputChange} />
+                <img src={SearchPNG} alt="Search" className="searchIcon" />
+            </label>
             <div className={`outputContainer ${searchActive ? "": "hidden"}`}>
             {
                 searchResults.length === 0 ? (

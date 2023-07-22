@@ -1,0 +1,99 @@
+@import "variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=Chela+One&display=swap');
+
+.reserveContainer{
+    .learnMoreButton{
+        border: solid 2px white;
+        border-radius: 100px;
+        padding: 0.8em 1.3em;
+        background-color: black;
+        color: white;
+        font-weight: 700;
+        font-size: 1.2em;
+        margin-top: 2em;
+        text-decoration: none;
+        transition: all 200ms ease;
+        &:hover{
+            cursor: pointer;
+            background-color: white;
+            color: black;
+            transform: scale(1.1);
+        }
+    }
+    .reservePage{
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2em;
+        &.showing{
+            background-color: black;
+            animation: show 500ms ease forwards;
+        }
+        &.hidden{
+            transform: scale(0);
+            animation: hide 500ms ease forwards;
+        }
+        .mainContainer{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 80%;
+            .leftContainer{
+                width: 50%;
+                .itemContainer{
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+                    margin: 3em 0;
+                    gap: 2em;
+                    .imageIcon{
+                        max-width: 100%;
+                        width: 30px;
+                        height: 30px;
+                    }
+                    .text{
+                        font-size: 1.3em;
+                        font-weight: 500;
+                        span{
+                            font-weight: 700;
+                            font-family: 'Chela One', cursive;
+                        }
+                    }
+                }
+                .buttonsContainer{
+                    display: flex;
+                    justify-content: space-around;
+                    gap: 1em;
+                }
+            }
+            .rightContainer{
+                width: 40%;
+                .imageContainer{
+                    height: 300px;
+                    width: 100%;
+                    background-color: gray;
+                }
+            }
+        }
+    }
+}
+
+@keyframes hide {
+    0%{
+        transform: translateY(0) scale(1);
+    }
+    100%{
+        transform: translateY(100%) scale(0);
+    }
+}
+@keyframes show {
+    0%{
+        transform: translateX(-300px) scale(0);
+    }
+    100%{
+        transform: translateX(0) scale(1);
+    }
+}

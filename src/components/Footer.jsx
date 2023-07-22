@@ -1,24 +1,24 @@
-import { DevilDrawing } from "./SVGs"
 import "../styles/footer.scss"
 import InstagramIcon from "../images/instagram.png"
 import YelpIcon from "../images/yelp.png"
 import MailIcon from "../images/mail.png"
+import Reserve from "./Reserve"
 
-const Footer = () => {
+const Footer = (props) => {
     return (
         <div className="footerContainer">
-            <div className="reserveContainer">
+            <div className="reserveSection">
                 <h2>Thinking about a private event?</h2>
-                <h1>Reserve Now!</h1>
-                <button className="learnMoreButton">Learn More</button>
+                <h1>Book Now!</h1>
+                <Reserve/>
             </div>
             <div className="linksContainer">
-                <a className="link" href="#location">Location</a>
-                <a className="link" href="#menu">Menu</a>
-                <a className="link subLink" href="#cocktails">Cocktails</a>
-                <a className="link subLink" href="#mocktails">Mocktails</a>
-                <a className="link subLink" href="#beer">Beer</a>
-                <a className="link subLink" href="#wine">Wine</a>
+                <a className="link" href="#location" onClick={props.hideNavigation ? props.hideNavigation: null}>Location</a>
+                <a className="link" href="#menu" onClick={props.hideNavigation ? props.hideNavigation: null}>Menu</a>
+                <a className="link subLink" href="#cocktails" onClick={props.hideNavigation ? props.hideNavigation: null}>Cocktails</a>
+                <a className="link subLink" href="#mocktails" onClick={props.hideNavigation ? props.hideNavigation: null}>Mocktails</a>
+                <a className="link subLink" href="#beer" onClick={props.hideNavigation ? props.hideNavigation: null}>Beer</a>
+                <a className="link subLink" href="#wine" onClick={props.hideNavigation ? props.hideNavigation: null}>Wine</a>
             </div>
             <div className="socialsContainer">
                 <a href="instagram.com">
