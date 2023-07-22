@@ -18,23 +18,6 @@
         width: 30%;
         color: white;
         font-size: 0.9em;
-        .learnMoreButton{
-            border: solid 2px white;
-            border-radius: 100px;
-            padding: 0.8em 1.3em;
-            background-color: black;
-            color: white;
-            font-weight: 700;
-            font-size: 1.2em;
-            margin-top: 2em;
-            transition: all 200ms ease;
-            &:hover{
-                cursor: pointer;
-                background-color: white;
-                color: black;
-                transform: scale(1.1);
-            }
-        }
     }
     .linksContainer{
         display: flex;
@@ -98,15 +81,19 @@
     }
 }
 
-@media only screen and (max-width: 600px){
+@media (max-width: 600px){
     .footerContainer{
         width: 90%;
-        .svgContainer{
-            width: 50%;
-            transform: translateY(2em);
-            margin-bottom: 1em;
+        .reserveSection{
+            width: 90%;
+            margin: 2em 0;
+            font-size: 0.8em;
+            .learnMoreButton{
+                font-size: 1.5em;
+            }
         }
         .linksContainer{
+            align-items: center;
             width: 100%;
             margin-bottom: 1em;
         }

@@ -78,10 +78,12 @@
 
 @media (max-width: 600px){
     .searchDrinkContainer{
-        .searchDrinkInput{
-            width: 50%;
-            &:focus{
+        .searchLabel{
+            .searchDrinkInput{
                 width: 70%;
+                &:focus{
+                    width: 90%;
+                }
             }
         }
     }

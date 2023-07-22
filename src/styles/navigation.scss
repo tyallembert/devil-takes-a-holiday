@@ -51,6 +51,15 @@
     }
 }
 
+@media (max-width: 600px){
+    .navigationContainer{
+        .navigationButton{
+            left: auto;
+            right: 2em;
+        }
+    }
+}
+
 
 @keyframes slideIn{
     0%{

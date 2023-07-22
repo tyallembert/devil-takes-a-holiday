@@ -10,8 +10,8 @@
         color: white;
         font-weight: 700;
         font-size: 1.2em;
-        margin-top: 2em;
         text-decoration: none;
+        margin-top: 2em;
         transition: all 200ms ease;
         &:hover{
             cursor: pointer;
@@ -43,6 +43,9 @@
             width: 80%;
             .leftContainer{
                 width: 50%;
+                .learnMoreButton{
+                    margin-top: 0;
+                }
                 .itemContainer{
                     display: flex;
                     align-items: center;
@@ -65,8 +68,8 @@
                 }
                 .buttonsContainer{
                     display: flex;
-                    justify-content: space-around;
                     gap: 1em;
+                    margin-top: 1em;
                 }
             }
             .rightContainer{
@@ -75,6 +78,39 @@
                     height: 300px;
                     width: 100%;
                     background-color: gray;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 600px){
+    .reserveContainer{
+        .reservePage{
+            .mainContainer{
+                flex-direction: column-reverse;
+                .leftContainer{
+                    width: 100%;
+                    font-size: 0.8em;
+                    h1 {
+                        font-size: 3.5em;
+                    }
+                    .itemContainer{
+                        .text{
+                            font-size: 1.5em;
+                        }
+                    }
+                    .buttonsContainer{
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 1em;
+                    }
+                }
+                .rightContainer{
+                    width: 100%;
+                    .imageContainer{
+                        height: 200px;
+                    }
                 }
             }
         }
