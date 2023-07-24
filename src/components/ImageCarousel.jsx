@@ -25,8 +25,8 @@ const ImageCarousel = ({ images }) => {
                     <img className="image" src={images[currentImage]} alt="Inside"/>
                 </div>
                 <div className="buttonsContainer">
-                    <button className="carouselButton previouse" onClick={previousImage}><img src={Arrow}/></button>
-                    <button className="carouselButton next" onClick={nextImage}><img src={Arrow}/></button>
+                    <button className="carouselButton previouse" onClick={previousImage}><img src={Arrow} alt='arrow left'/></button>
+                    <button className="carouselButton next" onClick={nextImage}><img src={Arrow} alt='arrow right'/></button>
                 </div>
             </div>
         </div>

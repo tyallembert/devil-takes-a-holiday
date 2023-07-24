@@ -21,13 +21,13 @@ const Footer = (props) => {
                 <a className="link subLink" href="#wine" onClick={props.hideNavigation ? props.hideNavigation: null}>Wine</a>
             </div>
             <div className="socialsContainer">
-                <a target="_blank" href="https://www.instagram.com/deviltakesaholiday/">
+                <a target="_blank" rel="noreferrer" href="https://www.instagram.com/deviltakesaholiday/">
                     <img src={InstagramIcon} alt="Instagram"/>
                 </a>
-                <a target="_blank" href="https://www.yelp.com">
+                <a target="_blank" rel="noreferrer" href="https://www.yelp.com">
                     <img src={YelpIcon} alt="Yelp"/>
                 </a>
-                <a target="_blank" href = "mailto:hello@deviltakesaholiday.com">
+                <a target="_blank" rel="noreferrer" href = "mailto:hello@deviltakesaholiday.com">
                     <img src={MailIcon} alt="Mail"/>
                 </a>
             </div>
