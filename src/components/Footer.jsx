@@ -26,7 +26,7 @@ const Footer = (props) => {
                 <a target="_blank" rel="noreferrer" href="https://www.yelp.com">
                     <img src={YelpIcon} alt="Yelp"/>
                 </a>
-                <a target="_blank" rel="noreferrer" href = "mailto:hello@deviltakesaholiday.com">
+                <a target="_blank" rel="noreferrer" href = "mailto:HELLo@deviltakesaholiday.com">
                     <img src={MailIcon} alt="Mail"/>
                 </a>
             </div>

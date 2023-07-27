@@ -27,7 +27,7 @@ const Reserve = () => {
                         </div>
                         <div className="itemContainer">
                             <img className="imageIcon" src={ClockPNG} alt="Clock"/>
-                            <p className="text">The start <span>TIME</span> and <span>LENGTH</span> of the event</p>
+                            <p className="text">The <span>START TIME</span> and <span>LENGTH</span> of the event</p>
                         </div>
                         <div className="itemContainer">
                             <img className="imageIcon" src={PeoplePNG} alt="People"/>
