@@ -112,7 +112,7 @@
             },
             "3": {
                 "title": "Sangria Tropica Blood Wine",
-                "description": "Dead red wine, Rhum JM, cardamom, coriander, vanilla, allspice, cinnamon",
+                "description": "Dead wine, Rhum JM, cardamom, coriander, vanilla, allspice, cinnamon",
                 "price": 0.0
             },
             "4": {
@@ -146,8 +146,8 @@
                 "price": 0.0
             },
             "10": {
-                "title": "Agassi’s Mullet",
-                "description": "Gin, Pimm’s, cucumber water, lemon, cream, egg white, simple, ginger beer. This can take 10 minutes to make (Ramos style)",
+                "title": "Agassi's Mullet",
+                "description": "Gin, Pimm's, cucumber water, lemon, cream, egg white, simple, ginger beer (Ramos style)",
                 "price": 0.0
             },
             "11": {
