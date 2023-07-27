@@ -27,7 +27,7 @@ const Reserve = () => {
                         </div>
                         <div className="itemContainer">
                             <img className="imageIcon" src={ClockPNG} alt="Clock"/>
-                            <p className="text">The start <span>TIME</span> of the event</p>
+                            <p className="text">The start <span>TIME</span> and <span>LENGTH</span> of the event</p>
                         </div>
                         <div className="itemContainer">
                             <img className="imageIcon" src={PeoplePNG} alt="People"/>
@@ -36,7 +36,7 @@ const Reserve = () => {
                         <div className="buttonsContainer">
                     <a className="learnMoreButton" 
                     onClick={toggleShowing}
-                    href = "mailto:hello@deviltakesaholiday.com?Subject=Private%20Booking&Body=Message">Email Now</a>
+                    href = "mailto:HELLo@deviltakesaholiday.com?Subject=Private%20Booking">Email Now</a>
                     <button className="learnMoreButton" onClick={toggleShowing}>Cancel</button>
                 </div>
                     </div>

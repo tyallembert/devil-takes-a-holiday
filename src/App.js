@@ -1,22 +1,17 @@
-import Hero from './components/Hero';
-import Menu from './components/Menu';
-import Location from './components/Location';
-import Footer from './components/Footer';
-import './styles/App.scss';
-import Navigation from './components/Navigation';
-// import TopBanner from './components/TopBanner';
-import InstagramFeed from './components/InstagramFeed';
+import LandingPage from "./components/LandingPage";
+import ClassicsMenu from "./components/ClassicsMenu";
+import "./styles/App.scss";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      {/* <TopBanner /> */}
-      <Navigation />
-      <Hero />
-      <Location />
-      <Menu />
-      <InstagramFeed />
-      <Footer />
+      <Router>
+        <Routes>
+          <Route path="/classics" element={<ClassicsMenu/>} />
+          <Route path="/" element={<LandingPage/>} />
+        </Routes>
+      </Router>
     </div>
   );
 }

@@ -1,193 +1,169 @@
 [
     {
-        "pagan spring": {
+        "atonements": {
             "1": {
-                "title": "Flora The Explorah",
-                "description": "Flor de Cana 7yr Rum, Smith & Cross Rum, hibiscus, lemon, egg white, Angostura bitters. The goddess of daquiri hits your lips. flowers heralds the Spring, and so will you after this floral",
-                "price": 14
+                "title": "Mamma Ghia (how could I resist you?)",
+                "description": "Ghia non-alcoholic aperitif, New London Light n/a gin, acid adjusted orange juice, agave, lemon",
+                "price": 0.0
             },
             "2": {
-                "title": "Herb Goddess (Temazcalteci)",
-                "description": "Blanco Tequila, Devil-made strawberry-cilantro shrub, lemon, seltzer. Temazcalteci is the one who uses herbs to banish illness, we do too, we just also use tequila...",
-                "price": 13
+                "title": "JalaPiña Mind",
+                "description": "Devil-made pineapple-jalapeno soda spritzer, tajin",
+                "price": 0.0
             },
             "3": {
-                "title": "Strawman (Jarylo)",
-                "description": "Gin, strawberry infused blanc vermouth, angostura, long pepper tincture. Nothing quite says fertility and springtime like the Slavic god Jarylo except maybe this delicious gin martini with a whisper of heat and strawberries.",
-                "price": 15
+                "title": "Hibiscus Hijinks",
+                "description": "Seedlip Grove 42 Citrus, hibiscus syrup, fresh lemon juice, seltzer",
+                "price": 0.0
             },
             "4": {
-                "title": "She's Made of Oak (Blodeuwedd)",
-                "description": "Rittenhouse Rye, Underberg, Bigallet China-China, maple syrup, Angostura bitters, oak smoke. She's bitter, she's sturdy, she's made of oak.",
-                "price": 15
+                "title": "The City Special",
+                "description": "Devil-made cinnamon & BRIO coffee syrup, condensed milk, vanilla, star anise, Mexican Coca-Cola",
+                "price": 0.0
             },
             "5": {
-                "title": "Pachamama (Incan Earth Mother)",
-                "description": "Pisco, coconut, lime, Peychaud's bitters, absinthe- coconut whipped cream, rose buds. An Earth Mother deserves something floral and vibrant with a delectable whipped cream top!",
-                "price": 14
+                "title": "Spritz-SIN the Night Away",
+                "description": "Pentire Coastal, rosemary, blood orange, Q tonic",
+                "price": 0.0
             },
             "6": {
-                "title": "Brigid's Fire",
-                "description": "El Silencio Mezcal, Amaro Abano, Amontillado, ginger, honey, lemon, cinnamon. Just like Brigid's smith, this drink is on fire!",
-                "price": 14
+                "title": "Wrong Island Iced Tea",
+                "description": "Pathfinder 'Amaro', Pentire Seaward 'spirit', Wilfred's NA Bitter, lemon, splash of Mexican Coca-Cola",
+                "price": 0.0
             },
             "7": {
-                "title": "New Calendar (Mayahuel)",
-                "description": "Mezcal, Green Chartreuse, ginger, jalapeno, lime. The Mayan goddess of fertility and agave needs another winning combination, hot, spicy, herbaceous, and smoky.",
-                "price": 15
-            },
-            "8": {
-                "title": "Diamond Bunnies (Eostre)",
-                "description": "Barr Hill Tom Cat Gin, devil-made carrot miso cordial, lemon, devil-made Adult Fireball. Have you ever wanted to drink a carrot, but have it taste good? Now you can!",
-                "price": 15
-            },
-            "9": {
-                "title": "Fruit of the Devil (Persephone)",
-                "description": "Reposadado tequila, pomegranate, grapefruit, ginger, mint, lime, honey, seltzer. Like the goddess who only spends half her time with the devil, this is light, with a touch of the darkness.",
-                "price": 14
+                "title": "NArgarita",
+                "description": "Pentire Adrift ‘spirit’, fresh lime juice, agave, citrus salt",
+                "price": 0.0
             }
         },
-        "devils favorites": {
+        "sinful summer sippers": {
             "1": {
-                "title": "French Mistress",
-                "description": "Cantaloupe-infused Aviation Gin, sparkling wine, lemon, agave, mint",
-                "price": 14
+                "title": "Piña Envy",
+                "description": "Espolon blanco tequila, Norden Aquavit, Devil-made pineapple-jalapeno soda, tajin",
+                "price": 0.0
             },
             "2": {
-                "title": "Smoking Bagpipe",
-                "description": "Speyburn 10yr Single Malt Scotch, pineapple, lime, chipotle maple, orange bitters",
-                "price": 15
+                "title": "Burly With a View",
+                "description": "Bruto Americano, Dolin’s Dry Vermouth, lime, simple, seltzer",
+                "price": 0.0
             },
             "3": {
-                "title": "Sexting on the Beach",
-                "description": "Vodka, oak-infused peach liqueur, sour orange, cranberry cordial",
-                "price": 14
+                "title": "Arcana Bitternica",
+                "description": "Espolon blanco tequila, Velvet Falernum, Arcana Botanica Vexia, grapefruit, lime, Angostura bitters, Q tonic water, citrus salt",
+                "price": 0.0
             },
             "4": {
-                "title": "Match(a) Made in Hell",
-                "description": "Pineapple Rum, Wray & Nephew overproof rum, Cointreau, Thai basil-matcha syrup, pineapple, lime, egg white, matcha powder.",
-                "price": 14
+                "title": "Whiteless Russian",
+                "description": "Flor de Cana 7yr Rum, Perc coffee liqueur, Meletti, BRIO coffee, demerara sugar, lemon, whey",
+                "price": 0.0
             },
             "5": {
-                "title": "Have a Dart (on draft)",
-                "description": "Mezcal, Lillet Blanc, grapefruit, lime, honey, Peychaud's bitters, Maldon sea salt",
-                "price": 15
+                "title": "Kevin",
+                "description": "Buffalo Trace bourbon, Yellow Chartreuse, Metcalf’s Peach Liqueur, chicory pecan bitters, Peychaud’s bitters, cava",
+                "price": 0.0
             },
             "6": {
-                "title": "Notorious F.I.G",
-                "description": "Fig-infused cognac, Grand Marnier, house grenadine, lemon. There's nothing Smalls about this Figgy...",
-                "price": 15
+                "title": "Sweep the Leg",
+                "description": "Old Overholt Rye, lemon, tonka, Ommegang Dream Patch Fruited Sour Ale",
+                "price": 0.0
             },
             "7": {
-                "title": "Saint Paul's Bone",
-                "description": "Rye, Cynar, Aged Rum, Luxardo, crushed clove, Maldon salt. A deep profound flavor pairs well with existential dread.",
-                "price": 14
+                "title": "Yellow Stone Witch",
+                "description": "Plymouth gin, Strega, peach, Angostura bitters, vanilla, cava",
+                "price": 0.0
             },
             "8": {
-                "title": "No Rest For The Wicked",
-                "description": "Coffee-infused mezcal, Contratto Bitter, Carpano Antica Sweet Vermouth, Crème de Cacao, mole bitters",
-                "price": 15
+                "title": "Chilled Monkey Brains,",
+                "description": "Speyburn 10yr scotch, Amaretto, grapefruit, coconut, lime, Campari spray",
+                "price": 0.0
             },
             "9": {
-                "title": "Rotating Milk Punch",
-                "description": "Ask us what blasphemy we've created now!",
-                "price": 13
+                "title": "Ses Youz",
+                "description": "Plymouth gin, Pierre Ferrand Dry Curacao, pineapple, lime, sesame syrup, Angostura bitters, sesame oil",
+                "price": 0.0
             },
             "10": {
-                "title": "Agassi's Mullet",
-                "description": "Gin, Pimm's, cucumber water, lemon, cream, egg white, simple, ginger beer. This will take 10 minutes to make (Ramos style)",
-                "price": 17
+                "title": "Sam Rum Stir Thang",
+                "description": "Cocchi Rosa, Plantation Pineapple Rum, Amaro Ciociaro, Wray & Nephew overproof rum, Angostura bitters, orange bitters, lime zest",
+                "price": 0.0
             },
             "11": {
-                "title": "Apricot Sour",
-                "description": "Cognac, Apricot Brandy, lemon, tonka syrup, egg white",
-                "price": 15
+                "title": "Cornhub",
+                "description": "Reposado tequila, Devil-made corn milk, coconut, lime, ancho salt",
+                "price": 0.0
             },
             "12": {
-                "title": "Gift Certificate to OnlyFans",
-                "description": "Aged rum, Mad River Vanilla Rum, passionfruit, lemon coconut, 'Billy's hot pepper juice', Lambrusco float",
-                "price": 15
-            },
-            "13": {
-                "title": "Red Banana",
-                "description": "Barr Hill Gin, Barr Hill Tom Cat Gin, minted Ferne Carpano Antica sweet vermouth, ginger, Angostu bitters",
-                "price": 16
+                "title": "Nice Melons",
+                "description": "Midori, Cognac, acid-adjusted orange juice, pineapple, egg white",
+                "price": 0.0
             }
         },
-        "beer": {
+        "devil's favorites": {
             "1": {
-                "title": "Peeper",
-                "description": "sldkg so goishg lshdgohsdlkghnl sdgoisd glkhsdl glsd glkshd glksdlkghs ldkg lskd glkshdglk sdlkhg lksd g",
-                "price": 14
+                "title": "We Can’t Elope",
+                "description": "Cantaloupe infused Aviation gin, lemon, mint, agave",
+                "price": 0.0
             },
             "2": {
-                "title": "Stella",
-                "description": "sldkg so goishg lshdgohsdlkghnl sdgoisd glkhsdl glsd glkshd glksdlkghs ldkg lskd glkshdglk sdlkhg lksd g",
-                "price": 14
+                "title": "Herb Goddess 2.0",
+                "description": "Vodka, Devil-made strawberry-cilantro shrub, lemon, seltzer",
+                "price": 0.0
             },
             "3": {
-                "title": "Flora The Explorah",
-                "description": "sldkg so goishg lshdgohsdlkghnl sdgoisd glkhsdl glsd glkshd glksdlkghs ldkg lskd glkshdglk sdlkhg lksd g",
-                "price": 14
-            }
-        },
-        "wine": {
-            "1": {
-                "title": "Peeper",
-                "description": "sldkg so goishg lshdgohsdlkghnl sdgoisd glkhsdl glsd glkshd glksdlkghs ldkg lskd glkshdglk sdlkhg lksd g",
-                "price": 14
-            },
-            "2": {
-                "title": "Stella",
-                "description": "sldkg so goishg lshdgohsdlkghnl sdgoisd glkhsdl glsd glkshd glksdlkghs ldkg lskd glkshdglk sdlkhg lksd g",
-                "price": 14
-            },
-            "3": {
-                "title": "Flora The Explorah",
-                "description": "sldkg so goishg lshdgohsdlkghnl sdgoisd glkhsdl glsd glkshd glksdlkghs ldkg lskd glkshdglk sdlkhg lksd g",
-                "price": 14
+                "title": "Sangria Tropica Blood Wine",
+                "description": "Dead red wine, Rhum JM, cardamom, coriander, vanilla, allspice, cinnamon",
+                "price": 0.0
             },
             "4": {
-                "title": "Flora The Explorah",
-                "description": "sldkg so goishg lshdgohsdlkghnl sdgoisd glkhsdl glsd glkshd glksdlkghs ldkg lskd glkshdglk sdlkhg lksd g",
-                "price": 14
+                "title": "Pachamama",
+                "description": "Pisco, coconut, lime, Peychaud’s bitters, absinthe- coconut whipped cream, rose buds",
+                "price": 0.0
             },
             "5": {
                 "title": "Flora The Explorah",
-                "description": "sldkg so goishg lshdgohsdlkghnl sdgoisd glkhsdl glsd glkshd glksdlkghs ldkg lskd glkshdglk sdlkhg lksd g",
-                "price": 14
+                "description": "Flor de Cana 7yr Rum, Smith & Cross Rum, hibiscus, lemon, egg white, Angostura bitters",
+                "price": 0.0
             },
             "6": {
-                "title": "Flora The Explorah",
-                "description": "sldkg so goishg lshdgohsdlkghnl sdgoisd glkhsdl glsd glkshd glksdlkghs ldkg lskd glkshdglk sdlkhg lksd g",
-                "price": 14
+                "title": "Kilt in the Breeze",
+                "description": "Speyburn 10yr Single Malt Scotch, pineapple, lime, chipotle maple, orange bitters",
+                "price": 0.0
             },
             "7": {
-                "title": "Flora The Explorah",
-                "description": "sldkg so goishg lshdgohsdlkghnl sdgoisd glkhsdl glsd glkshd glksdlkghs ldkg lskd glkshdglk sdlkhg lksd g",
-                "price": 14
+                "title": "Strawman (Jarylo)",
+                "description": "Gin, strawberry infused blanc vermouth, angostura, long pepper tincture",
+                "price": 0.0
             },
             "8": {
-                "title": "Flora The Explorah",
-                "description": "sldkg so goishg lshdgohsdlkghnl sdgoisd glkhsdl glsd glkshd glksdlkghs ldkg lskd glkshdglk sdlkhg lksd g",
-                "price": 14
-            }
-        },
-        "mocktails": {
-            "1": {
-                "title": "Peeper",
-                "description": "sldkg so goishg lshdgohsdlkghnl sdgoisd glkhsdl glsd glkshd glksdlkghs ldkg lskd glkshdglk sdlkhg lksd g",
-                "price": 14
+                "title": "She’s Made of Oak",
+                "description": "Rittenhouse Rye, Underberg, Bigallet China-China, maple syrup, Angostura bitters, oak smoke.",
+                "price": 0.0
             },
-            "2": {
-                "title": "Stella",
-                "description": "sldkg so goishg lshdgohsdlkghnl sdgoisd glkhsdl glsd glkshd glksdlkghs ldkg lskd glkshdglk sdlkhg lksd g",
-                "price": 14
+            "9": {
+                "title": "New Calendar",
+                "description": "Jalapeno infused Banhez Mezcal, Green Chartreuse, ginger, jalapeno, lime, citrus salt",
+                "price": 0.0
             },
-            "3": {
-                "title": "Flora The Explorah",
-                "description": "sldkg so goishg lshdgohsdlkghnl sdgoisd glkhsdl glsd glkshd glksdlkghs ldkg lskd glkshdglk sdlkhg lksd g",
-                "price": 14
+            "10": {
+                "title": "Agassi’s Mullet",
+                "description": "Gin, Pimm’s, cucumber water, lemon, cream, egg white, simple, ginger beer. This can take 10 minutes to make (Ramos style)",
+                "price": 0.0
+            },
+            "11": {
+                "title": "Diamond Bunnies,",
+                "description": "Barr Hill Tom Cat Gin, Devil-made carrot-miso cordial, lemon, devil-made Adult Fireball",
+                "price": 0.0
+            },
+            "12": {
+                "title": "No Rest For The Wicked (on draft!)",
+                "description": "Coffee-infused mezcal, Contratto Bitter, Carpano Antica Sweet Vermouth, Devil-made crème de cacao, mole bitters",
+                "price": 0.0
+            },
+            "13": {
+                "title": "Underberg",
+                "description": "Bitter German herbal digestif",
+                "price": 0.0
             }
         }
     }

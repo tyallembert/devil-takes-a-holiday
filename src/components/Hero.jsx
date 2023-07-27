@@ -8,8 +8,9 @@ const Hero = () => {
             <DevilDrawing />
             <BottomText />
             <div className="timeContainer">
-                <p className="time">4pm - 11pm, Sunday - Thursday</p>
-                <p className="time">4pm - 1am, Friday - Saturday</p>
+                <p className="time">Monday - Thursday, 5pm - 11pm</p>
+                <p className="time">Friday Saturday, 4pm - 1am</p>
+                <p className="time">Sunday, 5pm - 10pm</p>
             </div>
         </div>
     )

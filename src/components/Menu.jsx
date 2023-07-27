@@ -14,12 +14,12 @@ const Menu = () => {
     return (
         <div className="menuContainer" id="menu">
             <h1 className="menuTitle">Menu</h1>
-            <SearchDrink />
+            {/* <SearchDrink /> */}
             {
                 Object.keys(menu).map((drinkType) => {
                     return (
                         <div key={drinkType}>
-                            <h2 className="drinkTitle" id={drinkType}>{drinkType}</h2>
+                            <h2 className="drinkTitle" id={drinkType.split(" ")[0]}>{drinkType}</h2>
                             <div className="drinksContainer cocktailsContainer" id={drinkType}>
                             {
                                 Object.keys(menu[drinkType]).map((key) => {
