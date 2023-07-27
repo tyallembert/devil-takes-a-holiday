@@ -1,7 +1,7 @@
 import "../styles/menu.scss";
 import menuData from "../data/menu.json";
 import { useState, useEffect } from "react";
-import SearchDrink from "./SearchDrink";
+// import SearchDrink from "./SearchDrink";
 import DrinkObject from "./DrinkObject";
 
 const Menu = () => {
