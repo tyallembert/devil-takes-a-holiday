@@ -20,9 +20,11 @@ const Menu = () => {
                     return (
                         <div key={drinkType}>
                             <h2 className="drinkTitle" id={drinkType.split(" ")[0]}>{drinkType}</h2>
+                            <h3 className="tagLine">{menu[drinkType].tagLine}</h3>
                             <div className="drinksContainer cocktailsContainer" id={drinkType}>
                             {
                                 Object.keys(menu[drinkType]).map((key) => {
+                                    if(drinkType === "tagLine") return null;
                                     return (
                                         <DrinkObject key={key} 
                                         index={key} 

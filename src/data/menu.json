@@ -1,43 +1,7 @@
 [
     {
-        "atonements": {
-            "1": {
-                "title": "Mamma Ghia (how could I resist you?)",
-                "description": "Ghia non-alcoholic aperitif, New London Light n/a gin, acid adjusted orange juice, agave, lemon",
-                "price": 0.0
-            },
-            "2": {
-                "title": "JalaPiña Mind",
-                "description": "Devil-made pineapple-jalapeno soda spritzer, tajin",
-                "price": 0.0
-            },
-            "3": {
-                "title": "Hibiscus Hijinks",
-                "description": "Seedlip Grove 42 Citrus, hibiscus syrup, fresh lemon juice, seltzer",
-                "price": 0.0
-            },
-            "4": {
-                "title": "The City Special",
-                "description": "Devil-made cinnamon & BRIO coffee syrup, condensed milk, vanilla, star anise, Mexican Coca-Cola",
-                "price": 0.0
-            },
-            "5": {
-                "title": "Spritz-SIN the Night Away",
-                "description": "Pentire Coastal, rosemary, blood orange, Q tonic",
-                "price": 0.0
-            },
-            "6": {
-                "title": "Wrong Island Iced Tea",
-                "description": "Pathfinder 'Amaro', Pentire Seaward 'spirit', Wilfred's NA Bitter, lemon, splash of Mexican Coca-Cola",
-                "price": 0.0
-            },
-            "7": {
-                "title": "NArgarita",
-                "description": "Pentire Adrift ‘spirit’, fresh lime juice, agave, citrus salt",
-                "price": 0.0
-            }
-        },
         "sinful summer sippers": {
+            "tagLine": "(It's hot, be hotter...)",
             "1": {
                 "title": "Piña Envy",
                 "description": "Espolon blanco tequila, Norden Aquavit, Devil-made pineapple-jalapeno soda, tajin",
@@ -100,6 +64,7 @@
             }
         },
         "devil's favorites": {
+            "tagLine": "(Drink cocktails and sin...)",
             "1": {
                 "title": "We Can’t Elope",
                 "description": "Cantaloupe infused Aviation gin, lemon, mint, agave",
@@ -163,6 +128,44 @@
             "13": {
                 "title": "Underberg",
                 "description": "Bitter German herbal digestif",
+                "price": 0.0
+            }
+        },
+        "atonements": {
+            "tagLine": "(It's your normal life, you just aren't hungover)",
+            "1": {
+                "title": "Mamma Ghia (how could I resist you?)",
+                "description": "Ghia non-alcoholic aperitif, New London Light n/a gin, acid adjusted orange juice, agave, lemon",
+                "price": 0.0
+            },
+            "2": {
+                "title": "JalaPiña Mind",
+                "description": "Devil-made pineapple-jalapeno soda spritzer, tajin",
+                "price": 0.0
+            },
+            "3": {
+                "title": "Hibiscus Hijinks",
+                "description": "Seedlip Grove 42 Citrus, hibiscus syrup, fresh lemon juice, seltzer",
+                "price": 0.0
+            },
+            "4": {
+                "title": "The City Special",
+                "description": "Devil-made cinnamon & BRIO coffee syrup, condensed milk, vanilla, star anise, Mexican Coca-Cola",
+                "price": 0.0
+            },
+            "5": {
+                "title": "Spritz-SIN the Night Away",
+                "description": "Pentire Coastal, rosemary, blood orange, Q tonic",
+                "price": 0.0
+            },
+            "6": {
+                "title": "Wrong Island Iced Tea",
+                "description": "Pathfinder 'Amaro', Pentire Seaward 'spirit', Wilfred's NA Bitter, lemon, splash of Mexican Coca-Cola",
+                "price": 0.0
+            },
+            "7": {
+                "title": "NArgarita",
+                "description": "Pentire Adrift ‘spirit’, fresh lime juice, agave, citrus salt",
                 "price": 0.0
             }
         }

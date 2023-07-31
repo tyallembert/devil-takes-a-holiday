@@ -8,13 +8,20 @@
     scroll-snap-align: start;
     .menuTitle{
         color: $color-1;
+        margin-bottom: 0.5em;
     }
     .drinkTitle{
         font-weight: 700;
         color: $color-1;
-        margin: 1em 0em;
+        // margin: 1em 0em;
         text-transform: capitalize;
         scroll-snap-align: start;
+    }
+    .tagLine{
+        color: $color-1;
+        font-size: 1.1em;
+        font-weight: 400;
+        margin-bottom: 1em;
     }
     .drinksContainer{
         display: grid;
