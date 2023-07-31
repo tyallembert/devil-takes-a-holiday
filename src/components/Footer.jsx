@@ -1,6 +1,5 @@
 import "../styles/footer.scss"
 import InstagramIcon from "../images/instagram.png"
-import YelpIcon from "../images/yelp.png"
 import MailIcon from "../images/mail.png"
 import Reserve from "./Reserve"
 
@@ -22,9 +21,6 @@ const Footer = (props) => {
             <div className="socialsContainer">
                 <a target="_blank" rel="noreferrer" href="https://www.instagram.com/deviltakesaholiday/">
                     <img src={InstagramIcon} alt="Instagram"/>
-                </a>
-                <a target="_blank" rel="noreferrer" href="https://www.yelp.com">
-                    <img src={YelpIcon} alt="Yelp"/>
                 </a>
                 <a target="_blank" rel="noreferrer" href = "mailto:HELLo@deviltakesaholiday.com">
                     <img src={MailIcon} alt="Mail"/>
