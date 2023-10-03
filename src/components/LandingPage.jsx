@@ -4,7 +4,7 @@ import Location from './Location';
 import Footer from './Footer';
 import Navigation from './Navigation';
 // import TopBanner from './components/TopBanner';
-import InstagramFeed from './InstagramFeed';
+// import InstagramFeed from './InstagramFeed';
 
 const LandingPage = () => {
     return (
@@ -14,7 +14,7 @@ const LandingPage = () => {
             <Hero />
             <Location />
             <Menu />
-            <InstagramFeed />
+            {/* <InstagramFeed /> */}
             <Footer />
         </div>
     )

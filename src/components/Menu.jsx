@@ -14,7 +14,6 @@ const Menu = () => {
     return (
         <div className="menuContainer" id="menu">
             <h1 className="menuTitle">Menu</h1>
-            {/* <SearchDrink /> */}
             {
                 Object.keys(menu).map((drinkType) => {
                     return (
