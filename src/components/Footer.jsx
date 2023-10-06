@@ -14,9 +14,9 @@ const Footer = (props) => {
             <div className="linksContainer">
                 <a className="link" href="#location" onClick={props.hideNavigation ? props.hideNavigation: null}>Location</a>
                 <a className="link" href="#menu" onClick={props.hideNavigation ? props.hideNavigation: null}>Menu</a>
-                <a className="link subLink" href="#sinful" onClick={props.hideNavigation ? props.hideNavigation: null}>sinful summer sippers</a>
-                <a className="link subLink" href="#devil's" onClick={props.hideNavigation ? props.hideNavigation: null}>devil's favorites</a>
-                <a className="link subLink" href="#atonements" onClick={props.hideNavigation ? props.hideNavigation: null}>Atonements</a>
+                <a className="link subLink" href="#Fall(ish)" onClick={props.hideNavigation ? props.hideNavigation: null}>fall(ish) frivolities</a>
+                <a className="link subLink" href="#Devil's" onClick={props.hideNavigation ? props.hideNavigation: null}>devil's favorites</a>
+                <a className="link subLink" href="#Atonements" onClick={props.hideNavigation ? props.hideNavigation: null}>Atonements</a>
             </div>
             <div className="socialsContainer">
                 <a target="_blank" rel="noreferrer" href="https://www.instagram.com/deviltakesaholiday/">
