@@ -16,7 +16,7 @@
             },
             "3": {
                 "title": "Spill The Tea",
-                "description": "Espolon blanco tequila, Norden Aquavit, Devil-made red tea syrup, yuzu, lime, ginger bee.",
+                "description": "Espolon blanco tequila, Norden Aquavit, Devil-made red tea syrup, yuzu, lime, ginger beer.",
                 "tagLine": "French red tea blends beautifully with the citrus of yuzu and lime (the tequila doesn’t hurt either!)",
                 "price": 0.0
             },
@@ -57,7 +57,7 @@
                 "price": 0.0
             },
             "10": {
-                "title": "Dr. Puff",
+                "title": "Dr. Puffer",
                 "description": "Vodka, Amaretto, lemon, simple, egg white, cream, Modelo Especial.",
                 "tagLine": "It's as unhinged as the people that created it! Ramos Gin Fizz style ‘puff’ ‘can take up to 10 minutes to make but usually faster; we don’t mind, promise; Sergio is going to make it anyways.",
                 "price": 0.0
@@ -91,7 +91,7 @@
             },
             "4": {
                 "title": "Pachamama",
-                "description": "Pisco, coconut, lime, Peychaud’s bitters, absinthe- coconut whipped cream, rose buds.",
+                "description": "Pisco, coconut, lime, Peychaud’s bitters, absinthe-coconut whipped cream, rose buds.",
                 "tagLine": "",
                 "price": 0.0
             },
@@ -115,7 +115,7 @@
             },
             "8": {
                 "title": "She’s Made of Oak",
-                "description": "Rittenhouse Rye, Underberg, Bigallet China-China, maple syrup, Angostura bitters, oak smoke.",
+                "description": "Rittenhouse Rye, Underberg, Bigallet China-China, chipotle maple syrup, Angostura bitters, oak smoke.",
                 "tagLine": "",
                 "price": 0.0
             },
@@ -126,30 +126,24 @@
                 "price": 0.0
             },
             "10": {
-                "title": "Agassi's Mullet",
-                "description": "Gin, Pimm's, cucumber water, lemon, cream, egg white, simple, ginger beer (Ramos style).",
-                "tagLine": "",
-                "price": 0.0
-            },
-            "11": {
                 "title": "Sam Rum Stir Thang",
                 "description": "Cocchi Rosa, Plantation Pineapple Rum, Amaro Ciociaro, Wray & Nephew overproof rum, Angostura bitters, orange bitters, lime zest.",
                 "tagLine": "",
                 "price": 0.0
             },
-            "12": {
+            "11": {
                 "title": "Chilled Monkey Brains",
                 "description": "Speyburn 10yr scotch, Amaretto, grapefruit, coconut, lime, Campari spray.",
                 "tagLine": "It’s juicy, it’s tropical, it comes on crushed ice, but most importantly it’s served in a skull…",
                 "price": 0.0
             },
-            "13": {
+            "12": {
                 "title": "No Rest For The Wicked (on draft!)",
                 "description": "Mezcal, Contratto Bitter, Perc coffee liqueur, Sweet Vermouth, Devil-made crème de cacao, mole bitters.",
                 "tagLine": "",
                 "price": 0.0
             },
-            "14": {
+            "13": {
                 "title": "Underberg",
                 "description": "Bitter German herbal digestif.",
                 "tagLine": "",
