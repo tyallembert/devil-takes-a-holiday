@@ -29,6 +29,7 @@ const Menu = () => {
                                         index={key} 
                                         title={menu[drinkType][key].title} 
                                         description={menu[drinkType][key].description}
+                                        tagLine={menu[drinkType][key].tagLine}
                                         price={menu[drinkType][key].price} />
                                     );
                                 })
