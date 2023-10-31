@@ -1,0 +1,108 @@
+@import "variables.scss";
+
+.popupContainer {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.5);
+    animation: fadeColor 3s ease-in-out;
+    z-index: 2;
+    &.hidden {
+        display: none;
+    }
+    .popupContentContainer {
+        position: relative;
+        width: 50%;
+        min-height: 50vh;
+        padding: 1rem;
+        background-color: $color-1;
+        border-radius: 20px;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.75);
+        &.inAnimation {
+            animation: bounceIn 3s ease-in-out;
+        }
+        &.outAnimation {
+            animation: bounceOut 0.75s ease-in-out;
+            transform: translateY(200%);
+        }
+        .popupTitle {
+            font-size: 3rem;
+            font-weight: bold;
+            text-align: center;
+            padding: 1rem;
+        }
+        .popupInfo {
+            font-size: 1.5rem;
+            text-align: center;
+            padding: 1rem;
+        }
+        .closeButton {
+            position: absolute;
+            bottom: 1rem;
+            left: calc(50% - 5rem);
+            width: 10rem;
+            border: none;
+            background-color: transparent;
+            color: $color-2;
+            cursor: pointer;
+            &:hover {
+                color: $color-2;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .popupContainer {
+        .popupContentContainer {
+            width: 90%;
+        }
+    }
+}
+
+@keyframes fadeColor {
+    0% {
+        background-color: rgba(0,0,0,0);
+    }
+    80% {
+        background-color: rgba(0,0,0,0);
+    }
+    100% {
+        background-color: rgba(0,0,0,0.5);
+    }
+
+}
+@keyframes bounceIn {
+    0% {
+        transform: translateY(-200%);
+    }
+    80% {
+        transform: translateY(-200%);
+    }
+    90% {
+        transform: translateY(20%);
+    }
+    95% {
+        transform: translateY(-5%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceOut {
+    0% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-5%);
+    }
+    70% {
+        transform: translateY(20%);
+    }
+    100% {
+        transform: translateY(-200%);
+    }
+}

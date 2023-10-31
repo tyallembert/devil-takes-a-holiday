@@ -3,18 +3,20 @@ import Menu from './Menu';
 import Location from './Location';
 import Footer from './Footer';
 import Navigation from './Navigation';
+import PopUp from './PopUp';
 // import TopBanner from './components/TopBanner';
-// import InstagramFeed from './InstagramFeed';
+import InstagramFeed from './InstagramFeed';
 
 const LandingPage = () => {
     return (
         <div className='landingPage'>
             {/* <TopBanner /> */}
+            <PopUp />
             <Navigation />
             <Hero />
             <Location />
             <Menu />
-            {/* <InstagramFeed /> */}
+            <InstagramFeed />
             <Footer />
         </div>
     )
