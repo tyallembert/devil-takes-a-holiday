@@ -8,7 +8,7 @@
     align-items: center;
     background-color: rgba(0,0,0,0.5);
     animation: fadeColor 3s ease-in-out;
-    z-index: 2;
+    z-index: 5;
     &.hidden {
         display: none;
     }
@@ -19,7 +19,6 @@
         padding: 1rem;
         background-color: $color-1;
         border-radius: 20px;
-        box-shadow: 2px 2px 5px rgba(0,0,0,0.75);
         &.inAnimation {
             animation: bounceIn 3s ease-in-out;
         }
@@ -27,16 +26,41 @@
             animation: bounceOut 0.75s ease-in-out;
             transform: translateY(200%);
         }
+        .palmTree {
+            position: absolute;
+            left: -13%;
+            top: -7vh;
+            width: 12vh;
+            transform: rotate(-50deg);
+            z-index: 1;
+        }
+        .palmTree:nth-child(even) {
+            left: -2%;
+            top: -14vh;
+            width: 9vh;
+            transform: rotate(-10deg) scaleX(-1);
+        }
+        .devilDrawing {
+            position: absolute;
+            right: -15%;
+            bottom: 10%;
+            width: 25%;
+            transform: rotate(20deg) scaleX(-1);
+            z-index: 1;
+            animation: devilDrawing 4s ease-in-out;
+        }
         .popupTitle {
             font-size: 3rem;
             font-weight: bold;
             text-align: center;
             padding: 1rem;
+            z-index: 2;
         }
         .popupInfo {
+            position: relative;
             font-size: 1.5rem;
-            text-align: center;
             padding: 1rem;
+            z-index: 2;
         }
         .closeButton {
             position: absolute;
@@ -46,6 +70,7 @@
             border: none;
             background-color: transparent;
             color: $color-2;
+            font-size: 1rem;
             cursor: pointer;
             &:hover {
                 color: $color-2;
@@ -57,11 +82,35 @@
 @media screen and (max-width: 768px) {
     .popupContainer {
         .popupContentContainer {
-            width: 90%;
+            width: 70%;
+            padding: 0.5rem;
+            .palmTree {
+                top: -13vh;
+                width: 9vh;
+                transform: rotate(-15deg);
+            }
+            .palmTree:nth-child(even) {
+                left: 15%;
+                top: -10vh;
+                width: 7vh;
+                transform: rotate(10deg) scaleX(-1);
+            }
+            .popupTitle {
+                font-size: 2.5rem;
+                font-weight: bold;
+                text-align: center;
+                padding: 1rem;
+            }
+            .popupInfo {
+                position: relative;
+                font-size: 1rem;
+                padding: 1rem;
+            }
         }
     }
 }
 
+// animation for background color
 @keyframes fadeColor {
     0% {
         background-color: rgba(0,0,0,0);
@@ -74,6 +123,7 @@
     }
 
 }
+// animation for opening popup
 @keyframes bounceIn {
     0% {
         transform: translateY(-200%);
@@ -92,6 +142,7 @@
     }
 }
 
+// animation for closing popup
 @keyframes bounceOut {
     0% {
         transform: translateY(0);
@@ -104,5 +155,17 @@
     }
     100% {
         transform: translateY(-200%);
+    }
+}
+// animation for devilDrawing
+@keyframes devilDrawing {
+    0% {
+        transform: translateX(-150px) rotate(0deg) scaleX(-1);
+    }
+    90% {
+        transform: translateX(-150px) rotate(0deg) scaleX(-1);
+    }
+    100% {
+        transform: translateX(0) rotate(20deg) scaleX(-1);
     }
 }
