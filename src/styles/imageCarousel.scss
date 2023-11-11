@@ -7,7 +7,12 @@
         align-items: center;
         .imageContainer{
             border-radius: 10px;
-            overflow: hidden;
+            // mask: url(../images/mask.png) no-repeat center;
+            // mask-size: contain;
+            .image {
+                width: 100%;
+                max-width: 100%;
+            }
         }
         .buttonsContainer{
             display: flex;
