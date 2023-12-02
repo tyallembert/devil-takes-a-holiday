@@ -1,12 +1,12 @@
 import "../styles/reserve.scss"
 import {useState} from "react"
-import ImageCarousel from "./ImageCarousel"
 import PeoplePNG from "../images/people.png"
 import CalendarPNG from "../images/calendar.png"
 import ClockPNG from "../images/clock.png"
-import InsideImage1 from "../images/bar-inside-1.jpeg"
-import InsideImage2 from "../images/bar-inside-2.jpeg"
-import InsideImage3 from "../images/bar-inside-3.jpeg"
+// import ImageCarousel from "./ImageCarousel"
+// import InsideImage1 from "../images/bar-inside-1.jpeg"
+// import InsideImage2 from "../images/bar-inside-2.jpeg"
+// import InsideImage3 from "../images/bar-inside-3.jpeg"
 
 const Reserve = () => {
     const [showing, setShowing] = useState(false)
@@ -34,15 +34,15 @@ const Reserve = () => {
                             <p className="text">The <span>NUMBER</span> of <span>PEOPLE</span> that will be attending</p>
                         </div>
                         <div className="buttonsContainer">
-                    <a className="learnMoreButton" 
-                    onClick={toggleShowing}
-                    href = "mailto:HELLo@deviltakesaholiday.com?Subject=Private%20Booking">Email Now</a>
-                    <button className="learnMoreButton" onClick={toggleShowing}>Cancel</button>
-                </div>
+                            <a className="learnMoreButton" 
+                            onClick={toggleShowing}
+                            href = "mailto:HELLo@deviltakesaholiday.com?Subject=Private%20Booking">Email Now</a>
+                            <button className="learnMoreButton" onClick={toggleShowing}>Cancel</button>
+                        </div>
                     </div>
-                    <div className="rightContainer">
+                    {/* <div className="rightContainer">
                         <ImageCarousel images={[InsideImage1, InsideImage2, InsideImage3]}/>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

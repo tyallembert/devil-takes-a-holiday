@@ -16,6 +16,9 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 h1{
@@ -28,4 +31,33 @@ h2{
   font-size: 2em;
   font-weight: 600;
   font-family: 'Chela One', cursive;
+}
+.dot {
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  animation: float 300ms ease-in-out forwards;
+}
+.dot img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+@keyframes float {
+  0% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-25px) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-50px) scale(0);
+    opacity: 0;
+  }
 }

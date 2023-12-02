@@ -38,6 +38,7 @@
         }
         .mainContainer{
             display: flex;
+            justify-content: center;
             align-items: center;
             width: 80%;
             margin: 0 auto;
@@ -70,7 +71,7 @@
                 .buttonsContainer{
                     display: flex;
                     gap: 1em;
-                    margin-top: 1em;
+                    margin-top: 1em auto;
                 }
             }
             .rightContainer{

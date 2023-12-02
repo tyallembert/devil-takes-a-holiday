@@ -187,6 +187,24 @@
                 "tagLine": "",
                 "price": 0.0
             }
+        },
+        "Food": {
+            "tagLine": "(Yummy yummy in my tummy)",
+            "1": {
+                "title": "Truffle Fries",
+                "description": "Big boy fries with big boy stuff on 'em",
+                "price": 0.0
+            },
+            "2": {
+                "title": "Chicken Wings",
+                "description": "bird arms",
+                "price": 0.0
+            },
+            "3": {
+                "title": "Ensalada",
+                "description": "Green shit with some fancy toppings",
+                "price": 0.0
+            }
         }
     }
 ]
