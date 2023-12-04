@@ -29,7 +29,7 @@
             },
             "6": {
                 "title": "Forgive Me For I Have Synthed",
-                "description": "Devil's rum blend, absinthe, coconut, orange, pineapple Angostura bitters, coconut whipped cream, nutmeg.",
+                "description": "Devil's rum blend, absinthe, coconut, orange, pineapple, Angostura bitters, coconut whipped cream, nutmeg.",
                 "tagLine": "The Devil is on holiday you know, go ahead, indulge..."
             },
             "7": {
@@ -50,7 +50,7 @@
             "10": {
                 "title": "Mr. Pink",
                 "description": "Candy cane and white chocolate-infused vodka, lemon, simple, egg white, cream, peppermint extract.",
-                "tagLine": "We keep getting weirder with these Ramos Gin Fizz Style' drinks. It can take up to 10 minutes to make but don't let that stop you Mr. Pink is worth the wait."
+                "tagLine": "We keep getting weirder with these 'Ramos Gin Fizz Style' drinks. It can take up to 10 minutes to make but don't let that stop you Mr. Pink is worth the wait."
             },
             "11": {
                 "title": "I'm EggNogstic",
@@ -114,7 +114,7 @@
                 "description": "Bitter German herbal digestif"
               }
         },
-        "Atonements": {
+        "Atonements (sans alcohol)": {
           "tagLine": "(It's your normal life, you just aren't hungover)",
           "1": {
               "title": "Mamma Ghia (how could I resist you?)",
