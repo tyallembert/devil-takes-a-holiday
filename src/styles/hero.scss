@@ -9,15 +9,13 @@
     min-height: 100vh;
     background-color: black;
     scroll-snap-align: start;
-    .devilDrawing{
-        // animation: bounce 3s ease-in-out infinite;
-        animation: shrink 1s ease-in;
-    }
     .timeContainer{
         display: flex;
         flex-direction: row;
         margin-top: 2em;
         gap: 3em;
+        opacity: 0;
+        animation: fadeIn 1.6s $animationDelay ease-in-out forwards;
         .time{
             color: $color-1;
             font-weight: 500;
@@ -66,5 +64,16 @@
         transform: translateY(-3em) scale(1);
         z-index: 10;
         background-color: black;
+    }
+}
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
     }
 }

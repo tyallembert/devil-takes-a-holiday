@@ -1,33 +1,26 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "../styles/imageCarousel.scss"
-import Arrow from "../images/arrow.png"
 
 const ImageCarousel = ({ images }) => {
-    const [currentImage, setCurrentImage] = useState(0);
-    const nextImage = () => {
-        if (currentImage === images.length - 1) {
-            setCurrentImage(0);
-        } else {
-            setCurrentImage(currentImage + 1);
+    const [inAnimation, setInAnimation] = useState(true);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setInAnimation(false);
         }
-    }
-    const previousImage = () => {
-        if (currentImage === 0) {
-            setCurrentImage(images.length - 1);
-        } else {
-            setCurrentImage(currentImage - 1);
-        }
-    }
+        , 1000);
+    }, [])
+    
     return (
         <div className="imageCarouselContainer">
-            <div className="imageCarousel">
-                <div className="imageContainer">
-                    <img className="image" src={images[currentImage]} alt="Inside"/>
-                </div>
-                <div className="buttonsContainer">
-                    <button className="carouselButton previouse" onClick={previousImage}><img src={Arrow} alt='arrow left'/></button>
-                    <button className="carouselButton next" onClick={nextImage}><img src={Arrow} alt='arrow right'/></button>
-                </div>
+            <div className={inAnimation?'image1 inAnimation': 'image1 bounceAnimation'}>
+                <img src={images[0]} alt="Inside"/>
+            </div>
+            <div className={inAnimation?'image2 inAnimation': 'image2 bounceAnimation'}>
+                <img src={images[1]} alt="Inside"/>
+            </div>
+            <div className={inAnimation?'image3 inAnimation': 'image3 bounceAnimation'}>
+                <img src={images[2]} alt="Inside"/>
             </div>
         </div>
     )

@@ -14,7 +14,7 @@ const Navigation = () => {
     return (
         <div className="navigationContainer">
             <div className={showing? "showingNav": "hidingNav"}>
-                <Footer hideNavigation={hideNavigation}/>
+                <Footer hideNavigation={hideNavigation} showingNavigation={showing}/>
             </div>
             <button onClick={toggleNavigation} className={`navigationButton ${showing ? "showing": "hidden"}`}>
                 <div className="line line1"></div>

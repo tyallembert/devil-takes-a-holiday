@@ -1,11 +1,11 @@
 import "../styles/hero.scss";
-import { DevilDrawing, TopText, BottomText } from "./SVGs"
+import { TopText, BottomText, DevilEyesOpen } from "./SVGs";
 
 const Hero = () => {
     return (
         <div className="heroContainer">
             <TopText />
-            <DevilDrawing />
+            <DevilEyesOpen />
             <BottomText />
             <div className="timeContainer">
                 <p className="time">Monday - Thursday, 5pm - 12am</p>

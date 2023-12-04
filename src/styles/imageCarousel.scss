@@ -1,52 +1,184 @@
 
 .imageCarouselContainer{
     width: 100%;
-    .imageCarousel{
+    .image1 {
+        bottom: 12%;
+        right: 20%;
+        width: 40%;
+        height: 40vh;
+        background-color: gray;
+        z-index: 2;
+        animation: bounce 4s ease infinite;
+        &.bounceAnimation {
+            animation: bounce 4s ease infinite;
+        }
+        &.inAnimation {
+            animation-delay: 400ms;
+            animation-duration: 300ms;
+        }
+        img {
+            width: 100%;
+        }
+    }
+    .image2 {
+        bottom: 8%;
+        right: 12%;
+        width: 30%;
+        height: 80vh;
+        background-color: rgb(88, 88, 88);
+        img {
+            height: 100%;
+            width: auto;
+        }
+        &.bounceAnimation {
+            animation: bounce 6s ease infinite;
+        }
+        &.inAnimation {
+            animation-delay: 550ms;
+            animation-duration: 400ms;
+        }
+    }
+    .image3 {
+        top: 17%;
+        right: 5%;
+        width: 12rem;
+        height: 12rem;
+        z-index: 3;
+        background-color: rgb(162, 162, 162);
+        animation: bounce 3s ease infinite;
+        img {
+            height: 100%;
+            width: auto;
+        }
+        &.bounceAnimation {
+            animation: bounce 3s ease infinite;
+        }
+        &.inAnimation {
+            animation-delay: 200ms;
+            animation-duration: 700ms;
+        }
+    }
+    .image1, .image2, .image3 {
+        position: absolute;
+        overflow: hidden;
+        border: solid 1px white;
+        transform: scale(0);
+        box-shadow: -2px 2px 5px rgba(0,0,0,0.8);
+        transition: all 200ms ease;
+        img {
+            cursor: pointer;
+            transition: all 200ms ease;
+        }
+        &.inAnimation {
+            animation: grow cubic-bezier(.1,.9,.93,1.24) forwards;
+        }
+        &:hover {
+            img{
+                transform: scale(1.1);
+            }
+        
+        }
+        // &:hover {
+        //     cursor: pointer;
+        //     transform: scale(1.1);
+        //     animation: none;
+        // }
+    }
+    // .imageCarousel{
+    //     display: flex;
+    //     flex-direction: column;
+    //     align-items: center;
+    //     .imageContainer{
+    //         border-radius: 10px;
+    //         // mask: url(../images/mask.png) no-repeat center;
+    //         // mask-size: contain;
+    //         .image {
+    //             width: 100%;
+    //         }
+    //     }
+    //     .buttonsContainer{
+    //         display: flex;
+    //         justify-content: space-between;
+    //         align-items: center;
+    //         gap: 0.5em;
+    //         margin-top: 1em;
+    //         width: 60%;
+    //         .carouselButton{
+    //             width: 20px;
+    //             height: 20px;
+    //             border: none;
+    //             background-color: transparent;
+    //             cursor: pointer;
+    //             transition: all 300ms ease;
+    //             img{
+    //                 width: 100%;
+    //                 transition: all 200ms ease;
+    //             }
+    //             &:active{
+    //                 img{
+    //                     transform: scale(0.8);
+    //                 }
+    //             }
+    //             &.previouse{
+    //                 transform: rotate(180deg);
+    //             }
+    //             &.next{
+    //                 transform: rotate(0deg);
+    //             }
+    //         }
+    //     }
+    // }
+    // img{
+    //     max-width: 100%;
+    // }
+}
+@media (max-width: 800px) {
+    .imageCarouselContainer {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        .imageContainer{
-            border-radius: 10px;
-            // mask: url(../images/mask.png) no-repeat center;
-            // mask-size: contain;
-            .image {
+        gap: 1rem;
+        justify-content: center;
+        width: 100%;
+        .image1, .image2, .image3 {
+            position: relative;
+            width: 100%;
+            height: auto;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transform: scale(1);
+            img {
                 width: 100%;
-                max-width: 100%;
+                height: auto;
+            
             }
-        }
-        .buttonsContainer{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 0.5em;
-            margin-top: 1em;
-            width: 60%;
-            .carouselButton{
-                width: 20px;
-                height: 20px;
-                border: none;
-                background-color: transparent;
-                cursor: pointer;
-                transition: all 300ms ease;
-                img{
-                    width: 100%;
-                    transition: all 200ms ease;
-                }
-                &:active{
-                    img{
-                        transform: scale(0.8);
-                    }
-                }
-                &.previouse{
-                    transform: rotate(180deg);
-                }
-                &.next{
-                    transform: rotate(0deg);
-                }
+            &.bounceAnimation {
+                animation: none;
             }
         }
     }
-    img{
-        max-width: 100%;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+        box-shadow: -2px 2px 3px rgba(0,0,0,0.8);
+    }
+    50% {
+        transform: translateY(-5px);
+        box-shadow: -2px 7px 8px rgba(0,0,0,0.6);
+    }
+    100% {
+        transform: translateY(0);
+        box-shadow: -2px 2px 3px rgba(0,0,0,0.8);
+    }
+}
+@keyframes grow {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
     }
 }

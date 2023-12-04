@@ -9,7 +9,7 @@
     width: 80%;
     margin: auto;
     margin-top: 3em;
-    scroll-snap-align: start;
+    background-color: black;
     .reserveSection{
         display: flex;
         flex-direction: column;
@@ -84,6 +84,7 @@
 @media (max-width: 600px){
     .footerContainer{
         width: 90%;
+        padding-bottom: 2rem;
         .reserveSection{
             width: 90%;
             margin: 2em 0;
