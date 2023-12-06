@@ -16,7 +16,10 @@ const Menu = () => {
             <h1 className="menuTitle">Menu</h1>
             {
                 Object.keys(menu).map((drinkType) => {
+                    console.log(drinkType)
                     return (
+                        <>
+                        {drinkType === "Bits & Bobs" ? (<h1 className="menuTitle">Food</h1>) : null}
                         <div key={drinkType}>
                             <h2 className="drinkTitle" id={drinkType.split(" ")[0]}>{drinkType}</h2>
                             <h3 className="tagLine">{menu[drinkType].tagLine}</h3>
@@ -36,6 +39,7 @@ const Menu = () => {
                             }
                             </div>
                         </div>
+                        </>
                     );
                 })
             }

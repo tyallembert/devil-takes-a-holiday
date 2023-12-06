@@ -164,6 +164,64 @@
           "description": "Northern Spy Apple-butter-cinnamon-infused Jameson, Laird's Straight Apple Brandy, lemon, apple syrup, Angostura bitters.",
           "tagLine": "This toddy likes to party!"
         }
-      }
+      },
+      "Bits & Bobs": {
+        "1": {
+          "title": "DEVIL'S NUTS",
+          "description": "Pomegranate & sumac glazed cashews and fried chickpeas"
+        },
+        "2": {
+          "title": "DEVILED EGGS (3)",
+          "description": "XO sauce (shellfish sauce), scallion, sesame seed or chili crisp (vegetarian)"
+        },
+        "3": {
+          "title": "MARINATED OLIVES",
+          "description": "Citrus and herb marinated Moroccan and Italian olives with spicy cherry bomb peppers"
+        },
+        "4": {
+          "title": "CRISPY TUNA SQUARES",
+          "description": "Fried sushi rice cake, marinated cucumbers, spicy tuna, crispy ginger, tobikko"
+        },
+        "5": {
+          "title": "WAFFLE FRIES",
+          "description": "Tajin dusted, mojo mayo or Cerberus Style - Queso, hot sauce, scallion, cilantro, burnt pineapple salsa"
+        }
+      },
+      "Greenery": {
+        "1": {
+          "title": "HORNY CAESAR",
+          "description": "Kale, radicchio, endive, Calabrian chili dress, spicy croutons, parm, lemon"
+        },
+        "2": {
+          "title": "LETTUCE TURNIP THE BEETS",
+          "description": "Salt-baked beets, shaved turnips, herbs, mustard vinaigrette, whipped ricotta, turnip chips"
+        },
+        "3": {
+          "title": "LETTUCE WRAPS",
+          "description": "Tempura fried oyster mushrooms, ssamjang, green onion salad, marinated cucumber, radish"
+        }
+      },
+      "Sandos": {
+        "1": {
+          "title": "FRIED CHICKEN",
+          "description": ["INNOCENT - Confit garlic aioli, tomato, vinegar slaw, dill pickle", 
+          "PURGATORY - Maple Thai chili glaze, hot pepper relish, ginger pickle carrots, shrettuce",
+          "NINTH CIRCLE - Vinegar slaw, pickles, habanero hellfire sauce *No Take Backsies!"]
+        },
+        "2": {
+          "title": "PABLO'S DIABLO CUBANO",
+          "description": "Mojo braised pork shoulder, ham, yellow mustard, swiss, dill pickle, pan cubano"
+        },
+        "3": {
+          "title": "HAIL SEITAN",
+          "description": "House marinated seitan, mushroom walnut 'pate', koji, cilantro, marinated cucumbers, ginger pickled carrots, shaved jalapeno, radish, demi baguette"
+        }
+      },
+      "Dessert": {
+        "1": {
+          "title": "DONUTS",
+          "description": "Glazed risen donut made in house, served hot"
+        }
+      }    
     }
 ]
