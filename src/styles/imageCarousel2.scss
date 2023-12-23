@@ -1,0 +1,75 @@
+
+.carouselContainer {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 100vh;
+    width: 100%;
+    background-color: #6b6b6b;
+    overflow: hidden;
+    .activeImageContainer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        .prevImage {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+    }
+    .imagesContainer {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        z-index: 10;
+        gap: 2rem;
+        width: 100%;
+        padding: 1rem;
+        transition: all 300ms ease-in-out;
+        .image {
+            width: 100px;
+            height: 150px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+            overflow: hidden;
+            transition: all 300ms ease-in-out;
+            &.activeImage {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+            }
+            &.inactiveImage {
+                z-index: 2;
+                transition: all 300ms ease-in-out;
+                animation: grow 300ms ease-in-out;
+            }
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                transition: all 300ms ease-in-out;
+            }
+        }
+        .placeHolder {
+            width: 150px;
+            height: 250px;
+        }
+    }
+}
+
+@keyframes grow {
+    0% {
+        height: 150px;
+        width: 0px;
+    }
+    100% {
+        height: 150px;
+        width: 100px;
+    }
+}

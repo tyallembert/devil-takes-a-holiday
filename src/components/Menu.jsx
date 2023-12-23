@@ -12,14 +12,14 @@ const Menu = () => {
     }, []);
 
     return (
-        <div className="menuContainer" id="menu">
-            <h1 className="menuTitle">Menu</h1>
+        <div className="menuContainer" id="drinks">
+            <h1 className="menuTitle">Drinks</h1>
             {
                 Object.keys(menu).map((drinkType) => {
                     console.log(drinkType)
                     return (
                         <>
-                        {drinkType === "Bits & Bobs" ? (<h1 className="menuTitle">Food</h1>) : null}
+                        {drinkType === "Bits & Bobs" ? (<h1 className="menuTitle" id="food">Food</h1>):null}
                         <div key={drinkType}>
                             <h2 className="drinkTitle" id={drinkType.split(" ")[0]}>{drinkType}</h2>
                             <h3 className="tagLine">{menu[drinkType].tagLine}</h3>
