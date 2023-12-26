@@ -3,16 +3,16 @@
     position: relative;
     display: flex;
     justify-content: flex-end;
-    align-items: flex-end;
+    align-items: center;
     height: 100vh;
     width: 100%;
-    background-color: #6b6b6b;
+    background-color: black;
     overflow: hidden;
     .activeImageContainer {
         position: absolute;
         bottom: 0;
         left: 0;
-        width: 100%;
+        width: 80%;
         height: 100%;
         .prevImage {
             width: 100%;
@@ -23,16 +23,21 @@
     }
     .imagesContainer {
         display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
+        flex-direction: column;
+        align-items: center;
         z-index: 10;
         gap: 2rem;
-        width: 100%;
+        width: 150px;
         padding: 1rem;
+        overflow-y: scroll;
+        max-height: 90%;
+        background-color: black;
+        border: solid 2px red;
         transition: all 300ms ease-in-out;
         .image {
             width: 100px;
             height: 150px;
+            min-height: 150px;
             border-radius: 10px;
             box-shadow: 2px 2px 5px rgba(0,0,0,0.7);
             overflow: hidden;
@@ -42,7 +47,7 @@
                 bottom: 0;
                 left: 0;
                 height: 100%;
-                width: 100%;
+                width: auto;
             }
             &.inactiveImage {
                 z-index: 2;

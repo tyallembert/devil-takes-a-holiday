@@ -6,7 +6,7 @@ import Navigation from './Navigation';
 import PopUp from './PopUp';
 // import TopBanner from './components/TopBanner';
 import InstagramFeed from './InstagramFeed';
-// import ImageCarousel2 from './ImageCarousel2';
+import ImageCarousel2 from './ImageCarousel2';
 
 const LandingPage = () => {
     return (
