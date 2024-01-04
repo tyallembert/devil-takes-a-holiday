@@ -34,10 +34,10 @@ const ImageCarousel2 = () => {
     }
     return (
         <div className="carouselContainer">
-            <img src={imagesArray[activeIndex].url} className="image backgroundActiveImage"/>
+            <img src={imagesArray[activeIndex].url} alt="" className="image backgroundActiveImage"/>
             <div className="activeImageContainer">
                 <div className="arrow prev" onClick={handlePrevImage}></div>
-                <img src={imagesArray[activeIndex].url} className="image activeImage"/>
+                <img src={imagesArray[activeIndex].url} alt="" className="image activeImage"/>
                 <div className="arrow next" onClick={handleNextImage}></div>
             </div>
             <div className="imagesContainer" >
