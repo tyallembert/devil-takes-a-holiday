@@ -2,6 +2,7 @@ import LandingPage from "./components/LandingPage";
 import ClassicsMenu from "./components/ClassicsMenu";
 import "./styles/App.scss";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ImageCarousel2 from "./components/ImageCarousel2";
 // import { useEffect } from "react";
 // import { handleMouseActions } from './mouse-animation.js';
 // import rockOnImage from './images/rock-on.png';
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/classics" element={<ClassicsMenu/>} />
           <Route path="/" element={<LandingPage/>} />
+          <Route path="/gallery" element={<ImageCarousel2/>} />
         </Routes>
       </Router>
     </div>

@@ -14,43 +14,42 @@ const ImageCarousel2 = () => {
     const [activeIndex, setActiveIndex] = useState(1);
     // const [prevIndex, setPrevIndex] = useState(0);
 
-    const handleImageChange = (event) => {
+    const handleImageClick = (event) => {
         const imageID = parseInt(event.currentTarget.id);
-        const topPos = event.currentTarget.offsetTop;
-        console.log(topPos)
-        const leftPos = event.currentTarget.offsetLeft;
-        const heightAnimation = [
-            { position: "absolute", top: `${topPos}px`, zIndex: "1", height: "150px", left: `${leftPos}px` },
-            { position: "absolute", top: "0px", zIndex: "1", height: "100%", left: `0px`}
-        ];
-        event.currentTarget.animate(heightAnimation, 
-            {
-                duration: 500,
-                iterations: 1,
-                easing: 'ease-out',
-            }
-        );
         setActiveIndex(imageID);
-        // setTimeout(() => {
-        //     setPrevIndex(imageID);
-        // }
-        // , 480);
+    }
+    const handleNextImage = () => {
+        if (activeIndex === imagesArray.length - 1) {
+            setActiveIndex(0);
+        } else {
+            setActiveIndex(activeIndex + 1);
+        }
+    }
+    const handlePrevImage = () => {
+        if (activeIndex === 0) {
+            setActiveIndex(imagesArray.length - 1);
+        } else {
+            setActiveIndex(activeIndex - 1);
+        }
     }
     return (
         <div className="carouselContainer">
-            {/* <div className="activeImageContainer">
-                <img src={imagesArray[prevIndex].url} className="image prevImage"/>
-            </div> */}
+            <img src={imagesArray[activeIndex].url} className="image backgroundActiveImage"/>
+            <div className="activeImageContainer">
+                <div className="arrow prev" onClick={handlePrevImage}></div>
+                <img src={imagesArray[activeIndex].url} className="image activeImage"/>
+                <div className="arrow next" onClick={handleNextImage}></div>
+            </div>
             <div className="imagesContainer" >
                 {
                     imagesArray.map((image, index) => {
                         return (
                             <>
                             <div
-                                className={`image image${image.id} ${activeIndex === image.id ? 'activeImage' : 'inactiveImage'}`}
+                                className='image inactiveImage'
                                 key={index}
                                 id={image.id}
-                                onClick={activeIndex !== image.id ? handleImageChange: null}
+                                onClick={handleImageClick}
                             >
                                 <img src={image.url} alt=""/>
                             </div>
