@@ -35,7 +35,7 @@ $heroAnimationDuration: 2.5s;
     position: relative;
     width: 25%;
     transform: translateY(-3em);
-    animation: headAnimation $heroAnimationDuration ease-in-out forwards;
+    // animation: headAnimation $heroAnimationDuration ease-in-out forwards;
     .stroke{
         stroke: $color-1;
     }
@@ -43,36 +43,38 @@ $heroAnimationDuration: 2.5s;
         fill: $color-1;
     }
     #pupil-right{
-        animation: pupilRightAnimation $heroAnimationDuration ease-in-out forwards;
+        // animation: pupilRightAnimation $heroAnimationDuration ease-in-out forwards;
     }
     #pupil-left{
         transform-origin: center;
         transform-box: fill-box;
-        animation: pupilLeftAnimation $heroAnimationDuration ease-in-out forwards;
+        // animation: pupilLeftAnimation $heroAnimationDuration ease-in-out forwards;
     }
     #eye-left {
         transform-origin: center;
         transform-box:fill-box;
-        animation: winkOutAnimation $heroAnimationDuration ease-in-out forwards;
+        // animation: winkOutAnimation $heroAnimationDuration ease-in-out forwards;
     
     }
     #wink-left {
         transform-origin: center;
         transform-box:fill-box;
-        animation: winkInAnimation $heroAnimationDuration ease-in-out forwards;
+        // display: none;
+        // animation: winkInAnimation $heroAnimationDuration ease-in-out forwards;
     
     }
     #curved-star-1, #curved-star-2 {
         transform-origin: center;
         transform-box:fill-box;
+        // display: none;
     }
     #curved-star-1 {
         transform: translate(5rem, 8.8rem) scale(0.5);
-        animation: starAnimation-1 $heroAnimationDuration ease-in-out forwards;
+        // animation: starAnimation-1 $heroAnimationDuration ease-in-out forwards;
     }
     #curved-star-2 {
         transform: translate(5.5rem, 8rem) scale(0.2);
-        animation: starAnimation-2 $heroAnimationDuration ease-in-out forwards;
+        // animation: starAnimation-2 $heroAnimationDuration ease-in-out forwards;
     }
 }
 @media (max-width: 600px){

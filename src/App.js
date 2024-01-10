@@ -18,7 +18,7 @@ function App() {
         <Routes>
           <Route path="/classics" element={<ClassicsMenu/>} />
           <Route path="/" element={<LandingPage/>} />
-          <Route path="/gallery" element={<ImageCarousel2/>} />
+          <Route path="/photos" element={<ImageCarousel2/>} />
         </Routes>
       </Router>
     </div>

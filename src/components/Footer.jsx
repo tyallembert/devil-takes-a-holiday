@@ -19,18 +19,19 @@ const Footer = (props) => {
                 <Reserve showingNavigation={props.showingNavigation}/>
             </div>
             <div className="linksContainer">
-                <a className="link" href="#location" onClick={props.hideNavigation ? props.hideNavigation: null}>Location</a>
-                <a className="link" href="#drinks" onClick={props.hideNavigation ? props.hideNavigation: null}>Drinks</a>
+                <a className="link" href="/#location" onClick={props.hideNavigation ? props.hideNavigation: null}>Location</a>
+                <a className="link" href="/photos">Photos</a>
+                <a className="link" href="/#drinks" onClick={props.hideNavigation ? props.hideNavigation: null}>Drinks</a>
                 {
                     Object.keys(menu).map((drinkType) => {
                         return (
                             <>
                             {
                                 drinkType === "Bits & Bobs" && (
-                                    <a className="link" href="#food" onClick={props.hideNavigation ? props.hideNavigation: null}>Food</a>
+                                    <a className="link" href="/#food" onClick={props.hideNavigation ? props.hideNavigation: null}>Food</a>
                                 )
                             }
-                            <a key={drinkType} className="link subLink" href={`#${drinkType.split(" ")[0]}`} onClick={props.hideNavigation ? props.hideNavigation: null}>{drinkType}</a>
+                            <a key={drinkType} className="link subLink" href={`/#${drinkType.split(" ")[0]}`} onClick={props.hideNavigation ? props.hideNavigation: null}>{drinkType}</a>
                             </>
                         );
                     })
