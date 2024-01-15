@@ -83,6 +83,41 @@
             }
             .rightContainer{
                 width: 40%;
+                .imageSceneContainer {
+                    position: relative;
+                    // border: solid 2px white;
+                    height: 50vh;
+                    .palmTree {
+                        position: absolute;
+                    }
+                    .tree1 {
+                        left: 0;
+                        bottom: 0;
+                        height: 80%;
+                        transform: rotate(-10deg);
+                    }
+                    .tree2 {
+                        right: 0;
+                        bottom: 0;
+                        height: 70%;
+                        transform: scaleX(-1);
+                    }
+                    .tree3 {
+                        right: -10%;
+                        bottom: 0;
+                        height: 55%;
+                        transform: rotate(20deg) scaleX(-1);
+                        opacity: 0.9;
+                    }
+                    .tree4 {
+                        left: 20%;
+                        bottom: 0;
+                        height: 100%;
+                        transform: rotate(-0deg);
+                        opacity: 0.9;
+                    
+                    }
+                }
             }
         }
     }
@@ -123,6 +158,39 @@
                 }
                 .rightContainer{
                     width: 100%;
+                    .imageSceneContainer {
+                        height: 35vh;
+                        .palmTree {
+                            position: absolute;
+                        }
+                        .tree1 {
+                            left: 0;
+                            bottom: 0;
+                            height: 80%;
+                            transform: rotate(-10deg);
+                        }
+                        .tree2 {
+                            right: 0;
+                            bottom: 0;
+                            height: 70%;
+                            transform: scaleX(-1);
+                        }
+                        .tree3 {
+                            right: -10%;
+                            bottom: 0;
+                            height: 55%;
+                            transform: rotate(20deg) scaleX(-1);
+                            opacity: 0.9;
+                        }
+                        .tree4 {
+                            left: 20%;
+                            bottom: 0;
+                            height: 100%;
+                            transform: rotate(-0deg);
+                            opacity: 0.9;
+                        
+                        }
+                    }
                 }
             }
         }

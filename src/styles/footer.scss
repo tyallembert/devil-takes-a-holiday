@@ -100,6 +100,9 @@
             align-items: center;
             width: 100%;
             margin-bottom: 1em;
+            .subLink {
+                display: none;
+            }
         }
         .socialsContainer{
             flex-direction: row;

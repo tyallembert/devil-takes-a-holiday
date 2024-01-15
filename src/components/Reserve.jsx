@@ -3,10 +3,7 @@ import {useState, useEffect} from "react"
 import PeoplePNG from "../images/people.png"
 import CalendarPNG from "../images/calendar.png"
 import ClockPNG from "../images/clock.png"
-import ImageCarousel from "./ImageCarousel"
-import InsideImage1 from "../images/bar-inside-1.jpeg"
-import InsideImage2 from "../images/bar-inside-2.jpeg"
-import InsideImage3 from "../images/bar-inside-3.jpeg"
+import { PalmTree } from "./SVGs"
 
 const Reserve = (props) => {
     const [showing, setShowing] = useState(false)
@@ -63,7 +60,7 @@ const Reserve = (props) => {
                                 </div>
                             </div>
                             <div className="rightContainer">
-                                <ImageCarousel images={[InsideImage1, InsideImage2, InsideImage3]}/>
+                                <ImageScene />
                             </div>
                         </div>
                     ): null
@@ -74,3 +71,14 @@ const Reserve = (props) => {
 }
 
 export default Reserve;
+
+const ImageScene = () => {
+    return (
+        <div className="imageSceneContainer">
+            <PalmTree className="tree1"/>
+            <PalmTree className="tree2"/>
+            <PalmTree className="tree3"/>
+            <PalmTree className="tree4"/>
+        </div>
+    )
+}
