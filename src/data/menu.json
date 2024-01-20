@@ -46,16 +46,6 @@
                 "title": "Bitterly Beloved",
                 "description": "Reposado tequila, Devil-made grapefruit cinnamon syrup, Campari, lime, saline, egg white.",
                 "tagLine": "Bitterly beloved we are gathered here tonight to revel in the frothy pink goodness that is this drink."
-            },
-            "10": {
-                "title": "Mr. Pink",
-                "description": "Candy cane and white chocolate-infused vodka, lemon, simple, egg white, cream, peppermint extract.",
-                "tagLine": "We keep getting weirder with these 'Ramos Gin Fizz Style' drinks. It can take up to 10 minutes to make but don't let that stop you Mr. Pink is worth the wait."
-            },
-            "11": {
-                "title": "I'm EggNogstic",
-                "description": "We start by creating a decadent custard until the color and taste is just right, add maple syrup, bourbon and rum, then whip the egg whites until we deem it perfect, served cold and dusted with nutmeg.",
-                "tagLine": "Do I really need to say more?"
             }
         },
         "Devils Favorites": {
@@ -154,11 +144,6 @@
           "description": "Espresso, Moroccan spiced milk syrup, Flor de Cana 5yr Rum, Pierre Ferrand Dry Curacao",
           "tagLine": ""
         },
-        "3": {
-          "title": "Cocoa Caliente",
-          "description": "The Devil's own chocolate blend, slowly melted in cream and spices, reposado tequila (can be made w/ rum or bourbon by request), churro.",
-          "tagLine": "This proves even demons can have a touch of the divine…"
-        },
         "4": {
           "title": "La-di-da-di We Like to Toddy",
           "description": "Northern Spy Apple-butter-cinnamon-infused Jameson, Laird's Straight Apple Brandy, lemon, apple syrup, Angostura bitters.",
@@ -193,12 +178,12 @@
           "description": "Kale, radicchio, endive, Calabrian chili dress, spicy croutons, parm, lemon"
         },
         "2": {
-          "title": "LETTUCE TURNIP THE BEETS",
-          "description": "Salt-baked beets, shaved turnips, herbs, mustard vinaigrette, whipped ricotta, turnip chips"
+          "title": "NEW YEAR. HALLOUMI",
+          "description": "Frisée with blood orange vinaigrette, za'atar & honey marinated halloumi, shaved pear, pomegranate (GF) (Vegan w/o halloumi)"
         },
         "3": {
-          "title": "I'M A FUN GUY",
-          "description": "Tempura fried oyster mushrooms, ssamjang, green onion salad, marinated cucumber, radish"
+          "title": "EVERYDAY I'M BRUSSELING",
+          "description": "Fried Brussels sprouts, peanut mole, cilantro, crushed peanuts, lime crema (vegan option)"
         }
       },
       "Sandos": {
