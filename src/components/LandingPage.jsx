@@ -9,7 +9,7 @@ import InstagramFeed from './InstagramFeed';
 // import ImageCarousel2 from './ImageCarousel2';
 
 const LandingPage = () => {
-    const showingPopup = true;
+    const showingPopup = false;
     return (
         <div className='landingPage'>
             {/* <TopBanner /> */}
