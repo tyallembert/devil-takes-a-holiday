@@ -25,14 +25,14 @@ const Footer = (props) => {
                 {
                     Object.keys(menu).map((drinkType) => {
                         return (
-                            <>
+                            <div key={drinkType}>
                             {
                                 drinkType === "Bits & Bobs" && (
                                     <a className="link" href="/#food" onClick={props.hideNavigation ? props.hideNavigation: null}>Food</a>
                                 )
                             }
                             <a key={drinkType} className="link subLink" href={`/#${drinkType.split(" ")[0]}`} onClick={props.hideNavigation ? props.hideNavigation: null}>{drinkType}</a>
-                            </>
+                            </div>
                         );
                     })
                 }

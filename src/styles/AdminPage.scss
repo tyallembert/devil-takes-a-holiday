@@ -1,0 +1,308 @@
+@import "variables.scss";
+.adminContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 1em;
+    color: white;
+    .deletePopup {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2em;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 70%;
+        height: 60vh;
+        transform: translate(-50%, -50%);
+        background-color: $color-2;
+        border: solid 1px rgba(red, 0.5);
+        padding: 2em;
+        border-radius: 1em;
+        z-index: 2;
+        &.showing {
+            display: flex;
+            animation: showPopup 200ms ease-in-out forwards;
+        }
+        &.hidden {
+            display: flex;
+            animation: hidePopup 200ms ease-in-out forwards;
+        }
+        @keyframes showPopup {
+            0% {
+                transform: translate(-50%, -50%) scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+        }
+        @keyframes hidePopup {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+            99% {
+                transform: translate(-50%, -50%) scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                display: none;
+            }
+        }
+        .buttonsContainer {
+            display: flex;
+            gap: 1em;
+            .yesButton {
+                padding: 0.5em 1em;
+                border-radius: 10em;
+                text-align: center;
+                font-size: 1em;
+                cursor: pointer;
+                background-color: transparent;
+                border: solid 2px red;
+                color: red;
+            }
+            .noButton {
+                padding: 0.5em 1em;
+                border-radius: 10em;
+                text-align: center;
+                font-size: 1em;
+                cursor: pointer;
+                background-color: transparent;
+                border: solid 2px white;
+                color: white;
+            }
+        
+        }
+    }
+    .mainHeader {
+        position: sticky;
+        top: 0;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1em;
+        padding: 0.5em;
+        margin-bottom: 3em;
+        .tutorialLink {
+            color: white;
+            text-decoration: none;
+            padding: 0.7em 1em;
+            border: solid 1px white;
+            font-size: 0.8em;
+            border-radius: 10em;
+        }
+        
+    }
+    .openButton {
+        align-self: flex-start;
+        background-color: transparent;
+        border: solid 2px white;
+        color: white;
+        padding: 0.5em 1em;
+        border-radius: 10em;
+        cursor: pointer;
+        opacity: 0.5;
+        margin: 1em 0;
+        transition: all 200ms ease-in-out;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    .menusContainer {
+        width: 60%;
+        .menuForm {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+            border: solid 1px rgba($color-1, 0.3);
+            background-color: rgba($color-1, 0.15);
+            border-radius: 0.7em;
+            padding: 1em;
+            width: 100%;
+            margin: 1em 0;
+            &.updateForm {
+                margin: 0;
+            }
+            .typeSpan {
+                font-weight: 800;
+            }
+            .inputContainer {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+                input[type=text], textarea {
+                    padding: 0.5em;
+                    border-radius: 10em;
+                    border: none;
+                    width: 100%;
+                    background-color: rgba($color-1, 0.15);
+                    color: white;
+                    transition: all 150ms ease-in-out;
+                    &:focus {
+                        background-color: rgba($color-1, 0.8);
+                        color: black;
+                    }
+                }
+                textarea {
+                    border-radius: 0.7em;
+                    max-width: 100%;
+                    background-color: rgba($color-1, 0.15);
+                }
+            }
+            .submitButton {
+                align-self: flex-start;
+                display: inline-block;
+                padding: 0.5em 1em;
+                border-radius: 10em;
+                text-align: center;
+                font-size: 1em;
+                cursor: pointer;
+                background-color: transparent;
+                border: solid 2px rgb(5, 187, 5);
+                color: rgb(5, 187, 5);
+            }
+            .cancelButton {
+                align-self: flex-start;
+                display: inline-block;
+                padding: 0.5em 1em;
+                border-radius: 10em;
+                text-align: center;
+                font-size: 1em;
+                cursor: pointer;
+                background-color: transparent;
+                border: solid 2px white;
+                color: white;
+            }
+        }
+        .menuContainer {
+            width: 100%;
+            padding-top: 0em;
+            .header {
+                display: flex;
+                align-items: center;
+                gap: 0.5em;
+                h2 {
+                    margin: 0;
+                }
+                .editButton {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 3em;
+                    height: 3em;
+                    border-radius: 10em;
+                    border: solid 2px white;
+                    color: white;
+                    font-weight: 600;
+                    background-color: transparent;
+                    opacity: 0.5;
+                    transition: all 200ms ease-in-out;
+                    &:hover {
+                        cursor: pointer;
+                        opacity: 1;
+                    }
+                }
+                .removeButton {
+                    width: 3em;
+                    height: 3em;
+                    border-radius: 10em;
+                    border: solid 2px white;
+                    color: white;
+                    font-weight: 600;
+                    background-color: transparent;
+                    opacity: 0.5;
+                    transition: all 200ms ease-in-out;
+                    &:hover {
+                        cursor: pointer;
+                        opacity: 1;
+                        border: solid 2px red;
+                        color: red;
+                    }
+                }
+            }
+            .subMenuContainer {
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+                .subMenu {
+                    position: relative;
+                    padding: 1em;
+                    background-color: rgba($color-1, 0.15);
+                    border-radius: 1em;
+                    .header {
+                        .editButton {
+                            width: 2em;
+                            height: 2em;
+                        }
+                        .removeButton {
+                            width: 2em;
+                            height: 2em;
+                        }
+                    }
+                    .menuItemContainer {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 1em;
+                        .menuItem {
+                            position: relative;
+                            padding: 0.8em;
+                            padding-bottom: 2em;
+                            border-radius: 0.5em;
+                            background-color: rgba($color-1, 0.15);
+                            width: 48%;
+                            margin-top: 0;
+                            .tagLine {
+                                font-style: italic;
+                                font-weight: 200;
+                                font-size: 0.9em;
+                            }
+                            .buttonsContainer {
+                                position: absolute;
+                                bottom: 0.8em;
+                                right: 0.8em;
+                                display: flex;
+                                width: 100%;
+                                justify-content: flex-end;
+                                gap: 0.7em;
+                                button {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    width: 2em;
+                                    height: 2em;
+                                    border-radius: 10em;
+                                    border: solid 2px white;
+                                    color: white;
+                                    font-weight: 600;
+                                    background-color: transparent;
+                                    opacity: 0.5;
+                                    transition: all 200ms ease-in-out;
+                                    &:hover {
+                                        cursor: pointer;
+                                        opacity: 1;
+                                    }
+                                }
+                                .removeButton {
+                                    &:hover {
+                                        cursor: pointer;
+                                        color: red;
+                                        border: solid 2px red;
+                                        opacity: 1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

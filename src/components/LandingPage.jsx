@@ -6,7 +6,6 @@ import Navigation from './Navigation';
 import PopUp from './PopUp';
 // import TopBanner from './components/TopBanner';
 import InstagramFeed from './InstagramFeed';
-// import ImageCarousel2 from './ImageCarousel2';
 
 const LandingPage = () => {
     const showingPopup = false;
@@ -20,7 +19,6 @@ const LandingPage = () => {
             <Navigation />
             <Hero />
             <Location />
-            {/* <ImageCarousel2 /> */}
             <Menu />
             <InstagramFeed />
             <Footer />

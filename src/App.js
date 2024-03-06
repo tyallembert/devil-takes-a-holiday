@@ -3,14 +3,10 @@ import ClassicsMenu from "./components/ClassicsMenu";
 import "./styles/App.scss";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ImageCarousel2 from "./components/ImageCarousel2";
-// import { useEffect } from "react";
-// import { handleMouseActions } from './mouse-animation.js';
-// import rockOnImage from './images/rock-on.png';
+import Login from "./components/Login";
+import AdminPage from "./components/AdminPage";
 
 function App() {
-  // useEffect(() => {
-  //   handleMouseActions(rockOnImage);
-  // }, []);
 
   return (
     <div className="App">
@@ -19,6 +15,8 @@ function App() {
           <Route path="/classics" element={<ClassicsMenu/>} />
           <Route path="/" element={<LandingPage/>} />
           <Route path="/photos" element={<ImageCarousel2/>} />
+          <Route path="/admin" element={<AdminPage/>} />
+          <Route path="/login" element={<Login/>} />
         </Routes>
       </Router>
     </div>

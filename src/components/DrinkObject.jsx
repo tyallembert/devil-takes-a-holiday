@@ -7,7 +7,7 @@ const DrinkObject =(props) => {
             <div className="menuItemDescription">
                 {
                     typeof props.description === "object" ? props.description.map((line) => {
-                        return <p>{line}</p>
+                        return <p key={line}>{line}</p>
                     }
                     ) : (
                         <p>{props.description}</p>

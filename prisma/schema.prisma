@@ -1,0 +1,44 @@
+
+datasource db {
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Define the Menu model
+model Menu {
+  id        Int      @id @default(autoincrement())
+  title      String
+  order       Int      @default(0)
+
+  // Define a one-to-many relationship with MenuItem
+  subMenus     SubMenu[] 
+}
+
+// Define the SubMenu model
+model SubMenu {
+  id        Int      @id @default(autoincrement())
+  title      String
+  tagLine    String
+  menuId     Int
+  order       Int      @default(0)
+  menu        Menu      @relation(fields: [menuId], references: [id], onDelete: Cascade)
+  // Define a one-to-many relationship with MenuItem
+  menuItems     MenuItem[]
+
+}
+
+// Define the MenuItem model
+model MenuItem {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  tagLine     String? // Allow null values for optional tagLine
+  subMenuId     Int
+  subMenu        SubMenu      @relation(fields: [subMenuId], references: [id], onDelete: Cascade)
+  order       Int      @default(0)
+}
