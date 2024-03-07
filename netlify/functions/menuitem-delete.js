@@ -10,6 +10,14 @@ export const handler = async (event) => {
                 id: parseInt(id)
             }
         });
+        const menuItems = await prisma.menuItem.findMany({
+            where: { 
+                subMenuId: menu.subMenuId
+                // order: { gt: menu.order }
+            },
+            orderBy: { order: 'asc' }
+        });
+        updateItemsOrder(menuItems);
         return {
             statusCode: 200,
             body: JSON.stringify(menu)
@@ -21,4 +29,14 @@ export const handler = async (event) => {
             body: JSON.stringify(error)
         };
     }
+}
+
+const updateItemsOrder = async (menuItems) => {
+    menuItems.forEach(async (menuItem, index) => {
+        const { id } = menuItem;
+        await prisma.menuItem.update({
+            where: { id: id },
+            data: { order: index },
+        });
+    });
 }

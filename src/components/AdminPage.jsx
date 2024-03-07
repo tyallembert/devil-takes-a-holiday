@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../styles/AdminPage.scss";
 import { MdEdit } from "react-icons/md";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import Login from "./Login";
 
 
@@ -10,37 +11,35 @@ const AdminPage = () => {
     // const [menu, setMenu] = useState([
     //     {
     //         id: "1",
-    //         title: "Breakfast",
+    //         title: "Drinks",
     //         subMenus: [
     //             {
     //                 id: "1",
-    //                 title: "Eggs",
-    //                 tagLine: "Eggs are a great source of protein",
-    //                 menuItems: []
-    //             },
-    //             {
-    //                 id: "2",
-    //                 title: "Pancakes",
-    //                 tagLine: "Pancakes are a great source of carbs",
-    //                 menuItems: []
-    //             }
-    //         ]
-    //     },
-    //     {
-    //         id: "2",
-    //         title: "Lunch",
-    //         subMenus: [
-    //             {
-    //                 id: "3",
-    //                 title: "Salads",
-    //                 tagLine: "Salads are a great source of vitamins",
-    //                 menuItems: []
-    //             },
-    //             {
-    //                 id: "4",
-    //                 title: "Sandwiches",
-    //                 tagLine: "Sandwiches are a great source of protein",
-    //                 menuItems: []
+    //                 title: "Godless, Good, & Gracious",
+    //                 tagLine: "(We Devils are grateful for all of you; Thank you for making our demon dreams a reality!)",
+    //                 menuItems: [
+    //                     {
+    //                         id: "1",
+    //                         title: "The Devil's Margarita",
+    //                         description: "Tequila, lime, agave, and a splash of orange juice",
+    //                         tagLine: "",
+    //                         order: 0
+    //                     },
+    //                     {
+    //                         id: "2",
+    //                         title: "Diners, Drive-ins & Ryes",
+    //                         description: "A toasted rye bread, bourbon & rum milk punch with chipotle maple coffee.",
+    //                         tagLine: "",
+    //                         order: 1
+    //                     },
+    //                     {
+    //                         id: "3",
+    //                         title: "Just the (Spruce) Tip",
+    //                         description: "St George Terroir gin, Norden's Aquavit, Devil-made spruce syrup, lemon, seltzer, cava.",
+    //                         tagLine: "",
+    //                         order: 2
+    //                     }
+    //                 ]
     //             }
     //         ]
     //     }
@@ -62,6 +61,93 @@ const AdminPage = () => {
             }
             setIsAdmin(true);
         }
+    }
+    const saveMenuItemOrder = async (menuItemID, newOrder, adjacentID, adjacentOrder) => {
+        const response = await fetch('/.netlify/functions/menuitem-order', {
+            method: 'POST',
+            body: JSON.stringify({
+                order: newOrder, 
+                menuItemID: menuItemID,
+                adjacentID: adjacentID,
+                adjacentOrder: adjacentOrder
+            })
+        });
+        if (!response.ok) {
+            throw new Error('Failed to update menu');
+        }
+    }
+
+    const menuItemOrderDown = (menuID, subMenuID, menuItemID) => {
+        let newOrder = -1;
+        let adjacentID = -1;
+        let adjacentOrder = -1;
+        const newMenu = menu.map((item) => {
+            if(item.id === menuID) {
+                const newSubMenu = item.subMenus.map((subMenu) => {
+                    if(subMenu.id === subMenuID) {
+                        subMenu.menuItems = subMenu.menuItems.map((menuItem, index) => {
+                            if(menuItem.id === menuItemID) {
+                                if(index === subMenu.menuItems.length - 1) {
+                                    return menuItem;
+                                }
+                                menuItem.order = menuItem.order + 1;
+                                subMenu.menuItems[index + 1].order = subMenu.menuItems[index + 1].order - 1;
+                                newOrder = menuItem.order;
+                                adjacentID = subMenu.menuItems[index + 1].id;
+                                adjacentOrder = subMenu.menuItems[index + 1].order;
+                            }
+                            return menuItem;
+                        });
+                    }
+                    subMenu.menuItems = sortMenuItems(subMenu.menuItems);
+                    return subMenu;
+                });
+                item.subMenus = newSubMenu;
+            }
+            return item;
+        });
+        setMenu(newMenu);
+        if(newOrder !== -1){
+            saveMenuItemOrder(menuItemID, newOrder, adjacentID, adjacentOrder);
+        }
+    }
+    const menuItemOrderUp = (menuID, subMenuID, menuItemID) => {
+        let newOrder = -1;
+        let adjacentID = -1;
+        let adjacentOrder = -1;
+        const newMenu = menu.map((item) => {
+            if(item.id === menuID) {
+                const newSubMenu = item.subMenus.map((subMenu) => {
+                    if(subMenu.id === subMenuID) {
+                        subMenu.menuItems = subMenu.menuItems.map((menuItem, index) => {
+                            if(menuItem.id === menuItemID) {
+                                if(index === 0) {
+                                    return menuItem;
+                                }
+                                menuItem.order = menuItem.order - 1;
+                                subMenu.menuItems[index - 1].order = subMenu.menuItems[index - 1].order + 1;
+                                newOrder = menuItem.order;
+                                adjacentID = subMenu.menuItems[index - 1].id;
+                                adjacentOrder = subMenu.menuItems[index - 1].order;
+                            }
+                            return menuItem;
+                        });
+                    }
+                    subMenu.menuItems = sortMenuItems(subMenu.menuItems);
+                    return subMenu;
+                });
+                item.subMenus = newSubMenu;
+            }
+            return item;
+        }
+        );
+        setMenu(newMenu);
+        if(newOrder !== -1){
+            saveMenuItemOrder(menuItemID, newOrder, adjacentID, adjacentOrder);
+        }
+    }
+    const sortMenuItems = (menuItems) => {
+        return menuItems.sort((a, b) => a.order - b.order);
     }
     // function that handles adding a new menu
     const addNewMenu = (newMenu, wasNew) => {
@@ -156,7 +242,7 @@ const AdminPage = () => {
         }
         const response = await fetch(url, {
             method: 'DELETE',
-            body: JSON.stringify({ id: menuID })
+            body: JSON.stringify({ id: menuID})
         });
         if (!response.ok) {
             throw new Error('Failed to delete menu');
@@ -241,7 +327,11 @@ const AdminPage = () => {
                                                                 </>
                                                             )
                                                         }
-                                                        <NewMenuItem subMenuID={subMenu.id} addNewMenu={addNewMenuItem} submenuType={subMenu.title}/>
+                                                        <NewMenuItem 
+                                                        subMenuID={subMenu.id} 
+                                                        addNewMenu={addNewMenuItem} 
+                                                        submenuType={subMenu.title}
+                                                        itemsLength={subMenu.menuItems.length}/>
                                                         <div className="menuItemContainer">
                                                             {
                                                                 subMenu.menuItems.map((menuItem, k) => {
@@ -260,6 +350,11 @@ const AdminPage = () => {
                                                                                     <h3>{menuItem.title}</h3>
                                                                                     <p>{menuItem.description}</p>
                                                                                     <p className="tagLine">{menuItem.tagLine}</p>
+                                                                                    <p>{menuItem.order}</p>
+                                                                                    <div className="arrowsContainer">
+                                                                                        <button className="leftButton" onClick={() => menuItemOrderUp(singleMenu.id, subMenu.id, menuItem.id)}><IoIosArrowBack/></button>
+                                                                                        <button className="rightButton" onClick={() => menuItemOrderDown(singleMenu.id, subMenu.id, menuItem.id)}><IoIosArrowForward/></button>
+                                                                                    </div>
                                                                                     <div className="buttonsContainer">
                                                                                         <button className="editButton" onClick={() => setEditingElement({type: "menuItem", id: menuItem.id})}><MdEdit/></button>
                                                                                         <button className="removeButton" onClick={() => handleDelete(menuItem.id, "menuitem")}>X</button>
@@ -452,14 +547,15 @@ const NewSubMenu = ({ menuID, addNewMenu, menuType, elementInfo, setEditingEleme
 }
 
 // === NewMenuItem ===
-const NewMenuItem = ({ subMenuID, addNewMenu, submenuType, elementInfo, setEditingElement }) => {
+const NewMenuItem = ({ subMenuID, addNewMenu, submenuType, elementInfo, setEditingElement, itemsLength }) => {
     const [showing, setShowing] = useState(elementInfo ? true : false);
     const [data, setData] = useState({ 
         subMenuID: subMenuID, 
         menuItemID: elementInfo ? elementInfo.id : -1,
         title: elementInfo ? elementInfo.title : '', 
         description: elementInfo ? elementInfo.description : '' ,
-        tagLine: elementInfo ? elementInfo.tagLine : ''
+        tagLine: elementInfo ? elementInfo.tagLine : '',
+        order: elementInfo ? elementInfo.order : itemsLength
     });
 
     const handleChange = (event) => {
@@ -486,9 +582,11 @@ const NewMenuItem = ({ subMenuID, addNewMenu, submenuType, elementInfo, setEditi
         setShowing(false);
         setData({
             subMenuID: subMenuID,
+            menuItemID: -1,
             title: '',
             description: '',
-            tagLine: ''
+            tagLine: '',
+            order: itemsLength + 1
         });
         if(elementInfo) {
             setEditingElement({ type: '', id: ''});

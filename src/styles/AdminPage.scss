@@ -264,12 +264,12 @@
                                 font-weight: 200;
                                 font-size: 0.9em;
                             }
-                            .buttonsContainer {
+                            .buttonsContainer, .arrowsContainer {
                                 position: absolute;
                                 bottom: 0.8em;
                                 right: 0.8em;
                                 display: flex;
-                                width: 100%;
+                                // width: 100%;
                                 justify-content: flex-end;
                                 gap: 0.7em;
                                 button {
@@ -298,6 +298,10 @@
                                         opacity: 1;
                                     }
                                 }
+                            }
+                            .arrowsContainer {
+                                justify-content: flex-start;
+                                left: 0.8em;
                             }
                         }
                     }

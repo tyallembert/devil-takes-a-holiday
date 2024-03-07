@@ -4,7 +4,7 @@ export const handler = async (event) => {
   if (username !== 'admin' || password !== process.env.ADMIN_PASSWORD) {
     return {
       statusCode: 401,
-      body: JSON.stringify({ message: 'Unauthorized' })
+      body: JSON.stringify({ message: 'Unauthorized', isAdmin: false})
     };
   }else {
     return {
