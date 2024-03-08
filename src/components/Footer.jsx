@@ -2,15 +2,29 @@ import "../styles/footer.scss"
 import InstagramIcon from "../images/instagram.png"
 import MailIcon from "../images/mail.png"
 import Reserve from "./Reserve"
-import menuData from "../data/menu.json"
 import { useState, useEffect } from "react";
 
 const Footer = (props) => {
-    const [menu, setMenu] = useState({});
+    const [menu, setMenu] = useState([]);
 
     useEffect(() => {
-        setMenu(menuData[0]);
-    }, []);
+        const fetchData = async () => {
+            try {
+              const response = await fetch('/.netlify/functions/menu-get');
+              if (!response.ok) {
+                throw new Error('Failed to fetch data');
+              }
+              const jsonData = await response.json();
+              console.log(jsonData);
+              setMenu(jsonData);
+            } catch (error) {
+              console.error('Error fetching data:', error);
+            }
+          };
+      
+          fetchData();
+    }   
+    , []);
     return (
         <div className="footerContainer">
             <div className="reserveSection">
@@ -21,18 +35,19 @@ const Footer = (props) => {
             <div className="linksContainer">
                 <a className="link" href="/#location" onClick={props.hideNavigation ? props.hideNavigation: null}>Location</a>
                 <a className="link" href="/photos">Photos</a>
-                <a className="link" href="/#drinks" onClick={props.hideNavigation ? props.hideNavigation: null}>Drinks</a>
                 {
-                    Object.keys(menu).map((drinkType) => {
+                    menu.map((singleMenu) => {
                         return (
-                            <div key={drinkType}>
+                            <>
+                            <a key={singleMenu.id} className="link" href={`/#${singleMenu.title.split(" ")[0]}`} onClick={props.hideNavigation ? props.hideNavigation: null}>{singleMenu.title}</a>
                             {
-                                drinkType === "Bits & Bobs" && (
-                                    <a className="link" href="/#food" onClick={props.hideNavigation ? props.hideNavigation: null}>Food</a>
-                                )
+                                singleMenu.subMenus.map((subMenu) => {
+                                    return (
+                                        <a key={subMenu.id} className="link subLink" href={`/#${subMenu.title.split(" ")[0]}`} onClick={props.hideNavigation ? props.hideNavigation: null}>{subMenu.title}</a>
+                                    );
+                                })
                             }
-                            <a key={drinkType} className="link subLink" href={`/#${drinkType.split(" ")[0]}`} onClick={props.hideNavigation ? props.hideNavigation: null}>{drinkType}</a>
-                            </div>
+                            </>
                         );
                     })
                 }
@@ -46,7 +61,7 @@ const Footer = (props) => {
                 </a>
             </div>
             <div className="copywriteInfo">
-                <p>© 2023 Devil Takes a Holiday</p>
+                <p>© 2024 Devil Takes a Holiday</p>
             </div>
         </div>
     )

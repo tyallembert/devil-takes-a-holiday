@@ -1,61 +1,70 @@
 import "../styles/menu.scss";
-import menuData from "../data/menu.json";
 import { useState, useEffect } from "react";
 // import SearchDrink from "./SearchDrink";
 import DrinkObject from "./DrinkObject";
 
 const Menu = () => {
     const [menu, setMenu] = useState([]);
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         try {
-    //           const response = await fetch('/.netlify/functions/get-menu');
-    //           if (!response.ok) {
-    //             throw new Error('Failed to fetch data');
-    //           }
-    //           const jsonData = await response.json();
-    //           setMenu(jsonData);
-    //         } catch (error) {
-    //           console.error('Error fetching data:', error);
-    //         }
-    //       };
-      
-    //       fetchData();
-    // }   
-    // , []);
     useEffect(() => {
-        setMenu(menuData[0]);
-    }, []);
+        const fetchData = async () => {
+            try {
+              const response = await fetch('/.netlify/functions/menu-get');
+              if (!response.ok) {
+                throw new Error('Failed to fetch data');
+              }
+              const jsonData = await response.json();
+              console.log(jsonData);
+              setMenu(jsonData);
+            } catch (error) {
+              console.error('Error fetching data:', error);
+            }
+          };
+      
+          fetchData();
+    }   
+    , []);
+    // useEffect(() => {
+    //     setMenu(menuData[0]);
+    // }, []);
 
     return (
         <div className="menuContainer" id="drinks">
-            <h1 className="menuTitle">Drinks</h1>
-            {/* {
-                menu.map((item, index) => {
+            {/* <h1 className="menuTitle">Drinks</h1> */}
+            {
+                menu.map((singleMenu, index) => {
                     return (
                         <div key={index}>
-                            <h2 className="drinkTitle" id={item.drinkType.split(" ")[0]}>{item.drinkType}</h2>
-                            <h3 className="tagLine">{item.tagLine}</h3>
-                            <div className="drinksContainer cocktailsContainer" id={item.drinkType}>
+                            <h1 className="menuTitle"id={singleMenu.title.split(" ")[0]}>{singleMenu.title}</h1>
                             {
-                                item.drinks.map((drink, index) => {
+                                singleMenu.subMenus.map((subMenu, index) => {
                                     return (
-                                        <DrinkObject key={index} 
-                                        index={index} 
-                                        title={drink.title} 
-                                        description={drink.description}
-                                        tagLine={drink.tagLine}
-                                        price={drink.price} />
+                                        <div key={index}>
+                                            <h2 className="drinkTitle" id={subMenu.title.split(" ")[0]}>{subMenu.title}</h2>
+                                            <h3 className="tagLine">{subMenu.tagLine}</h3>
+                                            <div className="drinksContainer cocktailsContainer" id={subMenu.title}>
+                                            {
+                                                subMenu.menuItems.map((menuItem, index) => {
+                                                    return (
+                                                        <DrinkObject key={index} 
+                                                        index={index} 
+                                                        title={menuItem.title} 
+                                                        description={menuItem.description}
+                                                        tagLine={menuItem.tagLine} />
+                                                    );
+                                                })
+                                            }
+                                            </div>
+                                        </div>
                                     );
-                                })
+                                }
+                                )
                             }
-                            </div>
                         </div>
                     );
                 
                 })
-            } */}
-            {
+            }
+            {/* {
                 Object.keys(menu).map((drinkType) => {
                     return (
                         <div key={drinkType}>
@@ -82,7 +91,7 @@ const Menu = () => {
                         </div>
                     );
                 })
-            }
+            } */}
         </div>
     );
 };

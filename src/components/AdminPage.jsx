@@ -280,7 +280,7 @@ const AdminPage = () => {
                 </div>
                 <div className="mainHeader">
                     <h2>Admin</h2>
-                    <a href="https://youtu.be/wbYdfUbSrr8" target="_blank" className="tutorialLink">Tutorial</a>
+                    <a href="https://youtu.be/wbYdfUbSrr8" target="_blank" rel="noreferrer" className="tutorialLink">Tutorial</a>
                 </div>
                 <div className="menusContainer">
                     <NewMenu addNewMenu={addNewMenu}/>
