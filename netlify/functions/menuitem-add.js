@@ -23,7 +23,6 @@ export const handler = async (event) => {
             body: JSON.stringify(menuItem)
         };
     } catch (error) {
-        console.error('Error adding menu item:', error);
         return {
             statusCode: 401,
             body: JSON.stringify(error)

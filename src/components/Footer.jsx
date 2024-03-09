@@ -3,28 +3,33 @@ import InstagramIcon from "../images/instagram.png"
 import MailIcon from "../images/mail.png"
 import Reserve from "./Reserve"
 import { useState, useEffect } from "react";
+import menuData from "../data/menu.json";
+
 
 const Footer = (props) => {
     const [menu, setMenu] = useState([]);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-              const response = await fetch('/.netlify/functions/menu-get');
-              if (!response.ok) {
-                throw new Error('Failed to fetch data');
-              }
-              const jsonData = await response.json();
-              console.log(jsonData);
-              setMenu(jsonData);
-            } catch (error) {
-              console.error('Error fetching data:', error);
-            }
-          };
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         try {
+    //           const response = await fetch('/.netlify/functions/menu-get');
+    //           if (!response.ok) {
+    //             throw new Error('Failed to fetch data');
+    //           }
+    //           const jsonData = await response.json();
+    //           console.log(jsonData);
+    //           setMenu(jsonData);
+    //         } catch (error) {
+    //           console.error('Error fetching data:', error);
+    //         }
+    //       };
       
-          fetchData();
-    }   
-    , []);
+    //       fetchData();
+    // }   
+    // , []);
+    useEffect(() => {
+        setMenu(menuData);
+    }, []);
     return (
         <div className="footerContainer">
             <div className="reserveSection">

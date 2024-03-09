@@ -2,34 +2,34 @@ import "../styles/menu.scss";
 import { useState, useEffect } from "react";
 // import SearchDrink from "./SearchDrink";
 import DrinkObject from "./DrinkObject";
+import menuData from "../data/menu.json";
 
 const Menu = () => {
     const [menu, setMenu] = useState([]);
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-              const response = await fetch('/.netlify/functions/menu-get');
-              if (!response.ok) {
-                throw new Error('Failed to fetch data');
-              }
-              const jsonData = await response.json();
-              console.log(jsonData);
-              setMenu(jsonData);
-            } catch (error) {
-              console.error('Error fetching data:', error);
-            }
-          };
-      
-          fetchData();
-    }   
-    , []);
     // useEffect(() => {
-    //     setMenu(menuData[0]);
-    // }, []);
+    //     const fetchData = async () => {
+    //         try {
+    //           const response = await fetch('/.netlify/functions/menu-get');
+    //           if (!response.ok) {
+    //             throw new Error('Failed to fetch data');
+    //           }
+    //           const jsonData = await response.json();
+    //           console.log(jsonData);
+    //           setMenu(jsonData);
+    //         } catch (error) {
+    //           console.error('Error fetching data:', error);
+    //         }
+    //       };
+      
+    //       fetchData();
+    // }   
+    // , []);
+    useEffect(() => {
+        setMenu(menuData);
+    }, []);
 
     return (
         <div className="menuContainer" id="drinks">
-            {/* <h1 className="menuTitle">Drinks</h1> */}
             {
                 menu.map((singleMenu, index) => {
                     return (
