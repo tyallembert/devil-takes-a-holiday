@@ -1,31 +1,14 @@
 import "../styles/menu.scss";
 import { useState, useEffect } from "react";
-// import SearchDrink from "./SearchDrink";
 import DrinkObject from "./DrinkObject";
-import menuData from "../data/menu.json";
+import { getMenu } from "../utils/queries";
 
 const Menu = () => {
     const [menu, setMenu] = useState([]);
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         try {
-    //           const response = await fetch('/.netlify/functions/menu-get');
-    //           if (!response.ok) {
-    //             throw new Error('Failed to fetch data');
-    //           }
-    //           const jsonData = await response.json();
-    //           console.log(jsonData);
-    //           setMenu(jsonData);
-    //         } catch (error) {
-    //           console.error('Error fetching data:', error);
-    //         }
-    //       };
-      
-    //       fetchData();
-    // }   
-    // , []);
     useEffect(() => {
-        setMenu(menuData);
+        getMenu().then((data) => {
+            setMenu(data);
+        });
     }, []);
 
     return (
@@ -36,14 +19,14 @@ const Menu = () => {
                         <div key={index}>
                             <h1 className="menuTitle"id={singleMenu.title.split(" ")[0]}>{singleMenu.title}</h1>
                             {
-                                singleMenu.subMenus.map((subMenu, index) => {
+                                singleMenu.subMenu.map((subMenu, index) => {
                                     return (
                                         <div key={index}>
                                             <h2 className="drinkTitle" id={subMenu.title.split(" ")[0]}>{subMenu.title}</h2>
                                             <h3 className="tagLine">{subMenu.tagLine}</h3>
                                             <div className="drinksContainer cocktailsContainer" id={subMenu.title}>
                                             {
-                                                subMenu.menuItems.map((menuItem, index) => {
+                                                subMenu.menuItem.map((menuItem, index) => {
                                                     return (
                                                         <DrinkObject key={index} 
                                                         index={index} 

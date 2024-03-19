@@ -12,6 +12,24 @@
         gap: 1em;
         padding: 1em;
         width: 15em;
+        .errorMessage {
+            background-color: red;
+            padding: 1em;
+            border-radius: 5px;
+            color: white;
+            animation: bounceIn 0.5s ease-in-out;
+            @keyframes bounceIn {
+                0% {
+                    transform: scale(0);
+                }
+                50% {
+                    transform: scale(1.2);
+                }
+                100% {
+                    transform: scale(1);
+                }
+            }
+        }
         .inputContainer {
             display: flex;
             flex-direction: column;

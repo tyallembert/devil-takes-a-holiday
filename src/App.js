@@ -3,8 +3,8 @@ import ClassicsMenu from "./components/ClassicsMenu";
 import "./styles/App.scss";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ImageCarousel2 from "./components/ImageCarousel2";
-import Login from "./components/Login";
-import AdminPage from "./components/AdminPage";
+import Login from "./components/admin/Login";
+import AdminPage from "./components/admin/AdminPage";
 
 function App() {
 
