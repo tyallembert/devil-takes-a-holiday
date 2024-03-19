@@ -8,6 +8,7 @@ import NewSubMenu from "./NewSubMenu";
 import { deleteMenu, getMenu } from "../../utils/queries";
 import { supabase } from "../../utils/supabase";
 import DeleteConfirm from "./DeleteConfirm";
+import AdminNav from "./AdminNav";
 
 
 const AdminPage = () => {
@@ -82,14 +83,15 @@ const AdminPage = () => {
 
                 <div className="mainHeader">
                     <h2>Admin</h2>
-                    <a href="https://youtu.be/wbYdfUbSrr8" target="_blank" rel="noreferrer" className="tutorialLink">Tutorial</a>
+                    <a href="https://youtu.be/eetOtJTIDTM" target="_blank" rel="noreferrer" className="tutorialLink">Tutorial</a>
                 </div>
+                <AdminNav menu={menu}/>
                 <div className="menusContainer">
                     <NewMenu setMenu={setMenu} addNewMenu={addNewMenu}/>
                     {
                         menu.map((singleMenu, i) => {
                             return (
-                                <div key={i} className="menuContainer">
+                                <div key={i} className="menuContainer" id={singleMenu.title.split(" ")[0]}>
                                     {
                                         editingElement.type === 'menu' && editingElement.id === singleMenu.id ? (
                                             <NewMenu 

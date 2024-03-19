@@ -24,7 +24,7 @@ const SubMenu = ({setMenu, subMenu, editingElement, setEditingElement, singleMen
         }
     }
     return (
-        <div className="subMenu">
+        <div className="subMenu" id={subMenu.title.split(" ")[0]}>
             <DeleteConfirm
             deleteID={deleteElement.id} 
             deleteType={deleteElement.type} 
