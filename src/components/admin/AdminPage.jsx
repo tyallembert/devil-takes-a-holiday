@@ -17,7 +17,7 @@ const AdminPage = () => {
     const [showingDeletePopup, setShowingDeletePopup] = useState(null);
     const [deleteElement, setDeleteElement] = useState({type: '', id: ''});
     const [editingElement, setEditingElement] = useState({type: '', id: ''});
-    const [actionFeedback, setActionFeedback] = useState({message: 'Food menu added successfully!', success: false, type: "error"});
+    const [actionFeedback, setActionFeedback] = useState({message: '', success: null, type: ""});
     const [session, setSession] = useState(null)
 
 
