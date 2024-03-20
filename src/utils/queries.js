@@ -12,12 +12,24 @@ export async function getMenu() {
       )
     )
     `)
-    .order('order', {ascending: true}, {foreignTable: 'subMenu'}, {foreignTable: 'subMenu.menuItem'});
-    return data;
+    .order('order', {ascending: true}, {foreignTable: 'subMenu.menuItem', ascending: true});
+    const menus = orderMenus(data);
+    return menus;
   } catch (error) {
     console.error("Error fetching data:", error);
     return error;
   }
+}
+const orderMenus = (menus) => {
+  menus.sort((a, b) => a.order - b.order);
+  menus.forEach((menu) => {
+    menu.subMenu.sort((a, b) => a.order - b.order);
+    menu.subMenu.forEach((subMenu) => {
+      subMenu.menuItem.sort((a, b) => a.order - b.order);
+    });
+  }
+  );
+  return menus;
 }
 
 // ===== Insert New Data =====
