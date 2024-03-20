@@ -1,0 +1,52 @@
+
+.popupMessage {
+    position: absolute;
+    bottom: 2em;
+    left: 1em;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 1em;
+    border-radius: 10px;
+    border: solid 1px rgba(255, 255, 255, 0.3);
+    color: white;
+    transform: translateX(-150%);
+    .icon {
+        scale: 1.5;
+    }
+    p {
+        font-weight: 600;
+    }
+    &.showing {
+        animation: successAnimation 2.5s ease-in-out forwards;
+    }
+    &.hidden {
+        display: none;
+    }
+    &.success {
+        background-color: rgba(0, 255, 0, 0.5);
+    }
+    &.error {
+        background-color: rgba(255, 0, 0, 0.5);
+    }
+}
+@keyframes successAnimation {
+    0% {
+        transform: translateX(-150%) scale(0);
+    }
+    10% {
+        transform: translateX(10%) scale(1.1);
+    }
+    15% {
+        transform: translateX(0%) scale(1);
+    }
+    80% {
+        transform: translateX(0%);
+    }
+    90% {
+        transform: translateX(10%) scale(1.1);
+    }
+    100% {
+        transform: translateX(-150%) scale(0);
+    }
+}

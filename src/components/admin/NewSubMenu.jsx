@@ -2,7 +2,7 @@ import { useState } from 'react';
 import "../../styles/AdminPage.scss";
 import { addSubMenu, getMenu, updateSubMenu } from '../../utils/queries';
 
-const NewSubMenu = ({ menuID, setMenu, menuType, elementInfo, setEditingElement }) => {
+const NewSubMenu = ({ menuID, setMenu, menuType, elementInfo, setEditingElement, setActionFeedback }) => {
     const [showing, setShowing] = useState(elementInfo ? true : false);
     const [data, setData] = useState({ 
         menuId: menuID, 
@@ -23,7 +23,12 @@ const NewSubMenu = ({ menuID, setMenu, menuType, elementInfo, setEditingElement 
     }
     const handleNewMenu = async (event) => {
         event.preventDefault();
-        addSubMenu(data).then((data) => {
+        addSubMenu(data).then((success) => {
+            if(success) {
+                setActionFeedback({message: `${data.title} section successfully added!`, success: true, type: "add"});
+            } else {
+                setActionFeedback({message: `There was an error adding the ${data.title} section.`, success: false, type: "error"});
+            }
             setShowing(false);
             setData({
                 menuId: menuID,

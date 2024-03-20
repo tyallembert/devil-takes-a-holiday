@@ -9,6 +9,7 @@ import { deleteMenu, getMenu } from "../../utils/queries";
 import { supabase } from "../../utils/supabase";
 import DeleteConfirm from "./DeleteConfirm";
 import AdminNav from "./AdminNav";
+import PopupMessage from "./PopupMessage";
 
 
 const AdminPage = () => {
@@ -16,7 +17,9 @@ const AdminPage = () => {
     const [showingDeletePopup, setShowingDeletePopup] = useState(null);
     const [deleteElement, setDeleteElement] = useState({type: '', id: ''});
     const [editingElement, setEditingElement] = useState({type: '', id: ''});
+    const [actionFeedback, setActionFeedback] = useState({message: 'Food menu added successfully!', success: false, type: "error"});
     const [session, setSession] = useState(null)
+
 
     useEffect(() => {
         supabase.auth.getSession().then(({ data: { session } }) => {
@@ -33,26 +36,6 @@ const AdminPage = () => {
             setMenu(data);
         });
     }, [session]);
-    
-    // function that handles adding a new menu
-    const addNewMenu = (newMenu, wasNew) => {
-        console.log(newMenu);
-        if(wasNew || newMenu.subMenus === undefined) {
-            newMenu = {...newMenu, subMenus: []}
-        }
-        if(wasNew) {
-            setMenu([...menu, newMenu]);
-        }else {
-            const menuCopy = menu.map((item) => {
-                if (item.id === newMenu.id) {
-                    return {...item, title: newMenu.title};
-                }
-                return item;
-            }
-            );
-            setMenu(menuCopy);
-        }
-    }
 
     // function that handles deleting a menu
     const handleDeleteMenu = async (menuID) => {
@@ -81,13 +64,17 @@ const AdminPage = () => {
                 showing={showingDeletePopup} 
                 setShowing={setShowingDeletePopup}/>
 
+                <PopupMessage message={actionFeedback.message} success={actionFeedback.success} type={actionFeedback.type}/>
+
                 <div className="mainHeader">
                     <h2>Admin</h2>
                     <a href="https://youtu.be/eetOtJTIDTM" target="_blank" rel="noreferrer" className="tutorialLink">Tutorial</a>
                 </div>
                 <AdminNav menu={menu}/>
                 <div className="menusContainer">
-                    <NewMenu setMenu={setMenu} addNewMenu={addNewMenu}/>
+                    <NewMenu 
+                    setMenu={setMenu} 
+                    setActionFeedback={setActionFeedback}/>
                     {
                         menu.map((singleMenu, i) => {
                             return (
@@ -96,7 +83,6 @@ const AdminPage = () => {
                                         editingElement.type === 'menu' && editingElement.id === singleMenu.id ? (
                                             <NewMenu 
                                             setMenu={setMenu}
-                                            addNewMenu={addNewMenu} 
                                             elementInfo={singleMenu}
                                             setEditingElement={setEditingElement}/>
                                         ): (
@@ -110,7 +96,8 @@ const AdminPage = () => {
                                     <NewSubMenu 
                                     setMenu={setMenu}
                                     menuID={singleMenu.id}
-                                    menuType={singleMenu.title}/>
+                                    menuType={singleMenu.title}
+                                    setActionFeedback={setActionFeedback}/>
                                     <div className="subMenuContainer">
                                         {
                                             singleMenu.subMenu.map((subMenu, j) => {
@@ -123,7 +110,7 @@ const AdminPage = () => {
                                                     subMenu={subMenu} 
                                                     editingElement={editingElement} 
                                                     setEditingElement={setEditingElement}
-                                                    addNewMenu={addNewMenu}/>
+                                                    setActionFeedback={setActionFeedback}/>
                                                 );
                                             })
                                         }

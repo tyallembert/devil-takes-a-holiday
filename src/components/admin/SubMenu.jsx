@@ -7,7 +7,7 @@ import { deleteSubMenu, getMenu } from "../../utils/queries";
 import MenuItem from "./MenuItem";
 import DeleteConfirm from "./DeleteConfirm";
 
-const SubMenu = ({setMenu, subMenu, editingElement, setEditingElement, singleMenu}) => {
+const SubMenu = ({setMenu, subMenu, editingElement, setEditingElement, singleMenu, setActionFeedback}) => {
     const [showingDeletePopup, setShowingDeletePopup] = useState(null);
     const [deleteElement, setDeleteElement] = useState({type: '', id: ''});
     const handleDeleteSubMenu = async (subMenuID) => {
@@ -53,7 +53,8 @@ const SubMenu = ({setMenu, subMenu, editingElement, setEditingElement, singleMen
         <NewMenuItem 
         subMenu={subMenu} 
         setMenu={setMenu}
-        submenuType={subMenu.title}/>
+        submenuType={subMenu.title}
+        setActionFeedback={setActionFeedback}/>
         <div className="menuItemContainer">
             {
                 subMenu.menuItem.map((menuItem, k) => {

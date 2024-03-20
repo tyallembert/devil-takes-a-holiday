@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import "../../styles/AdminPage.scss";
 import { addMenuItem, getMenu, updateMenuItem } from '../../utils/queries';
 
-const NewMenuItem = ({ setMenu, subMenu, elementInfo, setEditingElement }) => {
+const NewMenuItem = ({ setMenu, subMenu, elementInfo, setEditingElement, setActionFeedback }) => {
     const [showing, setShowing] = useState(elementInfo ? true : false);
     const [data, setData] = useState({ 
         subMenuId: subMenu.id, 
@@ -28,7 +28,12 @@ const NewMenuItem = ({ setMenu, subMenu, elementInfo, setEditingElement }) => {
     }
     const handleNewMenuItem = async (event) => {
         event.preventDefault();
-        addMenuItem(data).then(() => {
+        addMenuItem(data).then((success) => {
+            if(success) {
+                setActionFeedback({message: `${data.title} item successfully added!`, success: true, type: "add"});
+            } else {
+                setActionFeedback({message: `There was an error adding the ${data.title} item.`, success: false, type: "error"});
+            }
             setShowing(false);
             setData({
                 subMenuId: subMenu.id,
