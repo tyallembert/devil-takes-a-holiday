@@ -12,7 +12,7 @@ export async function getMenu() {
       )
     )
     `)
-    .order('order', {foreignTable: 'subMenu.menuItem'}, {ascending: true});
+    .order('order', {ascending: true}, {foreignTable: 'subMenu'}, {foreignTable: 'subMenu.menuItem'});
     return data;
   } catch (error) {
     console.error("Error fetching data:", error);

@@ -38,7 +38,8 @@ const SubMenu = ({setMenu, subMenu, editingElement, setEditingElement, singleMen
                 menuID={singleMenu.id}
                 menuType={singleMenu.title} 
                 elementInfo={subMenu}
-                setEditingElement={setEditingElement}/>
+                setEditingElement={setEditingElement}
+                setActionFeedback={setActionFeedback}/>
             ): (
                 <>
                 <div className="header">
@@ -66,7 +67,8 @@ const SubMenu = ({setMenu, subMenu, editingElement, setEditingElement, singleMen
                         setMenu={setMenu}
                         menuItem={menuItem}
                         editingElement={editingElement}
-                        setEditingElement={setEditingElement}/>
+                        setEditingElement={setEditingElement}
+                        setActionFeedback={setActionFeedback}/>
                     );
                 })
             }

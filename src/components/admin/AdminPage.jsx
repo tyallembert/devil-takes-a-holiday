@@ -23,11 +23,11 @@ const AdminPage = () => {
 
     useEffect(() => {
         supabase.auth.getSession().then(({ data: { session } }) => {
-        setSession(session)
+            setSession(session)
         })
 
         supabase.auth.onAuthStateChange((_event, session) => {
-        setSession(session)
+            setSession(session)
         })
     }, [])
 
@@ -84,7 +84,8 @@ const AdminPage = () => {
                                             <NewMenu 
                                             setMenu={setMenu}
                                             elementInfo={singleMenu}
-                                            setEditingElement={setEditingElement}/>
+                                            setEditingElement={setEditingElement}
+                                            setActionFeedback={setActionFeedback}/>
                                         ): (
                                         <div className="header">
                                             <h1>{singleMenu.title}</h1>

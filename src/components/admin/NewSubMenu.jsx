@@ -8,7 +8,8 @@ const NewSubMenu = ({ menuID, setMenu, menuType, elementInfo, setEditingElement,
         menuId: menuID, 
         id: elementInfo ? elementInfo.id : -1,
         title: elementInfo ? elementInfo.title : '', 
-        tagLine: elementInfo ? elementInfo.tagLine : ''
+        tagLine: elementInfo ? elementInfo.tagLine : '',
+        order: elementInfo ? elementInfo.order : 100
     });
 
     const handleChange = (event) => {
@@ -46,7 +47,12 @@ const NewSubMenu = ({ menuID, setMenu, menuType, elementInfo, setEditingElement,
     }
     const handleUpdateMenu = async (event) => {
         event.preventDefault();
-        updateSubMenu(data).then(() => {
+        updateSubMenu(data).then((success) => {
+            if(success) {
+                setActionFeedback({message: `${data.title} section updated added!`, success: true, type: "update"});
+            } else {
+                setActionFeedback({message: `There was an error updating the ${data.title} section.`, success: false, type: "error"});
+            }
             setShowing(false);
             setData({
                 menuId: menuID,

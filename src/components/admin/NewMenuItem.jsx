@@ -13,8 +13,9 @@ const NewMenuItem = ({ setMenu, subMenu, elementInfo, setEditingElement, setActi
         order: elementInfo ? elementInfo.order : subMenu.menuItem.length + 1
     });
     useEffect(() => {
+        if(elementInfo) return;
         setData(prevData => ({ ...prevData, order: subMenu.menuItem.length + 1 }));
-    }, [subMenu.menuItem.length]);
+    }, [subMenu.menuItem.length, elementInfo]);
     
     const handleChange = (event) => {
         setData({ ...data, [event.target.name]: event.target.value });
@@ -54,7 +55,13 @@ const NewMenuItem = ({ setMenu, subMenu, elementInfo, setEditingElement, setActi
     }
     const handleUpdateMenu = async (event) => {
         event.preventDefault();
-        updateMenuItem(data).then(() => {
+        updateMenuItem(data).then((success) => {
+            if(success) {
+                setActionFeedback({message: `${data.title} item successfully updated!`, success: true, type: "update"});
+            } else {
+                setActionFeedback({message: `There was an error updated the ${data.title} item.`, success: false, type: "error"});
+            }
+            console.log("data: ", data);
             setShowing(false);
             setData({
                 subMenuId: subMenu.id,

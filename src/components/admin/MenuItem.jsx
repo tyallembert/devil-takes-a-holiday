@@ -4,7 +4,7 @@ import { MdEdit } from "react-icons/md";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { deleteMenuItem, getMenu, updateMenuItemOrder } from "../../utils/queries";
 
-const MenuItem = ({singleMenu, subMenu, menuItem, setMenu, editingElement, setEditingElement}) => {
+const MenuItem = ({subMenu, menuItem, setMenu, editingElement, setEditingElement, setActionFeedback}) => {
 
     const handleDelete = async (menuItemID) => {
         await deleteMenuItem(menuItemID).then(() => {
@@ -41,13 +41,13 @@ const MenuItem = ({singleMenu, subMenu, menuItem, setMenu, editingElement, setEd
                     subMenu={subMenu} 
                     setMenu={setMenu}
                     elementInfo={menuItem}
-                    setEditingElement={setEditingElement}/>
+                    setEditingElement={setEditingElement}
+                    setActionFeedback={setActionFeedback}/>
                 ): (
                     <>
                     <h3>{menuItem.title}</h3>
                     <p>{menuItem.description}</p>
                     <p className="tagLine">{menuItem.tagLine}</p>
-                    {/* <p>{menuItem.order}</p> */}
                     <div className="arrowsContainer">
                         <button className="leftButton" onClick={() => menuItemOrderUp(menuItem)}><IoIosArrowBack/></button>
                         <button className="rightButton" onClick={() => menuItemOrderDown(menuItem)}><IoIosArrowForward/></button>

@@ -6,7 +6,8 @@ const NewMenu = ({ setMenu, elementInfo, setEditingElement, setActionFeedback })
     const [showing, setShowing] = useState(elementInfo ? true : false);
     const [data, setData] = useState({
         title: elementInfo ? elementInfo.title :'',
-        id: elementInfo ? elementInfo.id : -1
+        id: elementInfo ? elementInfo.id : -1,
+        order: elementInfo ? elementInfo.order : 100
     });
 
     const handleChange = (event) => {
@@ -39,7 +40,12 @@ const NewMenu = ({ setMenu, elementInfo, setEditingElement, setActionFeedback })
     }
     const handleUpdateMenu = async (event) => {
         event.preventDefault();
-        updateMenu(data).then(() => {
+        updateMenu(data).then((success) => {
+            if(success) {
+                setActionFeedback({message: `${data.title} menu successfully updated!`, success: true, type: "update"});
+            } else {
+                setActionFeedback({message: `There was an error updating the ${data.title} menu.`, success: false, type: "error"});
+            }
             setShowing(false);
             setData({ title: '', id: ''});
             if(elementInfo) {
