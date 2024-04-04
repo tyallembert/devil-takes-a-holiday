@@ -55,6 +55,7 @@
         .popupImage {
             display: block;
             width: 40%;
+            min-width: 13em;
             height: auto;
             border-radius: 10px;
         }
@@ -95,6 +96,24 @@
     }
 }
 
+@media screen and (max-width: 1200px) {
+    .popupContainer {
+        .popupContentContainer {
+            width: 60%;
+            .popupImage {
+                width: 50%;
+            }
+            .infoContainer {
+                .popupTitle {
+                    font-size: 2.5rem;
+                }
+                .popupInfo {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
 @media screen and (max-width: 600px) {
     .popupContainer {
         .popupContentContainer {
