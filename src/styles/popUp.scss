@@ -16,14 +16,17 @@
         position: relative;
         width: 50%;
         min-height: 50vh;
+        display: flex;
+        justify-content: space-around;
         padding: 1rem;
+        padding-bottom: 3rem;
         background-color: $color-1;
         border-radius: 20px;
         &.inAnimation {
-            animation: bounceIn 3s ease-in-out;
+            animation: bounceDown 3s ease-in-out;
         }
         &.outAnimation {
-            animation: bounceOut 0.75s ease-in-out;
+            animation: bounceUp 0.75s ease-in-out;
             transform: translateY(200%);
         }
         .palmTree {
@@ -49,41 +52,30 @@
             z-index: -1;
             animation: devilDrawing 4s ease-in-out;
         }
-        .popupTitle {
-            font-size: 3rem;
-            font-weight: bold;
-            text-align: center;
-            padding: 1rem;
-            z-index: 2;
-        }
-        .popupInfo {
-            position: relative;
-            font-size: 1.5rem;
-            padding: 1rem;
-            z-index: 2;
-        }
-        .ticketLink {
+        .popupImage {
             display: block;
-            width: 6rem;
-            margin: auto;
-            margin-top: 2rem;
-            text-align: center;
-            text-decoration: none;
-            padding: 1rem 0;
-            border-radius: 50rem;
-            border: solid 2px black;
-            color: black;
-            transition: all 200ms ease-in-out;
-            &:visited {
-                color: black;
+            width: 40%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .infoContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 1rem;
+            .popupTitle {
+                font-size: 3rem;
+                font-weight: bold;
+                text-align: center;
+                padding: 1rem;
+                z-index: 2;
             }
-            &:hover {
-                background-color: rgb(247, 120, 203);
-                width: 8rem;
-                box-shadow: inset 2px 2px 3px rgb(249, 207, 234);
-                color: white;
-                font-weight: 800;
-                border: none;
+            .popupInfo {
+                position: relative;
+                font-size: 1.5rem;
+                padding: 1rem;
+                z-index: 2;
             }
         }
         .closeButton {
@@ -106,8 +98,10 @@
 @media screen and (max-width: 600px) {
     .popupContainer {
         .popupContentContainer {
+            flex-direction: column;
             width: 70%;
             padding: 0.5rem;
+            padding-bottom: 2rem;
             .palmTree {
                 top: -13vh;
                 width: 9vh;
@@ -119,16 +113,22 @@
                 width: 7vh;
                 transform: rotate(10deg) scaleX(-1);
             }
-            .popupTitle {
-                font-size: 2.5rem;
-                font-weight: bold;
-                text-align: center;
-                padding: 1rem;
+            .popupImage {
+                width: 100%;
             }
-            .popupInfo {
-                position: relative;
-                font-size: 1rem;
-                padding: 1rem;
+            .infoContainer {
+                .popupTitle {
+                    font-size: 2.5rem;
+                    font-weight: bold;
+                    text-align: center;
+                    padding: 0rem;
+                    margin: 0;
+                }
+                .popupInfo {
+                    position: relative;
+                    font-size: 1rem;
+                    padding: 1rem;
+                }
             }
             .ticketLink {
                 &:focus {
@@ -166,7 +166,7 @@
 
 }
 // animation for opening popup
-@keyframes bounceIn {
+@keyframes bounceDown {
     0% {
         transform: translateY(-200%);
     }
@@ -185,7 +185,7 @@
 }
 
 // animation for closing popup
-@keyframes bounceOut {
+@keyframes bounceUp {
     0% {
         transform: translateY(0);
     }

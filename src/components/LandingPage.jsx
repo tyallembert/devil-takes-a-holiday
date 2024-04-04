@@ -8,7 +8,7 @@ import PopUp from './PopUp';
 import InstagramFeed from './InstagramFeed';
 
 const LandingPage = () => {
-    const showingPopup = false;
+    const showingPopup = true;
     return (
         <div className='landingPage'>
             {/* <TopBanner /> */}
