@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "../../styles/AdminNav.scss";
 
-const AdminNav = ({menu}) => {
+const MenuQuickNav = ({menu}) => {
     const [activeNavItem, setActiveNavItem] = useState(null);
 
     useEffect(() => {
@@ -60,4 +60,4 @@ const AdminNav = ({menu}) => {
     )
 }
 
-export default AdminNav;
+export default MenuQuickNav;

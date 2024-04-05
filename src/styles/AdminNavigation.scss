@@ -1,0 +1,30 @@
+
+.adminNavigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1em 2em;
+    background-color: black;
+    z-index: 10;
+    .leftSide {
+        display: flex;
+        align-items: center;
+        gap: 3em;
+    }
+    .rightSide {
+        .tutorialLink {
+            font-size: 0.8em;
+            border: solid 1px white;
+            padding: 1em;
+            border-radius: 10em;
+        }
+    }
+    h2 {
+        color: white;
+    }
+    a {
+        color: white;
+        text-decoration: none;
+    }
+}

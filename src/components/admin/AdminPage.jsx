@@ -8,8 +8,9 @@ import NewSubMenu from "./NewSubMenu";
 import { deleteMenu, getMenu } from "../../utils/queries";
 import { supabase } from "../../utils/supabase";
 import DeleteConfirm from "./DeleteConfirm";
-import AdminNav from "./AdminNav";
+import MenuQuickNav from "./MenuQuickNav.jsx";
 import PopupMessage from "./PopupMessage";
+import AdminNavigation from "./AdminNavigation.jsx";
 
 
 const AdminPage = () => {
@@ -66,11 +67,8 @@ const AdminPage = () => {
 
                 <PopupMessage message={actionFeedback.message} success={actionFeedback.success} type={actionFeedback.type}/>
 
-                <div className="mainHeader">
-                    <h2>Admin</h2>
-                    <a href="https://youtu.be/eetOtJTIDTM" target="_blank" rel="noreferrer" className="tutorialLink">Tutorial</a>
-                </div>
-                <AdminNav menu={menu}/>
+                <AdminNavigation/>
+                <MenuQuickNav menu={menu}/>
                 <div className="menusContainer">
                     <NewMenu 
                     setMenu={setMenu} 

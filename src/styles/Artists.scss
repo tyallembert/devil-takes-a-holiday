@@ -1,0 +1,63 @@
+@import 'variables.scss';
+.artistsContainer {
+    padding: 2em;
+    color: white;
+    width: 80%;
+    margin: 0 auto;
+    .headerContainer {
+        border-bottom: solid 1px $color-1;
+        margin-bottom: 3em;
+        .text {
+            font-size: 1.3em;
+            margin-bottom: 1em;
+            width: 70%;
+        }
+    }
+    .allArtists {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 5em 0;
+        .artistContainer {
+            width: 30%;
+            .singleArtistHeader {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 1em;
+                .pronouns {
+                    font-size: 0.8em;
+                }
+                .title {
+                    font-size: 1.1em;
+                    font-weight: 200;
+                    width: 80%;
+                    font-style: italic;
+                }
+            }
+            .contactContainer {
+                position: relative;
+                display: flex;
+                width: 100%;
+                align-items: center;
+                margin-bottom: 0.3em;
+                color: $color-1;
+                .contactIcon {
+                    font-size: 1.2em;
+                    margin-right: 0.5em;
+                    &.instagram {
+                        font-size: 1.3em;
+                    }
+                    &.website {
+                        font-size: 1.1em;
+                    }
+                }
+                .contactText {
+                    position: absolute;
+                    left: 2em;
+                    font-size: 1em;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

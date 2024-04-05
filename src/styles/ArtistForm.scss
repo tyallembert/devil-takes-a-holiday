@@ -1,0 +1,63 @@
+@import 'variables.scss';
+.artistForm {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 100%;
+    padding: 1em;
+    border-radius: 1em;
+    background-color: rgba(255,255, 255, 0.2);
+    margin-bottom: 2em;
+    .inputContainer {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 1em;
+        label {
+            margin-left: 1em;
+        }
+        input[type=text], input[type=email], input[type=url], textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 50em;
+            border: none;
+            opacity: 0.6;
+            &:focus {
+                opacity: 1;
+            }
+        }
+    }
+    .buttonsContainer {
+        display: flex;
+        gap: 1em;
+        .submitButton {
+            padding: 10px;
+            border-radius: 50em;
+            border: none;
+            border: solid 2px rgb(70, 161, 70);
+            color: rgb(70, 161, 70);
+            background-color: transparent;
+            font-weight: 600;
+            transition: all 200ms ease-in-out;
+            &:hover {
+                scale: 1.05;
+                cursor: pointer;
+            }
+        }
+        .cancelButton {
+            padding: 10px;
+            border-radius: 50em;
+            border: none;
+            border: solid 2px red;
+            color: red;
+            background-color: transparent;
+            font-weight: 600;
+            transition: all 200ms ease-in-out;
+            &:hover {
+                scale: 1.05;
+                cursor: pointer;
+            }
+        }
+    }
+}

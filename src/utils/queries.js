@@ -1,5 +1,59 @@
 import { supabase } from "./supabase";
 
+export async function getArtists() {
+  try {
+    const { data } = await supabase.from("artists").select("*");
+    const newData = orderArtistsByName(data);
+    return newData;
+  }catch (error) {
+    console.error("Error fetching data:", error);
+    return error;
+  }
+}
+function orderArtistsByName(artists) {
+  return artists.sort((a, b) => a.firstName.localeCompare(b.firstName));
+}
+
+export async function addArtist(artist) {
+  try {
+    await supabase.from("artists").insert({
+      firstName: artist.firstName,
+      lastName: artist.lastName,
+      pronouns: artist.pronouns,
+      title: artist.title,
+      instagramHandle: artist.instagramHandle,
+      instagramURL: artist.instagramURL,
+      email: artist.email,
+      websiteURL: artist.websiteURL,
+    });
+    return true;
+  } catch (error) {
+    console.error("Error adding data:", error);
+    return false;
+  }
+}
+export async function updateArtist(artist) {
+  try {
+    await supabase.from("artists").update(artist).eq("id", artist.id);
+    return true;
+  } catch (error) {
+    console.error("Error updating data:", error);
+    return false;
+  }
+}
+export async function deleteArtist(artistId) {
+  try {
+    await supabase.from("artists").delete().eq("id", artistId);
+    return true;
+  } catch (error) {
+    console.error("Error deleting data:", error);
+    return false;
+  }
+}
+
+// ============================
+// ===== Admin Functions ======
+// ============================
 export async function getMenu() {
   try {
     const { data } = await supabase.from("menu")

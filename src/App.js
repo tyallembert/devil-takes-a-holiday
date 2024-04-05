@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ImageCarousel2 from "./components/ImageCarousel2";
 import Login from "./components/admin/Login";
 import AdminPage from "./components/admin/AdminPage";
+import Artists from "./components/Artists";
+import AdminArtists from "./components/admin/AdminArtists";
 
 function App() {
 
@@ -15,7 +17,9 @@ function App() {
           <Route path="/classics" element={<ClassicsMenu/>} />
           <Route path="/" element={<LandingPage/>} />
           <Route path="/photos" element={<ImageCarousel2/>} />
+          <Route path="/artists" element={<Artists/>} />
           <Route path="/admin" element={<AdminPage/>} />
+          <Route path="/admin/artists" element={<AdminArtists/>} />
           <Route path="/login" element={<Login/>} />
         </Routes>
       </Router>

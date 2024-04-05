@@ -24,6 +24,7 @@ const Footer = (props) => {
                 <a className="link" href="/" onClick={props.hideNavigation ? props.hideNavigation: null}>Home</a>
                 <a className="link" href="/#location" onClick={props.hideNavigation ? props.hideNavigation: null}>Location</a>
                 <a className="link" href="/photos">Photos</a>
+                <a className="link" href="/artists">Artists</a>
                 {
                     menu.map((singleMenu) => {
                         return (

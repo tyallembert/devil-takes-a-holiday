@@ -4,7 +4,7 @@ import Location from './Location';
 import Footer from './Footer';
 import Navigation from './Navigation';
 import PopUp from './PopUp';
-// import TopBanner from './components/TopBanner';
+// import TopBanner from './TopBanner';
 import InstagramFeed from './InstagramFeed';
 
 const LandingPage = () => {

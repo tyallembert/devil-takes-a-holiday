@@ -3,7 +3,8 @@ import "../styles/navigation.scss";
 import Footer from "./Footer";
 
 const Navigation = () => {
-    const [showing, setShowing] = useState(false);
+    const [showing, setShowing] = useState(null);
+    const whichPage = window.location.pathname;
 
     const toggleNavigation = () => {
         setShowing(!showing);
@@ -13,10 +14,12 @@ const Navigation = () => {
     }
     return (
         <div className="navigationContainer">
-            <div className={showing? "showingNav": "hidingNav"}>
+            <div className={`navigation ${showing === true? "showingNav": showing === false ? "hidingNav": ''}`}>
                 <Footer hideNavigation={hideNavigation} showingNavigation={showing}/>
             </div>
-            <button onClick={toggleNavigation} className={`navigationButton ${showing ? "showing": "hidden"}`}>
+            <button onClick={toggleNavigation} className={`navigationButton 
+            ${showing ? "showing": "hidden"} 
+            ${whichPage === "/" ? 'delayAnimation': null}`}>
                 <div className="line line1"></div>
                 <div className="line line2"></div>
                 <div className="line line3"></div>

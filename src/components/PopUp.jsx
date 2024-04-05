@@ -17,7 +17,9 @@ const PopUp = () => {
     return (
         <div className={showingContainer ? "popupContainer": "popupContainer hidden"} onClick={() => setShowPopUp(false)}>
             <div className={`popupContentContainer ${showPopUp ? 'inAnimation': 'outAnimation'}`}>
-                <img className='popupImage' src={MerchImage} alt='merch shirt'/>
+                <div className='imageContainer'>
+                    <img className='popupImage' src={MerchImage} alt='merch shirt'/>
+                </div>
                 <div className='infoContainer'>
                     <h1 className='popupTitle'>New Merch!</h1>
                     <p className='popupInfo'>Drop in to pick up a shirt, beer glass and some stickers!</p>
