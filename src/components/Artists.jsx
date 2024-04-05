@@ -56,7 +56,7 @@ const Artists = () => {
                         }
                         {
                             artist.websiteURL && (
-                            <a className='contactContainer' href={artist.websiteURL} target='_blank' rel="noreferrer">
+                            <a className='contactContainer' href={`http://${artist.websiteURL}`} target='_blank' rel="noreferrer">
                                 <FaArrowUpRightFromSquare className='contactIcon website'/>
                                 <p className='contactText'>{artist.websiteURL}</p>
                             </a>
