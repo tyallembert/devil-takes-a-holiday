@@ -1,11 +1,11 @@
-import LandingPage from "./components/LandingPage";
-import ClassicsMenu from "./components/ClassicsMenu";
+import LandingPage from "./screens/home/LandingPage";
+// import ClassicsMenu from "./components/ClassicsMenu";
 import "./styles/App.scss";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ImageCarousel2 from "./components/ImageCarousel2";
 import Login from "./components/admin/Login";
 import AdminPage from "./components/admin/AdminPage";
-import Artists from "./components/Artists";
+import Artists from "./screens/artists/Artists";
 import AdminArtists from "./components/admin/AdminArtists";
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/classics" element={<ClassicsMenu/>} />
+          {/* <Route path="/classics" element={<ClassicsMenu/>} /> */}
           <Route path="/" element={<LandingPage/>} />
           <Route path="/photos" element={<ImageCarousel2/>} />
           <Route path="/artists" element={<Artists/>} />

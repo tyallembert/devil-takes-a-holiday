@@ -1,5 +1,5 @@
-import "../styles/hero.scss";
-import { TopText, BottomText, DevilEyesOpen } from "./SVGs";
+import "../../styles/hero.scss";
+import { TopText, BottomText, DevilEyesOpen } from "../../components/SVGs";
 
 const Hero = () => {
     return (

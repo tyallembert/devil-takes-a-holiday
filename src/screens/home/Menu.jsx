@@ -1,7 +1,7 @@
-import "../styles/menu.scss";
+import "../../styles/menu.scss";
 import { useState, useEffect } from "react";
-import DrinkObject from "./DrinkObject";
-import { getMenu } from "../utils/queries";
+import DrinkObject from "../../components/DrinkObject";
+import { getMenu } from "../../utils/queries";
 
 const Menu = () => {
     const [menu, setMenu] = useState([]);

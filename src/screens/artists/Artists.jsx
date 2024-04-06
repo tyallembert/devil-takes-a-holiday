@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import '../styles/Artists.scss';
-import { getArtists } from '../utils/queries';
+import '../../styles/Artists.scss';
+import { getArtists } from '../../utils/queries';
 import { FaArrowUpRightFromSquare, FaInstagram, FaRegEnvelope } from "react-icons/fa6";
-import Footer from './Footer';
-import Navigation from './Navigation';
+import Footer from '../../components/Footer';
+import Navigation from '../../components/Navigation';
 
 const Artists = () => {
     const [artists, setArtists] = useState([]);

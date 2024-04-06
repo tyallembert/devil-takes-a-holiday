@@ -1,6 +1,6 @@
 // import { useEffect, useState } from "react";
-import "../styles/location.scss";
-import { DevilChillin } from "./SVGs"
+import "../../styles/location.scss";
+import { DevilChillin } from "../../components/SVGs"
 import Map from "./Map";
 
 

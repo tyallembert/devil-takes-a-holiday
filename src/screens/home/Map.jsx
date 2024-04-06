@@ -1,4 +1,4 @@
-import "../styles/map.scss";
+import "../../styles/map.scss";
 
 
 const Map = () => {

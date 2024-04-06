@@ -1,11 +1,11 @@
 import Hero from './Hero';
 import Menu from './Menu';
 import Location from './Location';
-import Footer from './Footer';
-import Navigation from './Navigation';
-import PopUp from './PopUp';
+import Footer from '../../components/Footer';
+import Navigation from '../../components/Navigation';
+import PopUp from '../../components/PopUp';
 // import TopBanner from './TopBanner';
-import InstagramFeed from './InstagramFeed';
+import InstagramFeed from '../../components/InstagramFeed';
 
 const LandingPage = () => {
     const showingPopup = true;
