@@ -1,5 +1,4 @@
-// import { useEffect, useState } from "react";
-import "../../styles/Location.scss";
+import "./../../styles/Location.scss";
 import { DevilChillin } from "../../components/SVGs"
 import Map from "./Map";
 
