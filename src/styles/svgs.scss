@@ -1,5 +1,16 @@
 @import "variables";
 
+.glasses {
+    width: 50%;
+    transform: translateY(-3em);
+    .stroke {
+        stroke: $color-2;
+    }
+    .fill {
+        fill: $color-2;
+    }
+
+}
 .devilDrawing{
     position: relative;
     width: 25%;

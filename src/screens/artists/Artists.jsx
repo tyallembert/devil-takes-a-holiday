@@ -13,7 +13,6 @@ const Artists = () => {
     }, []);
     const fetchArtists = async () => {
         const response = await getArtists();
-        console.log(response);
         setArtists(response);
     }
     return (

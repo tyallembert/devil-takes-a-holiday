@@ -6,6 +6,7 @@ import Navigation from '../../components/Navigation';
 import PopUp from '../../components/PopUp';
 // import TopBanner from './TopBanner';
 import InstagramFeed from '../../components/InstagramFeed';
+import ToArtistLink from './ToArtistLink';
 
 const LandingPage = () => {
     const showingPopup = true;
@@ -19,6 +20,7 @@ const LandingPage = () => {
             <Navigation />
             <Hero />
             <Location />
+            <ToArtistLink />
             <Menu />
             <InstagramFeed />
             <Footer />

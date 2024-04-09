@@ -295,3 +295,13 @@ export const PalmTree = ({className}) => {
 
     )
 }
+
+export const Glasses = () => {
+    return (
+        <svg className="glasses" viewBox="0 0 135 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 0.5H130C132.485 0.5 134.5 2.51472 134.5 5V37C134.5 39.4853 132.485 41.5 130 41.5H79.0711C77.8776 41.5 76.733 41.0259 75.8891 40.182L72.0365 36.3294C70.0462 34.3391 66.8745 34.1726 64.6868 35.9436L59.0612 40.4976C58.2601 41.1461 57.2606 41.5 56.2299 41.5H5C2.51472 41.5 0.5 39.4853 0.5 37V5C0.5 2.51472 2.51472 0.5 5 0.5Z" fill="white" stroke="black"/>
+            <rect className="fill" x="76" y="9" width="47" height="24" rx="5"/>
+            <rect className="fill" x="11" y="9" width="47" height="24" rx="5"/>
+        </svg>
+    )
+}

@@ -12,6 +12,52 @@
     .topText, .bottomText {
         animation: fadeIn 1.6s $animationDelay ease-in-out forwards;
     }
+    .eclipseContainer {
+        position: absolute;
+        top: 4em;
+        right: 4em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0.5;
+        .sun {
+            width: 15em;
+            height: 15em;
+            background-color: white;
+            border-radius: 50%;
+            filter: blur(5px);
+        }
+        .mooon {
+            position: absolute;
+            width: 14em;
+            height: 14em;
+            background-color: black;
+            border-radius: 50%;
+            z-index: 2;
+        }
+    }
+    .glasses {
+        position: absolute;
+        width: 12%;
+        opacity: 0;
+        animation: glasses 300ms 2.2s ease-in-out forwards;
+        @keyframes glasses {
+            0%{
+                transform: scale(5) translateY(-3em);
+                opacity: 0;
+            }
+            100%{
+                transform: scale(1) translateY(-3em);
+                opacity: 1;
+            }
+        }
+        .stroke {
+            stroke: $color-2;
+        }
+        .fill {
+            fill: $color-2;
+        }
+    }
     .devilEyesOpen {
         animation: headAnimation $heroAnimationDuration ease-in-out forwards;
         #pupil-right{
