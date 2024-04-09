@@ -1,4 +1,4 @@
-import "../../styles/Location.scss";
+import "../../styles/location.scss";
 import { DevilChillin } from "../../components/SVGs"
 import Map from "./Map";
 
