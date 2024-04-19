@@ -1,12 +1,17 @@
 import { useEffect, useState } from 'react';
 import '../../styles/Artists.scss';
-import { getArtists } from '../../utils/queries';
+import { getArtists, getArtistsHeader } from '../../utils/queries';
 import { FaArrowUpRightFromSquare, FaInstagram, FaRegEnvelope } from "react-icons/fa6";
 import Footer from '../../components/Footer';
 import Navigation from '../../components/Navigation';
 
 const Artists = () => {
     const [artists, setArtists] = useState([]);
+    const [headerInfo, setHeaderInfo] = useState({
+        header: '',
+        paragraph: '',
+        paragraph2: ''
+    });
 
     useEffect(() => {
         fetchArtists();
@@ -14,15 +19,17 @@ const Artists = () => {
     const fetchArtists = async () => {
         const response = await getArtists();
         setArtists(response);
+        const headerRes = await getArtistsHeader();
+        setHeaderInfo(headerRes[0]);
     }
     return (
         <>
         <Navigation/>
         <div className='artistsContainer'>
             <div className='headerContainer'>
-                <h1>Current Artists!</h1>
-                <p className='text'>We don the incredible work of 18 local artists on our walls, and all of it is for sale! See their information below to view more of their work and contact for purchase. All sales go directly through the artist and we don’t take commission.</p>
-                <p className='text'>Thank you for viewing!</p>
+                <h1>{headerInfo.header}</h1>
+                <p className='text'>{headerInfo.paragraph}</p>
+                <p className='text'>{headerInfo.paragraph2}</p>
             </div>
             <div className='allArtists'>
             {
