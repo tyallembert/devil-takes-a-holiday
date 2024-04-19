@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Chela+One&display=swap');
+.headerContainer {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2em;
+    .header {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+        width: 100%;
+    }
+    .paragraph {
+        width: 50%;
+        margin-top: 1em;
+    }
+    .headerInput {
+        font-size: 4em;
+        background-color: rgba(white,0.2);
+        color: white;
+        border: solid 2px rgba(white,0.1);
+        border-radius: 10em;
+        padding-left: 0.5em;
+        font-family: 'Chela One', cursive;
+    }
+    .paragraphInput {
+        width: 50%;
+        height: 8em;
+        margin-top: 1em;
+        background-color: rgba(white,0.2);
+        color: white;
+        border: solid 2px rgba(white,0.1);
+        padding: 0.5em;
+        border-radius: 1em;
+    }
+    .buttonsContainer {
+        display: flex;
+        gap: 1em;
+        margin-top: 1em;
+    }
+}

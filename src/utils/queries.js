@@ -1,5 +1,8 @@
 import { supabase } from "./supabase";
 
+// ============================
+// ===== Artist Functions ======
+// ============================
 export async function getArtists() {
   try {
     const { data } = await supabase.from("artists").select("*");
@@ -12,6 +15,26 @@ export async function getArtists() {
 }
 function orderArtistsByName(artists) {
   return artists.sort((a, b) => a.firstName.localeCompare(b.firstName));
+}
+
+export async function getArtistsHeader() {
+  try {
+    const { data } = await supabase.from("artistsHeader").select("*");
+    return data;
+  }catch (error) {
+    console.error("Error fetching data:", error);
+    return error;
+  }
+
+}
+export async function updateArtistHeader(headerInfo) {
+  try {
+    const { data } = await supabase.from("artistsHeader").update(headerInfo).eq("id", headerInfo.id);
+    return {...data, success: true};
+  } catch(e) {
+    console.error("Error updating: ", e);
+    return {success: false};
+  }
 }
 
 export async function addArtist(artist) {

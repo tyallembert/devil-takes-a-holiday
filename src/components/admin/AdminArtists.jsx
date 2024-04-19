@@ -7,6 +7,7 @@ import ArtistView from './ArtistView';
 import { supabase } from '../../utils/supabase';
 import Login from './Login';
 import AdminNavigation from './AdminNavigation';
+import ArtistHeader from './ArtistHeader';
 
 const AdminArtists = () => {
     const [artists, setArtists] = useState([]);
@@ -38,9 +39,7 @@ const AdminArtists = () => {
         <>
         <AdminNavigation/>
         <div className='artistsContainer'>
-            <div className='headerContainer'>
-                <h1>Current Artists!</h1>
-            </div>
+            <ArtistHeader/>
             <button onClick={() => setShowingNewForm(true)} className='newButton'>+</button>
             {
                 showingNewForm && (
@@ -58,6 +57,7 @@ const AdminArtists = () => {
                                 <ArtistForm key={artist.id} 
                                 artist={artist} 
                                 setEditingArtist={setEditingArtist}
+                                setShowingNewForm={setShowingNewForm}
                                 fetchArtists={fetchArtists}/>
                             </div>
                         )

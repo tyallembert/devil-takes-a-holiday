@@ -32,32 +32,22 @@ h2{
   font-weight: 600;
   font-family: 'Chela One', cursive;
 }
-.dot {
-  position: absolute;
-  height: 25px;
-  width: 25px;
-  animation: float 300ms ease-in-out forwards;
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3em;
+  height: 3em;
+  border-radius: 10em;
+  border: solid 2px white;
+  color: white;
+  font-weight: 600;
+  font-size: 0.8em;
+  background-color: transparent;
+  opacity: 0.5;
+  transition: all 200ms ease-in-out;
 }
-.dot img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  -webkit-user-drag: none;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-}
-@keyframes float {
-  0% {
-    transform: translateY(0px) scale(1);
-  }
-  50% {
-    transform: translateY(-25px) scale(1.1);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-50px) scale(0);
-    opacity: 0;
-  }
+.button:hover {
+  opacity: 1;
+  cursor: pointer;
 }
