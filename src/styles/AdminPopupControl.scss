@@ -5,7 +5,7 @@
     justify-content: space-around;
     .contentBox {
         width: 45%;
-        height: 80vh;
+        min-height: 80vh;
         border-radius: 1em;
         padding: 1em;
         background-color: rgba(white, 0.2);
@@ -166,8 +166,21 @@
             border-radius: 1em;
             margin-top: 2em;
             padding-bottom: 3em;
+            overflow: hidden;
             &.hidden {
                 opacity: 0.3;
+            }
+            &.mobileView {
+                flex-direction: column;
+                gap: 1em;
+                width: 50%;
+                .image {
+                    width: 90%;
+                }
+                .textContainer {
+                    min-width: 80%;
+                    max-width: 80%;
+                }
             }
             .image{
                 width: 40%;

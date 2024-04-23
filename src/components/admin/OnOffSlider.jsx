@@ -2,7 +2,7 @@ import React from 'react';
 import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
 import '../../styles/OnOffSlider.scss';
 
-const OnOffSlider = ({ name, popupInfo, handleChange, scale=0.9}) => {
+const OnOffSlider = ({ name, popupInfo, handleChange, scale=0.9, onIcon=<FaRegEye/>, offIcon=<FaRegEyeSlash/>}) => {
   return (
     <label htmlFor={name} className='onOffLabel'>
         <input
@@ -16,10 +16,10 @@ const OnOffSlider = ({ name, popupInfo, handleChange, scale=0.9}) => {
         <div className={`sliderContainer ${popupInfo ? "showing": ""} ${name === "showing" ? "showingButton": ""}`} style={{transform: `scale(${scale})`}}>
             <div className={`activeBackground ${popupInfo ? "": "right"}`}></div>
             <div className='regEye'>
-                <FaRegEye/>
+                {onIcon}
             </div>
             <div className='slashEye'>
-                <FaRegEyeSlash/>
+                {offIcon}
             </div>
         </div>
     </label>

@@ -7,6 +7,8 @@ import ShirtImage from "../../images/merch-shirt.jpg";
 import OnOffSlider from './OnOffSlider';
 import { savePopupInfo } from '../../utils/queries';
 import { FaCheck } from "react-icons/fa";
+import { CiMobile3 } from "react-icons/ci";
+import { IoIosDesktop } from "react-icons/io";
 
 const AdminPopupControl = () => {
     const [session, setSession] = useState(null);
@@ -34,6 +36,7 @@ const AdminPopupControl = () => {
         buttonLink: '',
         showingButton: true,
     });
+    const [showingDesktop, setShowingDesktop] = useState(true);
     const [showingSaveButton, setShowingSaveButton] = useState(false);
     const [saveSuccess, setSaveSuccess] = useState(false);
 
@@ -70,7 +73,11 @@ const AdminPopupControl = () => {
             setShowingSaveButton(false);
         }
     }
-
+    const changePreviewDevice = (e) => {
+        if(e.target.name === 'deviceType') {
+            setShowingDesktop(!showingDesktop);
+        }
+    }
     const handleChange = (e) => {
         if(e.target.name === 'showing') {
             setPopupInfo({...popupInfo, [e.target.name]: !popupInfo.showing})
@@ -185,7 +192,10 @@ const AdminPopupControl = () => {
                 </div>
                 <div className='contentBox preview'>
                     <h2>Preview</h2>
-                    <div className={`previewContainer ${popupInfo.showing ? "": "hidden"}`}>
+                    <OnOffSlider name='deviceType' popupInfo={showingDesktop} handleChange={changePreviewDevice} scale={1.2} onIcon={<IoIosDesktop />} offIcon={<CiMobile3 />}/>
+                    <div className={`previewContainer 
+                    ${popupInfo.showing ? "": "hidden"} 
+                    ${showingDesktop ? "": "mobileView"}`}>
                         {
                             popupInfo.showingImage ? <img src={ShirtImage} alt='shirt' className='image'/> : null
                         }
