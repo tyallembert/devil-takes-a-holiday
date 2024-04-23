@@ -36,5 +36,8 @@
         &.showing {
             background-color: rgba(52, 208, 57, 0.5);
         }
+        &.showingButton {
+            margin-left: 1em;
+        }
     }
 }

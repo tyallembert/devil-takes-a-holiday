@@ -13,7 +13,7 @@ const OnOffSlider = ({ name, popupInfo, handleChange, scale=0.9}) => {
             defaultChecked={popupInfo}
             onChange={handleChange}
         />
-        <div className={`sliderContainer ${popupInfo ? "showing": ""}`} style={{transform: `scale(${scale})`}}>
+        <div className={`sliderContainer ${popupInfo ? "showing": ""} ${name === "showing" ? "showingButton": ""}`} style={{transform: `scale(${scale})`}}>
             <div className={`activeBackground ${popupInfo ? "": "right"}`}></div>
             <div className='regEye'>
                 <FaRegEye/>

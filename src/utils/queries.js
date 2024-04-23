@@ -1,6 +1,18 @@
 import { supabase } from "./supabase";
 
 // ============================
+// ===== Popup Functions ======
+// ============================
+export const savePopupInfo = async (popupInfo) => {
+  try {
+    await supabase.from("popupInfo").upsert([popupInfo]);
+    return true;
+  } catch (error) {
+    console.error("Error saving data:", error);
+    return false;
+  }
+}
+// ============================
 // ===== Artist Functions ======
 // ============================
 export async function getArtists() {
