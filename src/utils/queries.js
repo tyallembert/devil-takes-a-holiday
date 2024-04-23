@@ -3,6 +3,16 @@ import { supabase } from "./supabase";
 // ============================
 // ===== Popup Functions ======
 // ============================
+export const getPopupInfo = async () => {
+  try {
+    const { data } = await supabase.from("popupInfo").select("*").single();
+    console.log("data: ", data)
+    return data;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return false;
+  }
+}
 export const savePopupInfo = async (popupInfo) => {
   try {
     await supabase.from("popupInfo").upsert([popupInfo]);

@@ -5,7 +5,7 @@ import AdminNavigation from './AdminNavigation';
 import Login from './Login';
 import ShirtImage from "../../images/merch-shirt.jpg";
 import OnOffSlider from './OnOffSlider';
-import { savePopupInfo } from '../../utils/queries';
+import { getPopupInfo, savePopupInfo } from '../../utils/queries';
 import { FaCheck } from "react-icons/fa";
 import { CiMobile3 } from "react-icons/ci";
 import { IoIosDesktop } from "react-icons/io";
@@ -53,14 +53,11 @@ const AdminPopupControl = () => {
     useEffect(() => {
         fetchPopupInfo();
     }, [])
-    useEffect(() => {   
-        checkSaveButton();
-    }, [popupInfo])
 
     const fetchPopupInfo = async () => {
-        const { data, error } = await supabase.from('popupInfo').select('*').single();
-        if(error) {
-            console.log(error);
+        const data = await getPopupInfo();
+        if(!data) {
+            console.log("Error fetching data");
         } else {
             setPopupInfo(data);
             setOldInfo(data);
@@ -73,6 +70,10 @@ const AdminPopupControl = () => {
             setShowingSaveButton(false);
         }
     }
+    useEffect(() => {   
+        checkSaveButton();
+    })
+    
     const changePreviewDevice = (e) => {
         if(e.target.name === 'deviceType') {
             setShowingDesktop(!showingDesktop);

@@ -9,14 +9,9 @@ import InstagramFeed from '../../components/InstagramFeed';
 import ToArtistLink from './ToArtistLink';
 
 const LandingPage = () => {
-    const showingPopup = true;
     return (
         <div className='landingPage'>
-            {/* <TopBanner /> */}
-            {
-                showingPopup && <PopUp />
-            
-            }
+            <PopUp />
             <Navigation />
             <Hero />
             <Location />

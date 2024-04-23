@@ -56,8 +56,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 50%;
-            min-width: 13em;
+            width: 100%;
+            min-width: 10em;
             .popupImage {
                 display: block;
                 width: 100%;
@@ -71,7 +71,6 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            align-items: center;
             padding: 1rem;
             .popupTitle {
                 font-size: 3rem;
@@ -85,6 +84,23 @@
                 font-size: 1.5rem;
                 padding: 1rem;
                 z-index: 2;
+            }
+            .popupButton {
+                border: solid 2px black;
+                color: black;
+                border-radius: 10em;
+                background-color: white;
+                width: fit-content;
+                height:  auto;
+                padding: 1em;
+                margin: auto;
+                text-decoration: none;
+                transition: all 200ms ease-in-out;
+                &:hover {
+                    background-color: black;
+                    color: white;
+                    cursor: pointer;
+                }
             }
         }
         .closeButton {
@@ -126,7 +142,7 @@
             align-items: center;
             width: 70%;
             padding: 0.5rem;
-            padding-bottom: 2rem;
+            padding-bottom: 3rem;
             .palmTree {
                 top: -13vh;
                 width: 9vh;
@@ -142,6 +158,8 @@
                 width: 100%;
             }
             .infoContainer {
+                padding: 0;
+                margin-top: 1em;
                 .popupTitle {
                     font-size: 2.5rem;
                     font-weight: bold;

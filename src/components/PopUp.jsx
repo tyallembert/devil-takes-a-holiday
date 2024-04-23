@@ -2,10 +2,23 @@ import React, {useState, useEffect} from 'react';
 import '../styles/popUp.scss';
 import { DevilDrawing, PalmTree } from "./SVGs";
 import MerchImage from "../images/merch-shirt.jpg";
+import { getPopupInfo } from '../utils/queries';
 
 const PopUp = () => {
     const [showPopUp, setShowPopUp] = useState(true);
     const [showingContainer, setShowingContainer] = useState(true);
+    const [popupInfo, setPopupInfo] = useState({
+        showing: true,
+        imageURL: '',
+        showingImage: true,
+        title: '',
+        showingTitle: true,
+        description: '',
+        showingDescription: true,
+        buttonText: '',
+        buttonLink: '',
+        showingButton: true,
+    });
     useEffect(() => {
         if(!showPopUp) {
             setTimeout(() => {
@@ -13,25 +26,48 @@ const PopUp = () => {
             }, 750);
         }
     }, [showPopUp])
+    useEffect(() => {
+        fetchPopupInfo();
+    } , [])
     
-    return (
-        <div className={showingContainer ? "popupContainer": "popupContainer hidden"} onClick={() => setShowPopUp(false)}>
-            <div className={`popupContentContainer ${showPopUp ? 'inAnimation': 'outAnimation'}`}>
-                <div className='imageContainer'>
-                    <img className='popupImage' src={MerchImage} alt='merch shirt'/>
+    const fetchPopupInfo = async () => {
+        const data = await getPopupInfo();
+        if(!data) {
+            console.log("Error fetching popup info");
+        } else {
+            setPopupInfo(data);
+        
+        }
+    }
+    if(popupInfo.showing) {
+        return (
+            <div className={showingContainer ? "popupContainer": "popupContainer hidden"} onClick={() => setShowPopUp(false)}>
+                <div className={`popupContentContainer ${showPopUp ? 'inAnimation': 'outAnimation'}`}>
+                    <div className='imageContainer'>
+                        <img className='popupImage' src={MerchImage} alt='merch shirt'/>
+                    </div>
+                    <div className='infoContainer'>
+                        {
+                            popupInfo.showingTitle && <h1 className='popupTitle'>{popupInfo.title}</h1>
+                        }
+                        {
+                            popupInfo.showingDescription && <p className='popupInfo'>{popupInfo.description}</p>
+                        }
+                        {
+                            popupInfo.showingButton && <a href={popupInfo.buttonLink} className='popupButton'>{popupInfo.buttonText}</a>
+                        }
+                        <button className='closeButton' onClick={() => setShowPopUp(false)}>Continue to website</button>
+                    </div>
+                    
+                    <PalmTree/>
+                    <PalmTree/>
+                    <DevilDrawing/>
                 </div>
-                <div className='infoContainer'>
-                    <h1 className='popupTitle'>New Merch!</h1>
-                    <p className='popupInfo'>Drop in to pick up a shirt, beer glass and some stickers!</p>
-                    <button className='closeButton' onClick={() => setShowPopUp(false)}>Continue to website</button>
-                </div>
-                
-                <PalmTree/>
-                <PalmTree/>
-                <DevilDrawing/>
             </div>
-        </div>
-    );
+        );
+    } else {
+        return null;
+    }
 };
 
 export default PopUp;
