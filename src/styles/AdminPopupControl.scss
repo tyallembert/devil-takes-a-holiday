@@ -1,0 +1,134 @@
+
+.popupControlContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    .contentBox {
+        width: 45%;
+        height: 80vh;
+        border-radius: 1em;
+        padding: 1em;
+        background-color: rgba(white, 0.2);
+        color: white;
+    }
+    .controls {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        .textLabel {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.2em 0.5em;
+            width: 70%;
+            min-width: 10em;
+            .text {
+                // width: 50%;
+                margin-left: 0.6em;
+                font-weight: 600;
+            }
+            input[type=text] {
+                border-radius: 10em;
+                border: none;
+                padding: 0.5em;
+                min-width: 20em;
+                opacity: 0.6;
+                width: 90%;
+                &:focus {
+                    opacity: 1;
+                }
+            }
+            .showingLabel {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                input[type=checkbox] {
+                    display: none;
+                }
+                svg {
+                    font-size: 1.3em;
+                }
+            }
+        }
+        .buttonInfoContainer {
+            padding: 1em;
+            border-radius: 0.8em;
+            background-color: rgba(white, 0.15);
+            width: 62%;
+            .textLabel {
+                width: 100%;
+                input[type=text] {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .preview {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .previewContainer {
+            position: relative;
+            display: flex;
+            // flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 1em;
+            min-height: 50%;
+            width: 80%;
+            padding: 1em;
+            background-color: white;
+            color: black;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            border-radius: 1em;
+            margin-top: 2em;
+            padding-bottom: 3em;
+            &.hidden {
+                opacity: 0.3;
+            }
+            .image{
+                width: 40%;
+                border-radius: 0.5em;
+            } 
+            .textContainer {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5em;
+                // width: 50%;
+                max-width: 80%;
+                .title {
+                    width: 100%;
+                    text-align: center;
+                    text-wrap: wrap;
+                }
+                .description {
+                    font-size: 1.1em;
+                }
+                .exampleButton {
+                    border: solid 2px black;
+                    color: black;
+                    border-radius: 10em;
+                    background-color: white;
+                    width: fit-content;
+                    height:  auto;
+                    padding: 1em;
+                    margin: auto;
+                    text-decoration: none;
+                    transition: all 200ms ease-in-out;
+                    &:hover {
+                        background-color: black;
+                        color: white;
+                        cursor: pointer;
+                    }
+                }
+            } 
+            .continueButton {
+                position: absolute;
+                bottom: 1.5em;
+                width: 100%;
+                text-align: center;
+                font-size: 0.8em;
+            }
+        }
+    }
+}

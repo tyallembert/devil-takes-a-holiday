@@ -7,6 +7,7 @@ import Login from "./components/admin/Login";
 import AdminPage from "./components/admin/AdminPage";
 import Artists from "./screens/artists/Artists";
 import AdminArtists from "./components/admin/AdminArtists";
+import AdminPopupControl from "./components/admin/AdminPopupControl";
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/artists" element={<Artists/>} />
           <Route path="/admin" element={<AdminPage/>} />
           <Route path="/admin/artists" element={<AdminArtists/>} />
+          <Route path="/admin/popup" element={<AdminPopupControl/>} />
           <Route path="/login" element={<Login/>} />
         </Routes>
       </Router>
