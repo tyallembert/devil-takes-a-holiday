@@ -3,12 +3,12 @@ import "../../styles/AdminPopupControl.scss";
 import { supabase } from '../../utils/supabase';
 import AdminNavigation from './AdminNavigation';
 import Login from './Login';
-import ShirtImage from "../../images/merch-shirt.jpg";
 import OnOffSlider from './OnOffSlider';
-import { getPopupInfo, savePopupInfo } from '../../utils/queries';
+import { getPopupInfo, savePopupImage, savePopupInfo } from '../../utils/queries';
 import { FaCheck } from "react-icons/fa";
 import { CiMobile3 } from "react-icons/ci";
 import { IoIosDesktop } from "react-icons/io";
+import { LuImagePlus } from "react-icons/lu";
 
 const AdminPopupControl = () => {
     const [session, setSession] = useState(null);
@@ -36,6 +36,10 @@ const AdminPopupControl = () => {
         buttonLink: '',
         showingButton: true,
     });
+
+    const [newImageFile, setNewImageFile] = useState(null);
+    const [imagePreview, setImagePreview] = useState(null);
+
     const [showingDesktop, setShowingDesktop] = useState(true);
     const [showingSaveButton, setShowingSaveButton] = useState(false);
     const [saveSuccess, setSaveSuccess] = useState(false);
@@ -53,6 +57,18 @@ const AdminPopupControl = () => {
     useEffect(() => {
         fetchPopupInfo();
     }, [])
+    useEffect(() => {
+        if (!newImageFile) {
+            setImagePreview(null)
+            return
+        }
+
+        const objectUrl = URL.createObjectURL(newImageFile)
+        setImagePreview(objectUrl)
+
+        // free memory when ever this component is unmounted
+        return () => URL.revokeObjectURL(objectUrl)
+    }, [newImageFile])
 
     const fetchPopupInfo = async () => {
         const data = await getPopupInfo();
@@ -64,7 +80,7 @@ const AdminPopupControl = () => {
         }
     }
     const checkSaveButton = () => {
-        if(popupInfo !== oldInfo) {
+        if(popupInfo !== oldInfo || newImageFile) {
             setShowingSaveButton(true);
         } else {
             setShowingSaveButton(false);
@@ -95,16 +111,29 @@ const AdminPopupControl = () => {
             setPopupInfo({...popupInfo, [e.target.name]: e.target.value})
         }
     }
+    const handleNewImageChange = (e) => {
+        setNewImageFile(e.target.files[0]);
+        setShowingSaveButton(true);
+    }
     const handleReset = () => {
         setPopupInfo(oldInfo);
+        setNewImageFile(null);
+        setImagePreview(null);
     }
     const handleSave = async () => {
-        const saved = await savePopupInfo(popupInfo);
-        if(saved) {
+        const savedData = await savePopupInfo(popupInfo);
+        let savedImage = false;
+        if(newImageFile) {
+            savedImage = await savePopupImage(newImageFile);
+            setPopupInfo({...popupInfo, imageURL: savedImage});
+        }
+        if(savedData) {
             setSaveSuccess(true);
             setTimeout(() => {
                 setSaveSuccess(false);
                 setOldInfo(popupInfo);
+                setNewImageFile(null);
+                setImagePreview(null);
                 setShowingSaveButton(false);
             }, 1200)
         }
@@ -128,16 +157,22 @@ const AdminPopupControl = () => {
                                 </div>
                             )
                         }
-                        <label htmlFor='imageURL' className='textLabel'>
+                        <label htmlFor='image' className='textLabel'>
                             <p className='text'>Image</p>
                             <OnOffSlider name='showingImage' popupInfo={popupInfo.showingImage} handleChange={handleChange}/>
-                            <input
-                                type='text'
-                                name='imageURL'
-                                id='imageURL'
-                                value={popupInfo.image}
-                                onChange={handleChange}
+                            <input 
+                                type='file' 
+                                name='image' 
+                                id='image' 
+                                accept='image/*' 
+                                onChange={handleNewImageChange}
+                                hidden
                             />
+                            <div className={`newImageButton ${newImageFile && "fileUploaded"}`}>
+                                {
+                                    newImageFile ? <p>{newImageFile.name}</p> : <LuImagePlus/>
+                                }
+                            </div>
                         </label>
                         <label htmlFor='title' className='textLabel'>
                             <p className='text'>Title</p>
@@ -198,7 +233,7 @@ const AdminPopupControl = () => {
                     ${popupInfo.showing ? "": "hidden"} 
                     ${showingDesktop ? "": "mobileView"}`}>
                         {
-                            popupInfo.showingImage ? <img src={ShirtImage} alt='shirt' className='image'/> : null
+                            popupInfo.showingImage ? <img src={newImageFile ? imagePreview :popupInfo.imageURL} alt='popup' className='image'/> : null
                         }
                         <div className='textContainer'>
                         {

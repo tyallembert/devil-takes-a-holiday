@@ -6,7 +6,6 @@ import { supabase } from "./supabase";
 export const getPopupInfo = async () => {
   try {
     const { data } = await supabase.from("popupInfo").select("*").single();
-    console.log("data: ", data)
     return data;
   } catch (error) {
     console.error("Error fetching data:", error);
@@ -19,6 +18,37 @@ export const savePopupInfo = async (popupInfo) => {
     return true;
   } catch (error) {
     console.error("Error saving data:", error);
+    return false;
+  }
+}
+export const savePopupImage = async (image) => {
+  try {
+    // check if image exists
+    const randomString = Math.random().toString(36).substring(7);
+    const imageURL = randomString+".png";
+
+    const { error: newImageError } = await supabase.storage.from("popup-image").upload(imageURL, image);
+    if (newImageError) {
+      console.error("Error saving image:", newImageError);
+      return false;
+    }
+
+    const { data: publicData, error: publicError } = supabase.storage.from("popup-image").getPublicUrl(imageURL);
+    if (publicError) {
+      console.error("Error getting image URL:", publicError);
+      return false;
+    }
+    const { error: popupError } = await supabase.from("popupInfo").update({ imageURL: publicData.publicUrl }).eq("id", 1);
+    
+    if (popupError) {
+      console.error("Error updating popup info:", popupError);
+      return false;
+    }
+
+    return publicData.publicUrl;
+    
+  } catch (error) {
+    console.error("Error saving image:", error);
     return false;
   }
 }

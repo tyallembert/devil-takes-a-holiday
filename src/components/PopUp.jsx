@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import '../styles/popUp.scss';
 import { DevilDrawing, PalmTree } from "./SVGs";
-import MerchImage from "../images/merch-shirt.jpg";
 import { getPopupInfo } from '../utils/queries';
 
 const PopUp = () => {
@@ -44,7 +43,7 @@ const PopUp = () => {
             <div className={showingContainer ? "popupContainer": "popupContainer hidden"} onClick={() => setShowPopUp(false)}>
                 <div className={`popupContentContainer ${showPopUp ? 'inAnimation': 'outAnimation'}`}>
                     <div className='imageContainer'>
-                        <img className='popupImage' src={MerchImage} alt='merch shirt'/>
+                        <img className='popupImage' src={popupInfo.imageURL} alt='popup'/>
                     </div>
                     <div className='infoContainer'>
                         {

@@ -39,6 +39,7 @@
             gap: 0.2em 0.5em;
             width: 70%;
             min-width: 10em;
+            margin-top: 0.5em;
             .text {
                 // width: 50%;
                 margin-left: 0.6em;
@@ -58,6 +59,33 @@
             textarea {
                 border-radius: 0.5em;
                 height: 5em;
+            }
+            .newImageButton {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 1em;
+                border-radius: 0.5em;
+                background-color: rgba(white, 0.2);
+                width: 50%;
+                transition: all 200ms ease-in-out;
+                &.fileUploaded {
+                    background-color: rgba(52, 208, 57, 0.5);
+                    outline: solid 2px rgba(white, 0.6);
+                    width: 60%;
+                }
+                .imageIcon {
+                    transform: scale(1);
+                    transition: all 200ms ease-in-out;
+                }
+                &:hover {
+                    background-color: rgba(white, 0.3);
+                    cursor: pointer;
+                    outline: solid 2px rgba(white, 0.5);
+                    .imageIcon {
+                        transform: scale(1.4);
+                    }
+                }
             }
             .showingLabel {
                 display: flex;
