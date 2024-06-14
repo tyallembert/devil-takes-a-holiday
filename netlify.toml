@@ -5,3 +5,10 @@
 
 [functions]
   node_bundler = "esbuild"
+
+
+[[redirects]]
+  from = "/shop/*"
+  to = "https://your-vercel-app.vercel.app/:splat"
+  status = 200
+  force = true

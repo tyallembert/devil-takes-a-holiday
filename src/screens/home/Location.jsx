@@ -5,7 +5,7 @@ import Map from "./Map";
 
 const Location = () => {
     return (
-        <div className="locationContainer" id="location">
+        <section className="locationContainer" id="location">
             <div className="locationInfo">
                 <div className="locationImage">
                     <DevilChillin />
@@ -18,7 +18,7 @@ const Location = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

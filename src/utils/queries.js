@@ -146,7 +146,7 @@ export async function getMenu() {
     return menus;
   } catch (error) {
     console.error("Error fetching data:", error);
-    return error;
+    return {isError: true, error: error};
   }
 }
 const orderMenus = (menus) => {
