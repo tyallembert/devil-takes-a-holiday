@@ -7,7 +7,7 @@ const PopUp = () => {
     const [showPopUp, setShowPopUp] = useState(true);
     const [showingContainer, setShowingContainer] = useState(true);
     const [popupInfo, setPopupInfo] = useState({
-        showing: true,
+        showing: false,
         imageURL: '',
         showingImage: true,
         title: '',
@@ -43,7 +43,13 @@ const PopUp = () => {
             <div className={showingContainer ? "popupContainer": "popupContainer hidden"} onClick={() => setShowPopUp(false)}>
                 <div className={`popupContentContainer ${showPopUp ? 'inAnimation': 'outAnimation'}`}>
                     <div className='imageContainer'>
-                        <img className='popupImage' src={popupInfo.imageURL} alt='popup'/>
+                        {
+                            !popupInfo.imageURL ? (
+                                <h2>Error Fetching Image</h2>
+                            ): (
+                                <img className='popupImage' src={popupInfo.imageURL} alt='popup'/>
+                            )
+                        }
                     </div>
                     <div className='infoContainer'>
                         {

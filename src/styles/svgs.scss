@@ -37,8 +37,21 @@
 .topText, .bottomText{
     fill: $color-1;
     stroke: $color-1;
+}
+.fadeAnimation {
     opacity: 0;
     animation: fadeIn 1.6s $animationDelay ease-in-out forwards;
+}
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 
 .devilEyesOpen{
@@ -240,16 +253,4 @@
         opacity: 0;
     }
 
-}
-
-@keyframes fadeIn{
-    0%{
-        opacity: 0;
-    }
-    50%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
 }
