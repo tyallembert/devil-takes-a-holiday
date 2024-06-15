@@ -28,7 +28,7 @@ const Hero = () => {
                 )
             }
             <BottomText hasAnimated={hasAnimated}/>
-            <div className={`timeContainer ${'fadeAnimation'}`}>
+            <div className={`timeContainer ${!hasAnimated ? 'fadeAnimation': ''}`}>
                 <p className="time">Monday - Thursday, 5pm - 12am</p>
                 <p className="time">Friday Saturday, 4pm - 1am</p>
                 <p className="time">Sunday, 5pm - 10pm</p>
