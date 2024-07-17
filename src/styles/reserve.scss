@@ -2,121 +2,105 @@
 @import url('https://fonts.googleapis.com/css2?family=Chela+One&display=swap');
 
 .reserveContainer{
-    .learnMoreButton{
-        border: solid 2px white;
-        border-radius: 100px;
-        padding: 0.8em 1.3em;
-        background-color: black;
-        color: white;
-        font-weight: 700;
-        font-size: 1.2em;
-        text-decoration: none;
-        margin-top: 2em;
-        transition: all 200ms ease;
-        &:hover{
-            cursor: pointer;
-            background-color: white;
-            color: black;
-            transform: scale(1.1);
-            text-shadow: none;
-        }
-    }
-    .reservePage{
-        position: absolute;
-        inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    .mainContainer{
         display: flex;
-        flex-direction: column;
         justify-content: center;
-        // align-items: center;
-        padding: 2em;
-        z-index: 5;
-        &.showing{
-            background-color: black;
-            animation: show 500ms ease forwards;
-        }
-        &.hidden{
-            transform: scale(0);
-            animation: hide 500ms ease forwards;
-        }
-        .mainContainer{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 80%;
-            margin: 0 auto;
-            .leftContainer{
-                width: 50%;
-                text-shadow: 1px 1px 0px rgb(0,0,0);
-                z-index: 3;
-                .learnMoreButton{
-                    margin-top: 0;
-                }
-                .infoContainer {
-                    padding: 1em;
-                    background-color: rgba(0,0,0,0.8);
-                }
-                .itemContainer{
-                    display: flex;
-                    align-items: center;
-                    width: 100%;
-                    margin: 3em 0;
-                    gap: 2em;
-                    .imageIcon{
-                        max-width: 100%;
-                        width: 30px;
-                        height: 30px;
-                    }
-                    .text{
-                        font-size: 1.3em;
-                        font-weight: 500;
-                        span{
-                            font-weight: 700;
-                            font-family: 'Chela One', cursive;
-                        }
-                    }
-                }
-                .buttonsContainer{
-                    display: flex;
-                    gap: 1em;
-                    margin-top: 1em auto;
+        align-items: center;
+        width: 80%;
+        margin: 0 auto;
+        color: $color-1;
+        .leftContainer{
+            width: 50%;
+            text-shadow: 1px 1px 0px rgb(0,0,0);
+            z-index: 3;
+            .learnMoreButton{
+                border: solid 2px white;
+                border-radius: 100px;
+                padding: 0.8em 1.3em;
+                background-color: black;
+                color: white;
+                font-weight: 700;
+                font-size: 1.2em;
+                text-decoration: none;
+                margin-top: 2em;
+                transition: all 200ms ease;
+                &:hover{
+                    cursor: pointer;
+                    background-color: white;
+                    color: black;
+                    transform: scale(1.1);
+                    text-shadow: none;
                 }
             }
-            .rightContainer{
-                width: 40%;
-                .imageSceneContainer {
-                    position: relative;
-                    // border: solid 2px white;
-                    height: 50vh;
-                    .palmTree {
-                        position: absolute;
+            .infoContainer {
+                padding: 1em;
+                background-color: rgba(0,0,0,0.8);
+            }
+            .itemContainer{
+                display: flex;
+                align-items: center;
+                width: 100%;
+                margin: 3em 0;
+                gap: 2em;
+                .imageIcon{
+                    max-width: 100%;
+                    width: 30px;
+                    height: 30px;
+                }
+                .text{
+                    font-size: 1.3em;
+                    font-weight: 500;
+                    span{
+                        font-weight: 700;
+                        font-family: 'Chela One', cursive;
                     }
-                    .tree1 {
-                        left: 0;
-                        bottom: 0;
-                        height: 80%;
-                        transform: rotate(-10deg);
-                    }
-                    .tree2 {
-                        right: 0;
-                        bottom: 0;
-                        height: 70%;
-                        transform: scaleX(-1);
-                    }
-                    .tree3 {
-                        right: -10%;
-                        bottom: 0;
-                        height: 55%;
-                        transform: rotate(20deg) scaleX(-1);
-                        opacity: 0.9;
-                    }
-                    .tree4 {
-                        left: 20%;
-                        bottom: 0;
-                        height: 100%;
-                        transform: rotate(-0deg);
-                        opacity: 0.9;
-                    
-                    }
+                }
+            }
+            .buttonsContainer{
+                display: flex;
+                gap: 1em;
+                margin-top: 1em auto;
+            }
+        }
+        .rightContainer{
+            width: 40%;
+            .imageSceneContainer {
+                position: relative;
+                // border: solid 2px white;
+                height: 50vh;
+                .palmTree {
+                    position: absolute;
+                }
+                .tree1 {
+                    left: 0;
+                    bottom: 0;
+                    height: 80%;
+                    transform: rotate(-10deg);
+                }
+                .tree2 {
+                    right: 0;
+                    bottom: 0;
+                    height: 70%;
+                    transform: scaleX(-1);
+                }
+                .tree3 {
+                    right: -10%;
+                    bottom: 0;
+                    height: 55%;
+                    transform: rotate(20deg) scaleX(-1);
+                    opacity: 0.9;
+                }
+                .tree4 {
+                    left: 20%;
+                    bottom: 0;
+                    height: 100%;
+                    transform: rotate(-0deg);
+                    opacity: 0.9;
+                
                 }
             }
         }

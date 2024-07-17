@@ -18,6 +18,25 @@
         width: 30%;
         color: white;
         font-size: 0.9em;
+        .learnMoreButton{
+            border: solid 2px white;
+            border-radius: 100px;
+            padding: 0.8em 1.3em;
+            background-color: black;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2em;
+            text-decoration: none;
+            margin-top: 2em;
+            transition: all 200ms ease;
+            &:hover{
+                cursor: pointer;
+                background-color: white;
+                color: black;
+                transform: scale(1.1);
+                text-shadow: none;
+            }
+        }
     }
     .linksContainer{
         display: flex;

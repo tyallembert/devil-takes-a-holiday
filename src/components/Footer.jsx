@@ -1,7 +1,7 @@
 import "../styles/footer.scss"
 import InstagramIcon from "../images/instagram.png"
 import MailIcon from "../images/mail.png"
-import Reserve from "./Reserve"
+// import Reserve from "./Reserve"
 import { useState, useEffect } from "react";
 import { getMenu } from "../utils/queries";
 
@@ -18,7 +18,7 @@ const Footer = (props) => {
             <div className="reserveSection">
                 <h2>Thinking about a private event?</h2>
                 <h1>Book Now!</h1>
-                <Reserve showingNavigation={props.showingNavigation}/>
+                <a href="/reserve" className="learnMoreButton">Learn More</a>
             </div>
             <nav className="linksContainer">
                 <a className="link" href="/" onClick={props.hideNavigation ? props.hideNavigation: null}>Home</a>

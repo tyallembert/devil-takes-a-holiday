@@ -8,6 +8,7 @@ import AdminPage from "./components/admin/AdminPage";
 import Artists from "./screens/artists/Artists";
 import AdminArtists from "./components/admin/AdminArtists";
 import AdminPopupControl from "./components/admin/AdminPopupControl";
+import Reserve from "./screens/reserve/Reserve";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="/" element={<LandingPage/>} />
           <Route path="/photos" element={<ImageCarousel2/>} />
           <Route path="/artists" element={<Artists/>} />
+          <Route path="/reserve" element={<Reserve/>} />
           <Route path="/admin" element={<AdminPage/>} />
           <Route path="/admin/artists" element={<AdminArtists/>} />
           <Route path="/admin/popup" element={<AdminPopupControl/>} />
