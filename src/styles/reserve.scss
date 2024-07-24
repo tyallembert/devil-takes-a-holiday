@@ -109,71 +109,65 @@
 
 @media (max-width: 800px){
     .reserveContainer{
-        .reservePage{
-            justify-content: flex-start;
-            padding: 1rem;
-            overflow: hidden;
-            overflow-y: scroll;
-            .mainContainer{
-                flex-direction: column;
-                gap: 2rem;
-                width: 90%;
-                margin-top: 5em;
-                .leftContainer{
-                    width: 100%;
-                    font-size: 0.8em;
-                    h1 {
-                        font-size: 3.5em;
-                    }
-                    h2{
-                        text-align: left;
-                    }
-                    .itemContainer{
-                        .text{
-                            font-size: 1.5em;
-                        }
-                    }
-                    .buttonsContainer {
-                        width: 90%;
-                        justify-content: center;
-                        align-items: center;
-                        margin: auto;
+        .mainContainer{
+            flex-direction: column;
+            gap: 2rem;
+            width: 90%;
+            margin-top: 5em;
+            .leftContainer{
+                width: 100%;
+                font-size: 0.8em;
+                h1 {
+                    font-size: 3.5em;
+                }
+                h2{
+                    text-align: left;
+                }
+                .itemContainer{
+                    .text{
+                        font-size: 1.5em;
                     }
                 }
-                .rightContainer{
-                    width: 100%;
-                    .imageSceneContainer {
-                        height: 35vh;
-                        .palmTree {
-                            position: absolute;
-                        }
-                        .tree1 {
-                            left: 0;
-                            bottom: 0;
-                            height: 80%;
-                            transform: rotate(-10deg);
-                        }
-                        .tree2 {
-                            right: 0;
-                            bottom: 0;
-                            height: 70%;
-                            transform: scaleX(-1);
-                        }
-                        .tree3 {
-                            right: -10%;
-                            bottom: 0;
-                            height: 55%;
-                            transform: rotate(20deg) scaleX(-1);
-                            opacity: 0.9;
-                        }
-                        .tree4 {
-                            left: 20%;
-                            bottom: 0;
-                            height: 100%;
-                            transform: rotate(-0deg);
-                            opacity: 0.9;
-                        
-                        }
+                .buttonsContainer {
+                    width: 90%;
+                    justify-content: center;
+                    align-items: center;
+                    margin: auto;
+                }
+            }
+            .rightContainer{
+                width: 100%;
+                .imageSceneContainer {
+                    height: 35vh;
+                    .palmTree {
+                        position: absolute;
+                    }
+                    .tree1 {
+                        left: 0;
+                        bottom: 0;
+                        height: 80%;
+                        transform: rotate(-10deg);
+                    }
+                    .tree2 {
+                        right: 0;
+                        bottom: 0;
+                        height: 70%;
+                        transform: scaleX(-1);
+                    }
+                    .tree3 {
+                        right: -10%;
+                        bottom: 0;
+                        height: 55%;
+                        transform: rotate(20deg) scaleX(-1);
+                        opacity: 0.9;
+                    }
+                    .tree4 {
+                        left: 20%;
+                        bottom: 0;
+                        height: 100%;
+                        transform: rotate(-0deg);
+                        opacity: 0.9;
+                    
                     }
                 }
             }
