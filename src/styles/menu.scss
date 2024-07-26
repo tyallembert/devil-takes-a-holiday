@@ -5,9 +5,18 @@
     width: 60%;
     margin: auto;
     padding-top: 3em;
-    .menuTitle{
-        color: $color-1;
-        margin-bottom: 0.5em;
+    .titleContainer {
+        display: flex;
+        align-items: flex-end;
+        margin-bottom: 3cqb;
+        .menuTitle{
+            color: $color-1;
+            margin-right: 0.2em;
+        }
+        .menuTagLine {
+            color: $color-1;
+            margin-bottom: 0.2em;
+        }
     }
     .drinkTitle{
         font-weight: 700;

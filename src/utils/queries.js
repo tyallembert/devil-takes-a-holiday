@@ -167,7 +167,8 @@ const orderMenus = (menus) => {
 export async function addMenu(menu) {
   try {
     await supabase.from("menu").insert({
-      title: menu.title
+      title: menu.title,
+      tagLine: menu.tagLine
     });
     return true;
   } catch (error) {

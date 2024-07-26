@@ -87,6 +87,7 @@ const AdminPage = () => {
                                         ): (
                                         <div className="header">
                                             <h1>{singleMenu.title}</h1>
+                                            <h2>{singleMenu.tagLine}</h2>
                                             <button className="editButton" onClick={() => setEditingElement({ type: "menu", id: singleMenu.id})}><MdEdit/></button>
                                             <button className="removeButton" onClick={() => handleDeleteMenu(singleMenu.id)}>X</button>
                                         </div>

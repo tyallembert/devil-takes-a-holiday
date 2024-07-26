@@ -54,7 +54,7 @@ const Reserve = (props) => {
                             <a className="learnMoreButton" 
                             onClick={toggleShowing}
                             href = "mailto:HELLo@deviltakesaholiday.com?Subject=Private%20Booking">Email Now</a>
-                            <a href="/" className="learnMoreButton" onClick={toggleShowing}>Back</a>
+                            {/* <a href="/" className="learnMoreButton" onClick={toggleShowing}>Back</a> */}
                         </div>
                     </div>
                 </div>

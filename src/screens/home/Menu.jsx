@@ -22,7 +22,10 @@ const Menu = () => {
                     menu.map((singleMenu, index) => {
                         return (
                             <div key={index}>
-                                <h1 className="menuTitle"id={singleMenu.title.split(" ")[0]}>{singleMenu.title}</h1>
+                                <div className="titleContainer">
+                                    <h1 className="menuTitle"id={singleMenu.title.split(" ")[0]}>{singleMenu.title}</h1>
+                                    <h2 className="menuTagLine">{singleMenu.tagLine}</h2>
+                                </div>
                                 {
                                     singleMenu.subMenu.map((subMenu, index) => {
                                         return (

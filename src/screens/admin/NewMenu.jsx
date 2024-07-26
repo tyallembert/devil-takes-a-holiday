@@ -6,6 +6,7 @@ const NewMenu = ({ setMenu, elementInfo, setEditingElement, setActionFeedback })
     const [showing, setShowing] = useState(elementInfo ? true : false);
     const [data, setData] = useState({
         title: elementInfo ? elementInfo.title :'',
+        tagLine: elementInfo ? elementInfo.tagLine :'',
         id: elementInfo ? elementInfo.id : -1,
         order: elementInfo ? elementInfo.order : 100
     });
@@ -73,6 +74,15 @@ const NewMenu = ({ setMenu, elementInfo, setEditingElement, setActionFeedback })
                         id="title" 
                         name="title" 
                         value={data.title}
+                        onChange={handleChange}/>
+                    </div>
+                    <div className="inputContainer">
+                        <label htmlFor="tagLine">Tag Line</label>
+                        <input 
+                        type="text" 
+                        id="tagLine" 
+                        name="tagLine" 
+                        value={data.tagLine}
                         onChange={handleChange}/>
                     </div>
                     {

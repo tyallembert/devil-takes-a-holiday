@@ -3,11 +3,11 @@ import LandingPage from "./screens/home/LandingPage";
 import "./styles/App.scss";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ImageCarousel2 from "./components/ImageCarousel2";
-import Login from "./components/admin/Login";
-import AdminPage from "./components/admin/AdminPage";
+import Login from "./screens/admin/Login";
+import AdminPage from "./screens/admin/AdminPage";
 import Artists from "./screens/artists/Artists";
-import AdminArtists from "./components/admin/AdminArtists";
-import AdminPopupControl from "./components/admin/AdminPopupControl";
+import AdminArtists from "./screens/admin/AdminArtists";
+import AdminPopupControl from "./screens/admin/AdminPopupControl";
 import Reserve from "./screens/reserve/Reserve";
 // import MenuUpload from "./screens/menuUpload/MenuUpload";
 
