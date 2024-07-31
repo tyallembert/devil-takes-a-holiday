@@ -40,6 +40,10 @@
 @media only screen and (max-width: 600px){
     .menuContainer{
         width: 80%;
+        .titleContainer {
+            align-items: flex-start;
+            flex-direction: column;
+        }
         .drinksContainer{
             grid-template-columns: 1fr;
         }
