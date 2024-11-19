@@ -1,16 +1,17 @@
 import { useState, useEffect } from "react";
-import "../../styles/AdminPage.scss";
+import "../../../styles/AdminPage.scss";
 import { MdEdit } from "react-icons/md";
-import Login from "./Login";
-import SubMenu from "./SubMenu";
-import NewMenu from "./NewMenu";
-import NewSubMenu from "./NewSubMenu";
-import { deleteMenu, getMenu } from "../../utils/queries";
-import { supabase } from "../../utils/supabase";
-import DeleteConfirm from "./DeleteConfirm";
+import Login from "../Login.jsx";
+import SubMenu from "./SubMenu.jsx";
+import NewMenu from "./NewMenu.jsx";
+import NewSubMenu from "./NewSubMenu.jsx";
+import { deleteMenu, getMenu } from "../../../utils/queries.js";
+import { supabase } from "../../../utils/supabase.js";
+import DeleteConfirm from "../DeleteConfirm.jsx";
 import MenuQuickNav from "./MenuQuickNav.jsx";
-import PopupMessage from "./PopupMessage";
-import AdminNavigation from "./AdminNavigation.jsx";
+import PopupMessage from "../artists/PopupMessage.jsx";
+import AdminNavigation from "../AdminNavigation.jsx";
+import QuickAdd from "./QuickAdd.jsx";
 
 
 const AdminPage = () => {
@@ -52,7 +53,7 @@ const AdminPage = () => {
             })
         }
     }
-
+    
     if(!session) {
         return <Login/>
     } else{
@@ -65,11 +66,20 @@ const AdminPage = () => {
                 showing={showingDeletePopup} 
                 setShowing={setShowingDeletePopup}/>
 
-                <PopupMessage message={actionFeedback.message} success={actionFeedback.success} type={actionFeedback.type}/>
+                <PopupMessage 
+                message={actionFeedback.message} 
+                success={actionFeedback.success} 
+                type={actionFeedback.type}/>
 
                 <AdminNavigation/>
                 <MenuQuickNav menu={menu}/>
                 <div className="menusContainer">
+                    <QuickAdd setMenu={setMenu} submenus={menu.flatMap(menu => menu.subMenu.map(item => ({
+                            id: item.id,
+                            title: item.title,
+                            numberMenuItems: item.menuItem.length > 0 ? item.menuItem[item.menuItem.length - 1].order : 0
+                        }))
+                    )}/>
                     <NewMenu 
                     setMenu={setMenu} 
                     setActionFeedback={setActionFeedback}/>

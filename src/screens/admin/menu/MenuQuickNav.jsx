@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "../../styles/AdminNav.scss";
+import "../../../styles/AdminNav.scss";
 
 const MenuQuickNav = ({menu}) => {
     const [activeNavItem, setActiveNavItem] = useState(null);

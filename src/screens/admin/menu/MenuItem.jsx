@@ -1,8 +1,8 @@
 import NewMenuItem from "./NewMenuItem";
-import "../../styles/AdminPage.scss";
+import "../../../styles/AdminPage.scss";
 import { MdEdit } from "react-icons/md";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { deleteMenuItem, getMenu, updateMenuItemOrder } from "../../utils/queries";
+import { deleteMenuItem, getMenu, updateMenuItemOrder } from "../../../utils/queries";
 
 const MenuItem = ({subMenu, menuItem, setMenu, editingElement, setEditingElement, setActionFeedback}) => {
 
@@ -50,6 +50,7 @@ const MenuItem = ({subMenu, menuItem, setMenu, editingElement, setEditingElement
                     <p className="tagLine">{menuItem.tagLine}</p>
                     <div className="arrowsContainer">
                         <button className="leftButton" onClick={() => menuItemOrderUp(menuItem)}><IoIosArrowBack/></button>
+                        {/* <p>{menuItem.order}</p> */}
                         <button className="rightButton" onClick={() => menuItemOrderDown(menuItem)}><IoIosArrowForward/></button>
                     </div>
                     <div className="buttonsContainer">

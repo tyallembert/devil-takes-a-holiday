@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
-import '../../styles/OnOffSlider.scss';
+import '../../../styles/OnOffSlider.scss';
 
 const OnOffSlider = ({ name, popupInfo, handleChange, scale=0.9, onIcon=<FaRegEye/>, offIcon=<FaRegEyeSlash/>}) => {
   return (

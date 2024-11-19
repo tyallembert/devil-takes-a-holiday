@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaArrowUpRightFromSquare, FaInstagram, FaRegEnvelope } from "react-icons/fa6";
 import { MdEdit } from 'react-icons/md';
-import { deleteArtist } from '../../utils/queries';
+import { deleteArtist } from '../../../utils/queries';
 
 const ArtistView = ({ artist, setEditingArtist, fetchArtists }) => {
     const handleDelete = async (artistID) => {

@@ -2,76 +2,182 @@
 @import url('https://fonts.googleapis.com/css2?family=Chela+One&display=swap');
 
 .reserveContainer{
+    position: relative;
     display: flex;
-    align-items: center;
     justify-content: center;
-    height: 100vh;
-    .mainContainer{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 80%;
-        margin: 0 auto;
-        color: $color-1;
-        .leftContainer{
-            width: 50%;
-            text-shadow: 1px 1px 0px rgb(0,0,0);
-            z-index: 3;
-            .learnMoreButton{
-                border: solid 2px white;
-                border-radius: 100px;
-                padding: 0.8em 1.3em;
-                background-color: black;
-                color: white;
-                font-weight: 700;
-                font-size: 1.2em;
-                text-decoration: none;
-                margin-top: 2em;
-                transition: all 200ms ease;
-                &:hover{
-                    cursor: pointer;
-                    background-color: white;
-                    color: black;
-                    transform: scale(1.1);
-                    text-shadow: none;
-                }
+    align-items: center;
+    width: 80%;
+    min-height: 100vh;
+    margin: 0 auto;
+    color: $color-1;
+    .leftContainer{
+        width: 50%;
+        text-shadow: 1px 1px 0px rgb(0,0,0);
+        margin-top: 3em;
+        z-index: 3;
+        .learnMoreButton{
+            border: solid 2px white;
+            border-radius: 100px;
+            padding: 0.8em 1.3em;
+            background-color: black;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2em;
+            text-decoration: none;
+            margin-top: 2em;
+            transition: all 200ms ease;
+            &:hover{
+                cursor: pointer;
+                background-color: white;
+                color: black;
+                transform: scale(1.1);
+                text-shadow: none;
             }
-            .infoContainer {
-                padding: 1em;
-                background-color: rgba(0,0,0,0.8);
-            }
+        }
+        .infoContainer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+            background-color: rgba(0,0,0,0.8);
             .itemContainer{
                 display: flex;
-                align-items: center;
-                width: 100%;
-                margin: 3em 0;
-                gap: 2em;
-                .imageIcon{
-                    max-width: 100%;
-                    width: 30px;
-                    height: 30px;
+                flex-direction: column;
+                width: 45%;
+                gap: 1.2em;
+                padding: 1em;
+                border-radius: 1em;
+                background-color: rgba(255,255,255,0.3);
+                transition: all 200ms ease-in-out;
+                &.verified {
+                    background-color: rgba(163, 252, 163, 0.422);
                 }
-                .text{
-                    font-size: 1.3em;
-                    font-weight: 500;
-                    span{
+                label {
+                    display: flex;
+                    gap: 1em;
+                    .imageIcon{
+                        max-width: 100%;
+                        width: 30px;
+                        height: 30px;
+                    }
+                    .text{
+                        font-size: 1.3em;
                         font-weight: 700;
                         font-family: 'Chela One', cursive;
                     }
                 }
+                input {
+                    width: 80%;
+                    min-width: 10em;
+                    &[type="date"], &[type="time"] {
+                        border-radius: 10em;
+                        padding: 0.5em;
+                        border: none;
+                        transition: all 200ms ease-in-out;
+                    }
+                }
+        }
+        }
+        .submitButton {
+            border: solid 2px white;
+            border-radius: 100px;
+            padding: 0.8em 1.3em;
+            background-color: black;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2em;
+            text-decoration: none;
+            margin-top: 2em;
+            transition: all 200ms ease;
+            &:hover{
+                cursor: pointer;
+                background-color: white;
+                color: black;
+                transform: scale(1.1);
+                text-shadow: none;
             }
-            .buttonsContainer{
-                display: flex;
-                gap: 1em;
-                margin-top: 1em auto;
+            &:disabled {
+                cursor: not-allowed;
+                opacity: 0.7;
+                background-color: black;
+                color: white;
+                transform: scale(1);
+                text-shadow: none;
+            }
+        }
+    }
+    .rightContainer{
+        position: sticky;
+        top: 5em;
+        width: 40%;
+        .imageSceneContainer {
+            position: relative;
+            // border: solid 2px white;
+            height: 50vh;
+            .palmTree {
+                position: absolute;
+            }
+            .tree1 {
+                left: 0;
+                bottom: 0;
+                height: 80%;
+                transform: rotate(-10deg);
+            }
+            .tree2 {
+                right: 0;
+                bottom: 0;
+                height: 70%;
+                transform: scaleX(-1);
+            }
+            .tree3 {
+                right: -10%;
+                bottom: 0;
+                height: 55%;
+                transform: rotate(20deg) scaleX(-1);
+                opacity: 0.9;
+            }
+            .tree4 {
+                left: 20%;
+                bottom: 0;
+                height: 100%;
+                transform: rotate(-0deg);
+                opacity: 0.9;
+            
+            }
+        }
+    }
+}
+
+@media (max-width: 800px){
+    .reserveContainer{
+        flex-direction: column;
+        gap: 2rem;
+        width: 90%;
+        margin-top: 5em;
+        .leftContainer{
+            width: 100%;
+            font-size: 0.8em;
+            h1 {
+                font-size: 3.5em;
+            }
+            h2{
+                text-align: left;
+            }
+            .itemContainer{
+                .text{
+                    font-size: 1.5em;
+                }
+            }
+            .buttonsContainer {
+                width: 90%;
+                justify-content: center;
+                align-items: center;
+                margin: auto;
             }
         }
         .rightContainer{
-            width: 40%;
+            width: 100%;
             .imageSceneContainer {
-                position: relative;
-                // border: solid 2px white;
-                height: 50vh;
+                height: 35vh;
                 .palmTree {
                     position: absolute;
                 }
@@ -101,74 +207,6 @@
                     transform: rotate(-0deg);
                     opacity: 0.9;
                 
-                }
-            }
-        }
-    }
-}
-
-@media (max-width: 800px){
-    .reserveContainer{
-        .mainContainer{
-            flex-direction: column;
-            gap: 2rem;
-            width: 90%;
-            margin-top: 5em;
-            .leftContainer{
-                width: 100%;
-                font-size: 0.8em;
-                h1 {
-                    font-size: 3.5em;
-                }
-                h2{
-                    text-align: left;
-                }
-                .itemContainer{
-                    .text{
-                        font-size: 1.5em;
-                    }
-                }
-                .buttonsContainer {
-                    width: 90%;
-                    justify-content: center;
-                    align-items: center;
-                    margin: auto;
-                }
-            }
-            .rightContainer{
-                width: 100%;
-                .imageSceneContainer {
-                    height: 35vh;
-                    .palmTree {
-                        position: absolute;
-                    }
-                    .tree1 {
-                        left: 0;
-                        bottom: 0;
-                        height: 80%;
-                        transform: rotate(-10deg);
-                    }
-                    .tree2 {
-                        right: 0;
-                        bottom: 0;
-                        height: 70%;
-                        transform: scaleX(-1);
-                    }
-                    .tree3 {
-                        right: -10%;
-                        bottom: 0;
-                        height: 55%;
-                        transform: rotate(20deg) scaleX(-1);
-                        opacity: 0.9;
-                    }
-                    .tree4 {
-                        left: 20%;
-                        bottom: 0;
-                        height: 100%;
-                        transform: rotate(-0deg);
-                        opacity: 0.9;
-                    
-                    }
                 }
             }
         }

@@ -118,6 +118,109 @@
     }
     .menusContainer {
         width: 60%;
+        .quickAddButton {
+            width: auto;
+            padding: 0.5em 1em;
+            font-weight: 500;
+        }
+        .quickAddContainer {
+            display: flex;
+            flex-direction: column;
+            gap: 3em;
+            padding: 1em;
+            border-radius: 1em;
+            border: solid 1px rgba($color-1, 0.3);
+            .inputContainer {
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+                margin: 1em 0;
+                .text {
+                    border-radius: 0.5em;
+                    height: 300px;
+                    padding: 1em;
+                }
+                .copyButton, .parseButton {
+                    position: relative;
+                    width: fit-content;
+                    padding: 1em 0.5em;
+                    &.animateCopy:after {
+                        content: "";
+                        position: absolute;
+                        inset: 0;
+                        border-radius: 50em;
+                        z-index: -1;
+                        border: solid 2px rgb(5, 187, 5);
+                        animation: animateCopy 1s ease-in-out forwards;
+                    }
+                }
+                @keyframes animateCopy {
+                    from {
+                        opacity: 1;
+                        transform: scale(1);
+                    }
+                    60% {
+                        opacity: 1;
+                    }
+                    to {
+                        opacity: 0;
+                        transform: scale(1.5);
+                    }
+                }
+            }
+            .gptContainer {
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+                .chatGPTButton {
+                    width: fit-content;
+                    text-decoration: none;
+                    padding: 1em 0.5em;
+                }
+            }
+            .menuItemsList {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                gap: 1em;
+                .title {
+                    width: 100%;
+                }
+                .submenuContainer {
+                    width: 100%;
+                    .submenuSelect {
+                        width: fit-content;
+                        padding: 1em 0.5em;
+                        border: solid 2px $color-1;
+                        background-color: rgb($color-1, 0.15);
+                        border-radius: 0.5em;
+                        color: $color-1;
+                    }
+                }
+                .quickMenuItem {
+                    position: relative;
+                    padding: 0.8em;
+                    border-radius: 0.5em;
+                    background-color: rgba($color-1, 0.15);
+                    width: 48%;
+                    margin-top: 0;
+                    .tagLine {
+                        font-style: italic;
+                        font-weight: 200;
+                        font-size: 0.9em;
+                    }
+                }
+                .addButton {
+                    width: fit-content;
+                    padding: 1em 0.5em;
+                    margin-top: 1em;
+                    &:disabled {
+                        opacity: 0.5;
+                        cursor: not-allowed;
+                    }
+                }
+            }
+        }
         .menuForm {
             display: flex;
             flex-wrap: wrap;
@@ -263,7 +366,6 @@
                             border-radius: 0.5em;
                             background-color: rgba($color-1, 0.15);
                             width: 48%;
-                            // min-width: 300px;
                             margin-top: 0;
                             .tagLine {
                                 font-style: italic;

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import "../../styles/AdminPage.scss";
-import { addMenuItem, getMenu, updateMenuItem } from '../../utils/queries';
+import "../../../styles/AdminPage.scss";
+import { addMenuItem, getMenu, updateMenuItem } from '../../../utils/queries';
 
 const NewMenuItem = ({ setMenu, subMenu, elementInfo, setEditingElement, setActionFeedback }) => {
     const [showing, setShowing] = useState(elementInfo ? true : false);
@@ -114,6 +114,19 @@ const NewMenuItem = ({ setMenu, subMenu, elementInfo, setEditingElement, setActi
                         onChange={handleChange}
                         />
                     </div>
+                    {
+                        elementInfo ? (
+                            <div className="inputContainer">
+                                <label htmlFor="tagLine">Order</label>
+                                <input 
+                                type="text" 
+                                id="order" 
+                                name="order" 
+                                value={data.order}
+                                onChange={handleChange}/>
+                            </div>
+                        ):null
+                    }
                     {
                         elementInfo ? (
                             <button type="submit" className="submitButton">Update</button>

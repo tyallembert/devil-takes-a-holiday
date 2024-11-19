@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import "../../styles/ArtistForm.scss";
-import { addArtist, updateArtist } from '../../utils/queries';
+import "../../../styles/ArtistForm.scss";
+import { addArtist, updateArtist } from '../../../utils/queries';
 
 const ArtistForm = ({artist, setEditingArtist, setShowingNewForm, fetchArtists}) => {
     const [newArtist, setNewArtist] = useState({

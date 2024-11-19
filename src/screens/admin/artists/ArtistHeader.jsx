@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { getArtistsHeader, updateArtistHeader } from '../../utils/queries';
-import '../../styles/ArtistHeader.scss';
+import { getArtistsHeader, updateArtistHeader } from '../../../utils/queries';
+import '../../../styles/ArtistHeader.scss';
 import { MdEdit } from 'react-icons/md';
 import { FaCheck } from "react-icons/fa";
 import PopupMessage from './PopupMessage';

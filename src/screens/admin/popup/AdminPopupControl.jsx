@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import "../../styles/AdminPopupControl.scss";
-import { supabase } from '../../utils/supabase';
-import AdminNavigation from './AdminNavigation';
-import Login from './Login';
+import "../../../styles/AdminPopupControl.scss";
+import { supabase } from '../../../utils/supabase';
+import AdminNavigation from '../AdminNavigation';
+import Login from '../Login';
 import OnOffSlider from './OnOffSlider';
-import { getPopupInfo, savePopupImage, savePopupInfo } from '../../utils/queries';
+import { getPopupInfo, savePopupImage, savePopupInfo } from '../../../utils/queries';
 import { FaCheck } from "react-icons/fa";
 import { CiMobile3 } from "react-icons/ci";
 import { IoIosDesktop } from "react-icons/io";

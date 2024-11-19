@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "../../styles/PopupMessage.scss";
+import "../../../styles/PopupMessage.scss";
 import { MdPostAdd, MdErrorOutline } from "react-icons/md";
 import { GrUpdate } from "react-icons/gr";
 
@@ -15,7 +15,7 @@ const PopupMessage = ({ message, success, type="add" }) => {
     }
     , [message]);
   return (
-    <div className={`popupMessage 
+    <div className={`feedbackPopupMessage 
     ${showing === true ? "showing": showing === false ? "hidden": ""}
     ${success === true ? "success": success === false ? "error": ""}`}>
         {

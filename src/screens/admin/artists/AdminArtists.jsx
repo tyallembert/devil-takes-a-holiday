@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
-import '../../styles/Artists.scss';
-import '../../styles/AdminArtists.scss';
-import { getArtists } from '../../utils/queries';
+import '../../../styles/Artists.scss';
+import '../../../styles/AdminArtists.scss';
+import { getArtists } from '../../../utils/queries';
 import ArtistForm from './ArtistForm';
 import ArtistView from './ArtistView';
-import { supabase } from '../../utils/supabase';
-import Login from './Login';
-import AdminNavigation from './AdminNavigation';
+import { supabase } from '../../../utils/supabase';
+import Login from '../Login';
+import AdminNavigation from '../AdminNavigation';
 import ArtistHeader from './ArtistHeader';
 
 const AdminArtists = () => {

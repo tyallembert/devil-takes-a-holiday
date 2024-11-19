@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import "../../styles/AdminPage.scss";
-import { addMenu, getMenu, updateMenu } from '../../utils/queries';
+import "../../../styles/AdminPage.scss";
+import { addMenu, getMenu, updateMenu } from '../../../utils/queries';
 
 const NewMenu = ({ setMenu, elementInfo, setEditingElement, setActionFeedback }) => {
     const [showing, setShowing] = useState(elementInfo ? true : false);

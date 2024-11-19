@@ -4,10 +4,10 @@ import "./styles/App.scss";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ImageCarousel2 from "./components/ImageCarousel2";
 import Login from "./screens/admin/Login";
-import AdminPage from "./screens/admin/AdminPage";
+import AdminPage from "./screens/admin/menu/AdminPage";
 import Artists from "./screens/artists/Artists";
-import AdminArtists from "./screens/admin/AdminArtists";
-import AdminPopupControl from "./screens/admin/AdminPopupControl";
+import AdminArtists from "./screens/admin/artists/AdminArtists";
+import AdminPopupControl from "./screens/admin/popup/AdminPopupControl";
 import Reserve from "./screens/reserve/Reserve";
 // import MenuUpload from "./screens/menuUpload/MenuUpload";
 

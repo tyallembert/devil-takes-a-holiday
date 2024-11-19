@@ -109,6 +109,7 @@ export async function addArtist(artist) {
 }
 export async function updateArtist(artist) {
   try {
+    console.log("updating artists")
     await supabase.from("artists").update(artist).eq("id", artist.id);
     return true;
   } catch (error) {

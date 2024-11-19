@@ -30,9 +30,23 @@
 }
 .topText{
     width: 40%;
+    path {
+        transform-origin: center;
+        transition: all 150ms ease-in-out;
+        &:hover {
+            transform: scale(1.03);
+        }
+    }
 }
 .bottomText{
     width: 20%;
+    path {
+        transform-origin: center;
+        transition: all 150ms ease-in-out;
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
 }
 .topText, .bottomText{
     fill: $color-1;

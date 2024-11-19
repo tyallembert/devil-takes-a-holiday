@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { MdEdit } from "react-icons/md";
-import "../../styles/AdminPage.scss";
+import "../../../styles/AdminPage.scss";
 import NewSubMenu from "./NewSubMenu";
 import NewMenuItem from "./NewMenuItem";
-import { deleteSubMenu, getMenu } from "../../utils/queries";
+import { deleteSubMenu, getMenu } from "../../../utils/queries";
 import MenuItem from "./MenuItem";
-import DeleteConfirm from "./DeleteConfirm";
+import DeleteConfirm from "../DeleteConfirm";
 
 const SubMenu = ({setMenu, subMenu, editingElement, setEditingElement, singleMenu, setActionFeedback}) => {
     const [showingDeletePopup, setShowingDeletePopup] = useState(null);
