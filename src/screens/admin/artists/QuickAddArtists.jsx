@@ -1,22 +1,38 @@
 import React, { useState } from 'react';
-import { addMenuItem, getMenu } from '../../../utils/queries';
+import { addArtist } from '../../../utils/queries';
 import "../../../styles/QuickAdd.scss";
+import "../../../styles/AdminArtists.scss";
+import { FaArrowUpRightFromSquare, FaInstagram, FaRegEnvelope } from 'react-icons/fa6';
 
-const QuickAdd = ({setMenu, submenus}) => {
+const QuickAddArtists = ({setArtists}) => {
     const [showing, setShowing] = useState(false);
     const [rawText, setRawText] = useState('');
     const [gptText, setGptText] = useState('');
-    const [menuItems, setMenuItems] = useState([]);
-    const [activeSubmenu, setActiveSubmenu] = useState(null);
+    const [artists, setNewArtists] = useState([]);
     const [animatePromptCopy, setAnimatePromptCopy] = useState(false);
 
     // Handle copying the ChatGPT prompt to the clipboard
     const handleCopy = () => {
-        const promptText = "Please format the following menu items into the format: [{title: 'example title', description: 'example description', tagLine: 'example tag line'}...]. The tagline should not include the price, if the item contains a tagline it is typically the last sentence. Do not write any narrative, only the json response:";
+        const promptText = `Please format the following artists items into the format: 
+        {
+            firstName: '',
+            middleName: '',
+            lastName: '',
+            pronouns: '',
+            title: '',
+            email: '',
+            instagramHandle: '',
+            instagramURL: '',
+            websiteURL: ''
+        }. 
+        Some of the fields may be left blank, but still include them in each item.
+        Do not include @ symbols at the beginning of any of the words.
+        Do not write any narrative, only the json response:`;
+
         const formattedText = `${promptText}\n\n${rawText}`;
         navigator.clipboard.writeText(formattedText)
             .then(() => console.log("Text copied to clipboard!"))
-            .catch((err) => alert("Failed to copy text: ", err));
+            .catch((error) => alert("Failed to copy text: "+error));
         setAnimatePromptCopy(true);
         setTimeout(() => {
             setAnimatePromptCopy(false);
@@ -26,36 +42,20 @@ const QuickAdd = ({setMenu, submenus}) => {
     const handleParseJson = () => {
         try {
             const parsedItems = JSON.parse(gptText);
-            setMenuItems(parsedItems);
+            setNewArtists(parsedItems);
         } catch (error) {
             alert("Invalid JSON format. Please check the ChatGPT response.");
         }
     };
 
     // API call to add item to the menu
-    const addItemToMenu = (item) => {
-        const submenu = submenus.find(sub => {return sub.id === parseInt(activeSubmenu,10)});
-        const numberMenuItems = submenu ? submenu.numberMenuItems : 0;
-        const finalItem = {
-            subMenuId: parseInt(activeSubmenu),
-            id: -1,
-            title: item.title,
-            description: item.description,
-            tagLine: item.tagLine,
-            order: numberMenuItems + 1
-        }
-        console.log(finalItem)
-        addMenuItem(finalItem).then((success) => {
-            if(success) {
-                console.log("Successfully added drink");
-                setMenuItems((prevMenuItems) => prevMenuItems.filter((menuItem) => menuItem !== item));
-                getMenu().then((data) => {
-                    setMenu(data);
-                });
-            } else {
-                console.log("Error saving menu item")
-            }
-        })
+    const addArtistToList = (newArtist) => {
+        console.log(newArtist)
+        addArtist(newArtist).then(() => {
+            console.log("Artist Added");
+            setNewArtists((prevArtists) => prevArtists.filter((artist) => artist !== newArtist));
+            setArtists((prevArtists) => [...prevArtists, newArtist])
+        });
         
     };
 
@@ -98,27 +98,47 @@ const QuickAdd = ({setMenu, submenus}) => {
                     </button>
                 </div>
 
-                {menuItems.length > 0 && (
+                {artists.length > 0 && (
                     <div className='itemsList'>
                         <h3 className='title'>Parsed Menu Items</h3>
                         <p>These items are NOT yet on the menu. Select which section they should go under then click "add":</p>
-                        <div className='subitemContainer'>
-                            <select className='submenuSelect' name='subMenuId' onChange={(e) => setActiveSubmenu(e.target.value)}>
-                                <option value={""}>Select a submenu</option>
-                            {
-                                submenus.map((submenu) => (
-                                    <option key={submenu.id} value={submenu.id}>{submenu.title}</option>
-                                ))
-                            }
-                            </select>
-                        </div>
-                        {menuItems.map((item, index) => (
-                            <div key={index} className='quickMenuItem'>
-                                <h3>{item.title}</h3>
-                                <p>{item.description}</p>
-                                <p><em>{item.tagLine}</em></p>
-                                <button className='button addButton' onClick={() => addItemToMenu(item)} disabled={activeSubmenu?false:true}>Add to Menu</button>
+                        {artists.map((artist, index) => (
+                        <div key={artist.id} className='quickMenuItem'>
+                            <div className='singleArtistHeader'>
+                                <h2 className='artistName'>{artist.firstName} {artist.middleName} {artist.lastName}</h2>
+                                {
+                                    artist.pronouns && <p className='pronouns'>{artist.pronouns}</p>
+                                }
+                                {
+                                    artist.title && <p className='title'>{artist.title}</p>
+                                }
                             </div>
+                            {
+                                artist.instagramHandle && (
+                                <div className='contactContainer' href={artist.instagramURL ? artist.instagramURL: ''}>
+                                    <FaInstagram className='contactIcon instagram'/>
+                                    <p className='contactText'>@{artist.instagramHandle}</p>
+                                </div>
+                                )
+                            }
+                            {
+                                artist.email && (
+                                <div className='contactContainer' href={`mailto:${artist.email}`}>
+                                    <FaRegEnvelope className='contactIcon envelope'/>
+                                    <p className='contactText'>{artist.email}</p>
+                                </div>
+                                )
+                            }
+                            {
+                                artist.websiteURL && (
+                                <div className='contactContainer' href={artist.websiteURL} target='_blank' rel="noreferrer">
+                                    <FaArrowUpRightFromSquare className='contactIcon website'/>
+                                    <p className='contactText'>{artist.websiteURL}</p>
+                                </div>
+                                )
+                            }
+                            <button className='button addButton' onClick={() => addArtistToList(artist)}>Add Artist</button>
+                        </div>
                         ))}
                     </div>
                 )}
@@ -133,4 +153,4 @@ const QuickAdd = ({setMenu, submenus}) => {
     }
 };
 
-export default QuickAdd;
+export default QuickAddArtists;

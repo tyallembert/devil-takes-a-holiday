@@ -8,6 +8,7 @@ import { supabase } from '../../../utils/supabase';
 import Login from '../Login';
 import AdminNavigation from '../AdminNavigation';
 import ArtistHeader from './ArtistHeader';
+import QuickAddArtists from './QuickAddArtists';
 
 const AdminArtists = () => {
     const [artists, setArtists] = useState([]);
@@ -40,7 +41,8 @@ const AdminArtists = () => {
         <AdminNavigation/>
         <div className='artistsContainer'>
             <ArtistHeader/>
-            <button onClick={() => setShowingNewForm(true)} className='newButton'>+</button>
+            <QuickAddArtists setArtists={setArtists}/>
+            <button onClick={() => setShowingNewForm(true)} className='button quickAddButton'>New Artist</button>
             {
                 showingNewForm && (
                     <div className='newFormContainer'>
