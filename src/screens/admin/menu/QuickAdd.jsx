@@ -74,15 +74,15 @@ const QuickAdd = ({setMenu, submenus}) => {
                         value={rawText}
                         onChange={(e) => setRawText(e.target.value)}
                     ></textarea>
-                    <p>Click the button below to copy the ChatGPT prompt</p>
+                    <p>Click the button below to copy the ChatGPT prompt.</p>
                     <button type='button' className={`button copyButton ${animatePromptCopy ? "animateCopy": ""}`} onClick={handleCopy}>
                         Copy with Prompt
                     </button>
                 </div>
 
                 <div className='gptContainer'>
-                    <p>Once you have copied the prompt, click the button below to open ChatGPT</p>
-                    <p>Once you have opened ChatGPT, paste into the prompt box and click generate. Once the response has been created, copy it</p>
+                    <p>Once you have copied the prompt, click the button below to open ChatGPT.</p>
+                    <p>Once you have opened ChatGPT, paste into the prompt box and click generate. Once the response has been created, copy it.</p>
                     <a className='button chatGPTButton' rel="noreferrer" href="https://chatgpt.com/?temporary-chat=true" target='_blank'>Chat GPT</a>
                 </div>
 
