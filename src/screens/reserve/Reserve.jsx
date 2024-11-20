@@ -77,9 +77,10 @@ const Reserve = (props) => {
         });
     
         // 4. Open email client
+        const recipient = "HELLo@deviltakesaholiday.com";
         const emailSubject = encodeURIComponent("Reservation Request");
         const emailBodyEncoded = encodeURIComponent(emailBody);
-        const mailtoLink = `mailto:?subject=${emailSubject}&body=${emailBodyEncoded}`;
+        const mailtoLink = `mailto:${recipient}?subject=${emailSubject}&body=${emailBodyEncoded}`;
         window.location.href = mailtoLink;
     }
 
