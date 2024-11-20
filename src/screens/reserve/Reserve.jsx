@@ -1,4 +1,4 @@
-import "../../styles/reserve.scss"
+import "../../styles/Reserve.scss"
 import {useState, useEffect} from "react"
 import PeoplePNG from "../../images/people.png"
 import CalendarPNG from "../../images/calendar.png"
@@ -30,6 +30,59 @@ const Reserve = (props) => {
         })
     }
 
+    const handleReset = () => {
+        setForm({
+            date: "",
+            time: "",
+            length: 0,
+            partySize: 0
+        });
+    }
+
+    const handleSubmit = () => {
+        if (!form.date || !form.time || form.length <= 0 || form.partySize <= 0) {
+            alert("Please fill out all fields with valid information.");
+            return;
+        }
+
+        const date = new Date(form.date);
+
+        const [hours, minutes] = form.time.split(":").map(Number); // Split time into hours and minutes
+        const suffix = hours >= 12 ? "PM" : "AM"; // Determine AM or PM
+        const formattedHours = hours % 12 || 12; // Convert to 12-hour format, treating 0 as 12
+        const timeString = `${formattedHours}:${minutes.toString().padStart(2, "0")} ${suffix}`
+        
+        const length = formatLength(form.length);
+        // 2. Generate email text
+        const emailBody = `
+            Hello,
+    
+            Here are the details of the reservation request:
+            - Date: ${date.toLocaleDateString()}
+            - Time: ${timeString}
+            - Length: ${length}
+            - Party Size: ${form.partySize}
+    
+            Please let us know if you need any further information.
+    
+            Best regards,
+            [Your Name]
+        `.trim();
+    
+        // 3. Copy email text to clipboard
+        navigator.clipboard.writeText(emailBody).then(() => {
+            console.log("Email text copied to clipboard!");
+        }).catch((err) => {
+            console.error("Could not copy text to clipboard:", err);
+        });
+    
+        // 4. Open email client
+        const emailSubject = encodeURIComponent("Reservation Request");
+        const emailBodyEncoded = encodeURIComponent(emailBody);
+        const mailtoLink = `mailto:?subject=${emailSubject}&body=${emailBodyEncoded}`;
+        window.location.href = mailtoLink;
+    }
+
     useEffect(() => {
         const verifyForm = () => {
             setFormVerified({
@@ -50,25 +103,6 @@ const Reserve = (props) => {
         }
         return `${hours} hours ${minutes} minutes`;
     }
-
-    // useEffect(() => {
-    //     if(!props.showingNavigation) {
-    //         setAnimation(false);
-    //         setShowing(false);
-    //     }
-    // },[props.showingNavigation])
-
-    // const toggleShowing = () => {
-    //     setAnimation(!animation);
-    //     if(showing) {
-    //         setTimeout(() => {
-    //             setShowing(false);
-    //         }
-    //         , 1000);
-    //     }else {
-    //         setShowing(true);
-    //     }
-    // }
     return (
         <>
         <Navigation />
@@ -76,7 +110,7 @@ const Reserve = (props) => {
             <div className="leftContainer">
                 <h1>Book a Private Event</h1>
                 <h2>Please provide the following in an email</h2>
-                <form className="infoContainer">
+                <form className="infoContainer" onSubmit={handleSubmit}>
                     <div className={`itemContainer ${formVerified.date ? "verified": null}`}>
                         <label htmlFor="date">
                             <img className="imageIcon" src={CalendarPNG} alt="Calendar"/>
@@ -89,7 +123,34 @@ const Reserve = (props) => {
                             <img className="imageIcon" src={ClockPNG} alt="Clock"/>
                             <p className="text">Start Time</p>
                         </label>
-                        <input type="time" name="time"id="time" value={form.time} onChange={handleChange}/>
+                        <input type="time" name="time"id="time" list="start-time" value={form.time} onChange={handleChange}/>
+                        <datalist id="start-time">
+                            <option value="10:00">10:00</option>
+                            <option value="10:30">10:30</option>
+                            <option value="11:00">11:00</option>
+                            <option value="11:30">11:30</option>
+                            <option value="12:00">12:00</option>
+                            <option value="12:30">12:30</option>
+                            <option value="13:00">13:00</option>
+                            <option value="13:30">13:30</option>
+                            <option value="14:00">14:00</option>
+                            <option value="14:30">14:30</option>
+                            <option value="15:00">15:00</option>
+                            <option value="15:30">15:30</option>
+                            <option value="16:00">16:00</option>
+                            <option value="16:30">16:30</option>
+                            <option value="17:00">17:00</option>
+                            <option value="17:30">17:30</option>
+                            <option value="18:00">18:00</option>
+                            <option value="18:30">18:30</option>
+                            <option value="19:00">19:00</option>
+                            <option value="19:30">19:30</option>
+                            <option value="20:00">20:00</option>
+                            <option value="20:30">20:30</option>
+                            <option value="21:00">21:00</option>
+                            <option value="21:30">21:30</option>
+                            <option value="22:00">22:00</option>
+                        </datalist>
                     </div>
                     <div className={`itemContainer ${formVerified.length ? "verified": null}`}>
                         <label htmlFor="length">
@@ -110,31 +171,11 @@ const Reserve = (props) => {
                     <button type="submit" 
                     className="submitButton" 
                     disabled={formVerified.date && formVerified.time && formVerified.length && formVerified.partySize ? false: true}>Done</button>
+                    <button type="button" 
+                    className="submitButton"
+                    onClick={handleReset}>Reset</button>
                 </form>
             </div>
-            {/* <div className="leftContainer">
-                <h1>Book a Private Event</h1>
-                <h2>Please provide the following in an email</h2>
-                <div className="infoContainer">
-                    <div className="itemContainer">
-                        <img className="imageIcon" src={CalendarPNG} alt="Calendar"/>
-                        <p className="text">The <span>DATE</span> you would like to have the event</p>
-                    </div>
-                    <div className="itemContainer">
-                        <img className="imageIcon" src={ClockPNG} alt="Clock"/>
-                        <p className="text">The <span>START TIME</span> and <span>LENGTH</span> of the event</p>
-                    </div>
-                    <div className="itemContainer">
-                        <img className="imageIcon" src={PeoplePNG} alt="People"/>
-                        <p className="text">The <span>NUMBER</span> of <span>PEOPLE</span> that will be attending</p>
-                    </div>
-                    <div className="buttonsContainer">
-                        <a className="learnMoreButton" 
-                        onClick={toggleShowing}
-                        href = "mailto:HELLo@deviltakesaholiday.com?Subject=Private%20Booking">Email Now</a>
-                    </div>
-                </div>
-            </div> */}
             <div className="rightContainer">
                 <ImageScene />
             </div>
