@@ -22,7 +22,7 @@
             height: 300px;
             padding: 1em;
         }
-        .copyButton, .parseButton {
+        .copyButton, .aiButton, .parseButton {
             position: relative;
             width: fit-content;
             padding: 1em 0.5em;
@@ -34,6 +34,17 @@
                 z-index: -1;
                 border: solid 2px rgb(5, 187, 5);
                 animation: animateCopy 1s ease-in-out forwards;
+            }
+            .loading {
+                animation: aiLoading 1.5s infinite ease-in-out;
+            }
+            @keyframes aiLoading {
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(360deg);
+                }
             }
         }
         @keyframes animateCopy {
