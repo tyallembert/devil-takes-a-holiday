@@ -5,12 +5,36 @@
     width: 80%;
     margin: 0 auto;
     .headerContainer {
+        position: relative;
         border-bottom: solid 1px $color-1;
         margin-bottom: 3em;
+        overflow: hidden;
         .text {
             font-size: 1.3em;
             margin-bottom: 1em;
             width: 70%;
+        }
+        .derpHover {
+            position: absolute;
+            width: 150px;
+            height: 50px;
+            bottom: 0;
+            right: 0;
+            &:hover + .derpHorse {
+                transform: translateX(0px) rotate(0deg);
+                animation: derpIn 400ms ease-in;
+            }
+            @keyframes derpIn {
+                from {
+                    transform: translate(100px) rotate(45deg);
+                }
+                50% {
+                    transform: translate(40px) rotate(30deg);
+                }
+                to {
+                    transform: translate(0px) rotate(0deg);
+                }
+            }
         }
     }
     .allArtists {

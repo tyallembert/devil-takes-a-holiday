@@ -4,6 +4,7 @@ import { getArtists, getArtistsHeader } from '../../utils/queries';
 import { FaArrowUpRightFromSquare, FaInstagram, FaRegEnvelope } from "react-icons/fa6";
 import Footer from '../../components/Footer';
 import Navigation from '../../components/Navigation';
+import { DerpHorse } from '../../components/SVGs';
 
 const Artists = () => {
     const [artists, setArtists] = useState([]);
@@ -30,6 +31,8 @@ const Artists = () => {
                 <h1>{headerInfo.header}</h1>
                 <p className='text'>{headerInfo.paragraph}</p>
                 <p className='text'>{headerInfo.paragraph2}</p>
+                <div className='derpHover'></div>
+                <DerpHorse />
             </div>
             <div className='allArtists'>
             {
