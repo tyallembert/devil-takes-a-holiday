@@ -317,6 +317,5 @@ export const DerpHorse =  () => {
             <circle cx="37.5112" cy="152.529" r="2.5" fill="black"/>
             <circle cx="37.0112" cy="153.029" r="1" fill="white"/>
         </svg>
-
     )
 }

@@ -74,7 +74,7 @@ const AdminPage = () => {
                 <AdminNavigation/>
                 <MenuQuickNav menu={menu}/>
                 <div className="menusContainer">
-                    <QuickAdd setMenu={setMenu} submenus={menu.flatMap(menu => menu.subMenu.map(item => ({
+                    <QuickAdd type="menu" setter={setMenu} submenus={menu.flatMap(menu => menu.subMenu.map(item => ({
                             id: item.id,
                             title: item.title,
                             numberMenuItems: item.menuItem.length > 0 ? item.menuItem[item.menuItem.length - 1].order : 0

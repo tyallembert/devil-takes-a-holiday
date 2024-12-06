@@ -7,6 +7,7 @@
     padding: 1em 2em;
     background-color: black;
     z-index: 10;
+    overflow-x: hidden;
     .leftSide {
         display: flex;
         align-items: center;
@@ -26,5 +27,11 @@
     a {
         color: white;
         text-decoration: none;
+    }
+    .backToHomeContainer {
+        display: flex;
+        &:hover>.derpHorse {
+            transform: translateX(0) rotate(0deg);
+        }
     }
 }
