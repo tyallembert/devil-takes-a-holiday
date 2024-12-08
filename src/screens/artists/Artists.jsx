@@ -26,7 +26,7 @@ const Artists = () => {
     return (
         <>
         <Navigation/>
-        <div className='artistsContainer'>
+        <main className='artistsContainer'>
             <div className='headerContainer'>
                 <h1>{headerInfo.header}</h1>
                 <p className='text'>{headerInfo.paragraph}</p>
@@ -75,7 +75,7 @@ const Artists = () => {
                 ))
             }
             </div>
-        </div>
+        </main>
         <Footer/>
         </>
     )

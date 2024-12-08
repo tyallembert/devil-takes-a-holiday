@@ -10,16 +10,18 @@ import ToArtistLink from './ToArtistLink';
 
 const LandingPage = () => {
     return (
-        <div className='landingPage'>
+        <>
             <PopUp />
             <Navigation />
-            <Hero />
-            <Location />
-            <ToArtistLink />
-            <Menu />
-            <InstagramFeed />
+            <main className='landingPage'>
+                <Hero />
+                <Location />
+                <ToArtistLink />
+                <Menu />
+                <InstagramFeed />
+            </main>
             <Footer />
-        </div>
+        </>
     )
 }
 

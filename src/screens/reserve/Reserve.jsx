@@ -105,7 +105,7 @@ const Reserve = (props) => {
         return `${hours} hours ${minutes} minutes`;
     }
     return (
-        <>
+        <main>
         <Navigation />
         <div className="reserveContainer">
             <div className="leftContainer">
@@ -182,7 +182,7 @@ const Reserve = (props) => {
             </div>
         </div>
         <Footer />
-        </>
+        </main>
     )
 }
 
