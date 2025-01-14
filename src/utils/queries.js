@@ -1,6 +1,22 @@
 import { supabase } from "./supabase";
 
 // ============================
+// ===== Website Content ======
+// ============================
+export const getHours = async () => {
+  try {
+    const { data } = await supabase.from("siteContent")
+    .select("*")
+    .eq("key", "times")
+    .single();
+    return data;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return {isError: true, error: error};
+  }
+}
+
+// ============================
 // ===== Popup Functions ======
 // ============================
 export const getPopupInfo = async () => {
