@@ -31,7 +31,7 @@ const Hero = () => {
             <div className={`timeContainer ${!hasAnimated ? 'fadeAnimation': ''}`}>
                 <p className="time">Monday - Thursday, 5pm - 12am</p>
                 <p className="time">Friday Saturday, 4pm - 1am</p>
-                <p className="time">Sunday, 5pm - 10pm</p>
+                <p className="time">Sunday, Closed</p>
             </div>
         </section>
     )
