@@ -7,7 +7,8 @@ const AdminNavigation = () => {
     <div className='adminNavigation'>
         <div className='leftSide'>
             <h2>Admin</h2>
-            <a href='/admin'>Menu</a>
+            <a href='/admin'>Home</a>
+            <a href='/admin/menu'>Menu</a>
             <a href='/admin/artists'>Artists</a>
             <a href='/admin/popup'>Popup</a>
         </div>

@@ -1,0 +1,139 @@
+
+
+.adminHomeContainer {
+    width: 90%;
+    margin: auto;
+    .adminHero {
+        position: relative;
+        height: 30vh;
+        width: 100%;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: solid 1px white;
+        margin: 2em auto;
+        .derpHorse {
+            position: absolute;
+            right: 0;
+            transform: none;
+            width: auto;
+            height: 100%;
+            &:nth-child(2) {
+                transform: scale(1.1);
+                opacity: 0.2;
+            }
+            &:nth-child(3) {
+                transform: scale(1.2);
+                opacity: 0.2;
+            }
+        }
+    }
+    .siteContentContainer {
+        padding: 1em;
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            color: white;
+            .timeForm {
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+                .daysContainer {
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: 100%;
+                    gap: 1em;
+                    .dayEntry {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        min-width: 130px;
+                        gap: 1em;
+                        padding: 0.5em;
+                        border: solid 2px rgba(255,255,255,0.3);
+                        border-radius: 10px;
+                        .title {
+                            font-weight: 700;
+                        }
+                        .closedButton {
+                            padding: 0.5em;
+                            border-radius: 5px;
+                            border: solid 2px white;
+                            background-color: transparent;
+                            color: white;
+                            font-weight: 600;
+                            opacity: 0.7;
+                            cursor: pointer;
+                            transition: all 200ms ease-in-out;
+                            &.closed {
+                                background-color: white;
+                                color: black;
+                                opacity: 1;
+                            }
+                            &:hover {
+                                background-color: white;
+                                color: black;
+                                opacity: 1;
+                            }
+                        }
+                        .input {
+                            display: flex;
+                            flex-direction: column;
+                            width: 100%;
+                            input {
+                                border-radius: 5px;
+                                background-color: rgba(255,255,255,0.5);
+                                border: 1px solid rgba(255,255,255,0.7);
+                                transition: all 200ms ease-in-out;
+                                &:hover, &:focus {
+                                    background-color: rgb(255,255,255);
+                                }
+                            }
+                        }
+                    }
+                }
+                .buttonsContainer {
+                    display: flex;
+                    gap: 1em;
+                    .submitButton {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 1em;
+                        width: fit-content;
+                        border-radius: 8px;
+                        font-weight: 600;
+                        color: white;
+                        border: solid 2px rgba(255,255,255,0.7);
+                        background-color: transparent;
+                        transition: all 200ms ease-in-out;
+                        &:hover {
+                            cursor: pointer;
+                            background-color: white;
+                            color: black;
+                        }
+                        &.success {
+                            background-color: rgb(24, 112, 25);
+                        }
+                        &.fail {
+                            background-color: rgb(161, 33, 33);
+                        }
+                        .loading {
+                            animation: spin 1s linear infinite;
+                        }
+                        @keyframes spin {
+                            0% {
+                                transform: rotate(0);
+                            }
+                            100% {
+                                transform: rotate(360deg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

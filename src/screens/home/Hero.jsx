@@ -29,77 +29,91 @@ const Hero = () => {
                 formatHours(data.value)
             }
         });
+        const formatHours = (data) => {
+            // Map to hold unique time ranges and their associated days
+            const timeGroups = {};
+
+            // Iterate through the data and group by time range
+            data.forEach(({ day, open, close }) => {
+                const formattedOpen = open && open.toLowerCase() !== "closed" ? formatTime(open) : null;
+                const formattedClose = close && close.toLowerCase() !== "closed" ? formatTime(close) : null;
+
+                const timeRange = formattedOpen && formattedClose 
+                    ? `${formattedOpen} - ${formattedClose}`
+                    : "Closed";
+
+                if (!timeGroups[timeRange]) {
+                    timeGroups[timeRange] = [];
+                }
+                timeGroups[timeRange].push(day);
+            });
+
+            // Convert grouped data into formatted strings
+            const formattedHours = Object.entries(timeGroups).map(([timeRange, days]) => {
+                // Combine the days into a single string, e.g., "Monday - Thursday"
+                const dayString = combineDays(days);
+                return `${dayString}, ${timeRange}`;
+            });
+            setHours(formattedHours);
+        };
+
+        // Helper function to format military time to AM/PM
+        const formatTime = (time) => {
+            const [hour, minute] = time.split(':').map(Number);
+            const isPM = hour >= 12;
+            const formattedHour = hour % 12 || 12; // Convert 0 to 12 for midnight
+            const suffix = isPM ? "PM" : "AM";
+            return `${formattedHour}:${minute.toString().padStart(2, '0')} ${suffix}`;
+        };
+
+        // Helper function to combine consecutive days
+        const combineDays = (days) => {
+            const dayOrder = [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday",
+            ];
+
+            const sortedDays = days.sort(
+                (a, b) => dayOrder.indexOf(a) - dayOrder.indexOf(b)
+            );
+
+            let result = [];
+            let tempGroup = [sortedDays[0]];
+
+            for (let i = 1; i < sortedDays.length; i++) {
+                const prevIndex = dayOrder.indexOf(sortedDays[i - 1]);
+                const currentIndex = dayOrder.indexOf(sortedDays[i]);
+
+                if (currentIndex - prevIndex === 1) {
+                    // Consecutive days
+                    tempGroup.push(sortedDays[i]);
+                } else {
+                    // Break in sequence
+                    result.push(formatDayGroup(tempGroup));
+                    tempGroup = [sortedDays[i]];
+                }
+            }
+
+            // Push the last group
+            result.push(formatDayGroup(tempGroup));
+
+            return result.join(", ");
+        };
+
+        // Helper function to format a group of consecutive days
+        const formatDayGroup = (group) => {
+            if (group.length === 1) {
+                return group[0];
+            }
+            return `${group[0]} - ${group[group.length - 1]}`;
+        };
     }, []);
 
-    const formatHours = (data) => {
-        // Map to hold unique time ranges and their associated days
-        const timeGroups = {};
-      
-        // Iterate through the data and group by time range
-        data.forEach(({ day, open, close }) => {
-            const timeRange = open && close && open.toLowerCase() !== "closed" && close.toLowerCase() !== "closed"
-            ? `${open} - ${close}`
-            : "Closed";
-          if (!timeGroups[timeRange]) {
-            timeGroups[timeRange] = [];
-          }
-          timeGroups[timeRange].push(day);
-        });
-      
-        // Convert grouped data into formatted strings
-        const formattedHours = Object.entries(timeGroups).map(([timeRange, days]) => {
-          // Combine the days into a single string, e.g., "Monday - Thursday"
-          const dayString = combineDays(days);
-          return `${dayString}, ${timeRange}`;
-        });
-        setHours(formattedHours);
-    };
-    // Helper function to combine consecutive days
-    const combineDays = (days) => {
-        const dayOrder = [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday",
-        ];
-    
-        const sortedDays = days.sort(
-        (a, b) => dayOrder.indexOf(a) - dayOrder.indexOf(b)
-        );
-    
-        let result = [];
-        let tempGroup = [sortedDays[0]];
-    
-        for (let i = 1; i < sortedDays.length; i++) {
-        const prevIndex = dayOrder.indexOf(sortedDays[i - 1]);
-        const currentIndex = dayOrder.indexOf(sortedDays[i]);
-    
-        if (currentIndex - prevIndex === 1) {
-            // Consecutive days
-            tempGroup.push(sortedDays[i]);
-        } else {
-            // Break in sequence
-            result.push(formatDayGroup(tempGroup));
-            tempGroup = [sortedDays[i]];
-        }
-        }
-    
-        // Push the last group
-        result.push(formatDayGroup(tempGroup));
-    
-        return result.join(", ");
-    };
-    
-    // Helper function to format a group of consecutive days
-    const formatDayGroup = (group) => {
-        if (group.length === 1) {
-        return group[0];
-        }
-        return `${group[0]} - ${group[group.length - 1]}`;
-    };
     return (
         <section className="heroContainer">
             <TopText hasAnimated={hasAnimated}/>

@@ -9,6 +9,7 @@ import Artists from "./screens/artists/Artists";
 import AdminArtists from "./screens/admin/artists/AdminArtists";
 import AdminPopupControl from "./screens/admin/popup/AdminPopupControl";
 import Reserve from "./screens/reserve/Reserve";
+import AdminSiteContent from "./screens/admin/home/AdminSiteContent";
 // import MenuUpload from "./screens/menuUpload/MenuUpload";
 
 function App() {
@@ -22,7 +23,8 @@ function App() {
           <Route path="/photos" element={<ImageCarousel2/>} />
           <Route path="/artists" element={<Artists/>} />
           <Route path="/reserve" element={<Reserve/>} />
-          <Route path="/admin" element={<AdminPage/>} />
+          <Route path="/admin" element={<AdminSiteContent/>} />
+          <Route path="/admin/menu" element={<AdminPage/>} />
           <Route path="/admin/artists" element={<AdminArtists/>} />
           <Route path="/admin/popup" element={<AdminPopupControl/>} />
           {/* <Route path="/menuUploadTesting" element={<MenuUpload/>} /> */}

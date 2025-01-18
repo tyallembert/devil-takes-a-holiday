@@ -146,6 +146,26 @@ export async function deleteArtist(artistId) {
 // ============================
 // ===== Admin Functions ======
 // ============================
+export const getSiteContent = async () => {
+  try {
+    const { data } = await supabase.from("siteContent").select("*")
+    return data;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return {isError: true, error: error};
+  }
+}
+// updates a menu
+export async function updateSiteContent(content) {
+  try {
+    await supabase.from("siteContent").update(content).eq("id", content.id);
+    return true;
+  } catch (error) {
+    console.error("Error updating data:", error);
+    return false;
+  }
+}
+// gets all menu items
 export async function getMenu() {
   try {
     const { data } = await supabase.from("menu")
