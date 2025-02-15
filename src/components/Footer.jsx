@@ -8,6 +8,7 @@ import { getMenu } from "../utils/queries";
 
 const Footer = (props) => {
     const [menu, setMenu] = useState([]);
+    const year = new Date().getFullYear() 
     useEffect(() => {
         getMenu().then((data) => {
             setMenu(data);
@@ -44,7 +45,7 @@ const Footer = (props) => {
                 </a>
             </div>
             <div className="copywriteInfo">
-                <p>© 2024 Devil Takes a Holiday</p>
+                <p>© {year} Devil Takes a Holiday</p>
             </div>
         </div>
     )

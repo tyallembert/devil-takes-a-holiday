@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "../../../styles/AdminPage.scss";
 import { MdEdit } from "react-icons/md";
 import Login from "../Login.jsx";
@@ -6,12 +6,12 @@ import SubMenu from "./SubMenu.jsx";
 import NewMenu from "./NewMenu.jsx";
 import NewSubMenu from "./NewSubMenu.jsx";
 import { deleteMenu, getMenu } from "../../../utils/queries.js";
-import { supabase } from "../../../utils/supabase.js";
 import DeleteConfirm from "../DeleteConfirm.jsx";
 import MenuQuickNav from "./MenuQuickNav.jsx";
 import PopupMessage from "../artists/PopupMessage.jsx";
 import AdminNavigation from "../AdminNavigation.jsx";
 import QuickAdd from "./QuickAdd.jsx";
+import { useAdmin } from "../AdminContext.jsx";
 
 
 const AdminPage = () => {
@@ -20,18 +20,7 @@ const AdminPage = () => {
     const [deleteElement, setDeleteElement] = useState({type: '', id: ''});
     const [editingElement, setEditingElement] = useState({type: '', id: ''});
     const [actionFeedback, setActionFeedback] = useState({message: '', success: null, type: ""});
-    const [session, setSession] = useState(null)
-
-
-    useEffect(() => {
-        supabase.auth.getSession().then(({ data: { session } }) => {
-            setSession(session)
-        })
-
-        supabase.auth.onAuthStateChange((_event, session) => {
-            setSession(session)
-        })
-    }, [])
+    const { session } = useAdmin();
 
     useState(() => {
         getMenu().then((data) => {

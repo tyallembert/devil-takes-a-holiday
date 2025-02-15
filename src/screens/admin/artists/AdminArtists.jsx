@@ -4,27 +4,18 @@ import '../../../styles/AdminArtists.scss';
 import { getArtists } from '../../../utils/queries';
 import ArtistForm from './ArtistForm';
 import ArtistView from './ArtistView';
-import { supabase } from '../../../utils/supabase';
 import Login from '../Login';
 import AdminNavigation from '../AdminNavigation';
 import ArtistHeader from './ArtistHeader';
 import QuickAdd from '../menu/QuickAdd';
+import { useAdmin } from '../AdminContext';
 
 const AdminArtists = () => {
     const [artists, setArtists] = useState([]);
     const [editingArtist, setEditingArtist] = useState(null);
     const [showingNewForm, setShowingNewForm] = useState(false);
-    const [session, setSession] = useState(null);
+    const { session } = useAdmin();
 
-    useEffect(() => {
-        supabase.auth.getSession().then(({ data: { session } }) => {
-            setSession(session)
-        })
-
-        supabase.auth.onAuthStateChange((_event, session) => {
-            setSession(session)
-        })
-    }, [])
     useEffect(() => {
         fetchArtists();
     }, []);

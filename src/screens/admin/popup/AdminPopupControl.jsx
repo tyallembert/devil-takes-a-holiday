@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import "../../../styles/AdminPopupControl.scss";
-import { supabase } from '../../../utils/supabase';
 import AdminNavigation from '../AdminNavigation';
 import Login from '../Login';
 import OnOffSlider from './OnOffSlider';
@@ -9,9 +8,10 @@ import { FaCheck } from "react-icons/fa";
 import { CiMobile3 } from "react-icons/ci";
 import { IoIosDesktop } from "react-icons/io";
 import { LuImagePlus } from "react-icons/lu";
+import { useAdmin } from '../AdminContext';
 
 const AdminPopupControl = () => {
-    const [session, setSession] = useState(null);
+    const { session } = useAdmin();
     const [popupInfo, setPopupInfo] = useState({
         showing: true,
         imageURL: '',
@@ -43,16 +43,6 @@ const AdminPopupControl = () => {
     const [showingDesktop, setShowingDesktop] = useState(true);
     const [showingSaveButton, setShowingSaveButton] = useState(false);
     const [saveSuccess, setSaveSuccess] = useState(false);
-
-    useEffect(() => {
-        supabase.auth.getSession().then(({ data: { session } }) => {
-            setSession(session)
-        })
-
-        supabase.auth.onAuthStateChange((_event, session) => {
-            setSession(session)
-        })
-    }, [])
 
     useEffect(() => {
         fetchPopupInfo();

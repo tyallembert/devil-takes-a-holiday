@@ -42,15 +42,19 @@ const PopUp = () => {
         return (
             <div className={showingContainer ? "popupContainer": "popupContainer hidden"} onClick={() => setShowPopUp(false)}>
                 <div className={`popupContentContainer ${showPopUp ? 'inAnimation': 'outAnimation'}`}>
-                    <div className='imageContainer'>
-                        {
-                            !popupInfo.imageURL ? (
-                                <h2>Error Fetching Image</h2>
-                            ): (
-                                <img className='popupImage' src={popupInfo.imageURL} alt='popup'/>
-                            )
-                        }
-                    </div>
+                    {
+                        popupInfo.showingImage ? (
+                            <div className='imageContainer'>
+                                {
+                                    !popupInfo.imageURL ? (
+                                        <h2>Error Fetching Image</h2>
+                                    ): (
+                                        <img className='popupImage' src={popupInfo.imageURL} alt='popup'/>
+                                    )
+                                }
+                            </div>
+                        ): null
+                    }
                     <div className='infoContainer'>
                         {
                             popupInfo.showingTitle && <h1 className='popupTitle'>{popupInfo.title}</h1>

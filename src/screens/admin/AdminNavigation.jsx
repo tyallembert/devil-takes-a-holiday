@@ -1,6 +1,6 @@
 import React from 'react'
 import "../../styles/AdminNavigation.scss";
-import { DerpHorse } from "../../components/SVGs";
+import AdminUser from './AdminUser';
 
 const AdminNavigation = () => {
   return (
@@ -12,10 +12,7 @@ const AdminNavigation = () => {
             <a href='/admin/artists'>Artists</a>
             <a href='/admin/popup'>Popup</a>
         </div>
-        <div className='backToHomeContainer'>
-          <a className='backtoHomeButton' href='/'>Back to Website</a>
-          <DerpHorse styles={{position: 'relative'}}/>
-        </div>
+        <AdminUser />
     </div>
   )
 }

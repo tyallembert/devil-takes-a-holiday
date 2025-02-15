@@ -4,9 +4,12 @@ import { getSiteContent } from '../../../utils/queries';
 import TimeChange from './TimeChange';
 import AdminNavigation from '../AdminNavigation';
 import { DerpHorse } from '../../../components/SVGs';
+import { useAdmin } from '../AdminContext';
+import Login from '../Login';
 
 const AdminSiteContent = () => {
   const [siteContent, setSiteContent] = useState([]);
+  const { session } = useAdmin();
 
   useEffect(() => {
       getSiteContent().then((data) => {
@@ -17,7 +20,10 @@ const AdminSiteContent = () => {
           }
       });
     },[])
-
+    
+  if(!session) {
+    return <Login />
+  }
   return (
     <div className='adminHomeContainer'>
       <AdminNavigation />
