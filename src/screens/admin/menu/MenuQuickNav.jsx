@@ -35,7 +35,7 @@ const MenuQuickNav = ({menu}) => {
                 menu.map((singleMenu) => {
                     return (
                         <div key={singleMenu.id} className="menuNavContainer">
-                            <a href={`/admin#${singleMenu.title.split(" ")[0]}`} 
+                            <a href={`/admin/menu#${singleMenu.title.split(" ")[0]}`} 
                             className={`adminNavElement parentNav ${activeNavItem === singleMenu.title.split(" ")[0] ? 'active' : ''}`}>
                                 {singleMenu.title}
                             </a>

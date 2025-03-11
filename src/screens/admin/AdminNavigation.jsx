@@ -5,6 +5,7 @@ import AdminUser from './AdminUser';
 const AdminNavigation = () => {
   return (
     <div className='adminNavigation'>
+      <div className='background'></div>
         <div className='leftSide'>
             <h2>Admin</h2>
             <a href='/admin'>Home</a>

@@ -1,58 +1,117 @@
 
 .loginContainer {
     display: flex;
-    justify-content: center;
+    gap: 1em;
+    padding: 1em;
     align-items: center;
     height: 100vh;
     width: 100%;
     color: white;
-    .loginForm {
+    .brandingContainer {
         display: flex;
         flex-direction: column;
-        gap: 1em;
-        padding: 1em;
-        width: 15em;
-        .errorMessage {
-            background-color: red;
-            padding: 1em;
-            border-radius: 5px;
-            color: white;
-            animation: bounceIn 0.5s ease-in-out;
-            @keyframes bounceIn {
-                0% {
-                    transform: scale(0);
-                }
-                50% {
-                    transform: scale(1.2);
-                }
-                100% {
-                    transform: scale(1);
-                }
+        align-items: center;
+        width: 50%;
+        .loginTitle {
+            color: black;
+            font-size: 4.5em;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.1);
+        }
+        .devilDrawing {
+            width: 50%;
+            filter: drop-shadow(1px 1px 2px rgba(255,255,255,0.1));
+            transform: translateY(0em);
+            .fill {
+                fill: rgba(0,0,0,0.5);
+            }
+            .stroke {
+                stroke: rgba(0,0,0,0.5);
             }
         }
-        .inputContainer {
+    }
+    .decorationContainer {
+        position: absolute;
+        top: -2000px;
+        left: -2000px;
+        width: 5000px;
+        height: 5000px;
+        background-size: 109px;
+        background-repeat: repeat;
+        background-image: url(https://framerusercontent.com/images/rR6HYXBrMmX4cRpXfXUOvpvpB0.png);
+        opacity: 0.12;
+        z-index: 0;
+        animation: spin 100s infinite linear;
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            50% {
+                scale: 3;
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    }
+    .formContainer {
+        position: absolute;
+        right: 3em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        height: calc(100% - 6em);
+        background-color: black;
+        border-radius: 1em;
+        box-shadow: inset 1px 0.5px 3px rgba(255,255,255,0.2);
+        .loginForm {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-            width: 100%;
-            input {
-                padding: 0.5em;
-                border-radius: 10em;
-                border: none;
-                width: 100%;
+            gap: 1em;
+            padding: 1em;
+            width: 15em;
+            .errorMessage {
+                background-color: red;
+                padding: 1em;
+                border-radius: 5px;
+                color: white;
+                animation: bounceIn 0.5s ease-in-out;
+                @keyframes bounceIn {
+                    0% {
+                        transform: scale(0);
+                    }
+                    50% {
+                        transform: scale(1.2);
+                    }
+                    100% {
+                        transform: scale(1);
+                    }
+                }
             }
-        }
-        button {
-            align-self: flex-start;
-            display: inline-block;
-            padding: 0.5em 1em;
-            border-radius: 10em;
-            text-align: center;
-            font-size: 1em;
-            cursor: pointer;
-            background-color: transparent;
-            border: solid 2px white;
-            color: white;
+            .inputContainer {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+                input {
+                    padding: 0.5em;
+                    border-radius: 10em;
+                    border: none;
+                    width: 100%;
+                }
+            }
+            button {
+                align-self: flex-start;
+                display: inline-block;
+                padding: 0.5em 1em;
+                border-radius: 10em;
+                text-align: center;
+                font-size: 1em;
+                cursor: pointer;
+                background-color: transparent;
+                border: solid 2px white;
+                color: white;
+            }
         }
     }
 }
