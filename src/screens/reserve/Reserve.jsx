@@ -46,7 +46,6 @@ const Reserve = (props) => {
         }
 
         const date = new Date(form.date);
-
         const [hours, minutes] = form.time.split(":").map(Number); // Split time into hours and minutes
         const suffix = hours >= 12 ? "PM" : "AM"; // Determine AM or PM
         const formattedHours = hours % 12 || 12; // Convert to 12-hour format, treating 0 as 12
@@ -171,10 +170,14 @@ const Reserve = (props) => {
                     </div>
                     <button type="submit" 
                     className="submitButton" 
-                    disabled={formVerified.date && formVerified.time && formVerified.length && formVerified.partySize ? false: true}>Done</button>
+                    disabled={formVerified.date && formVerified.time && formVerified.length && formVerified.partySize ? false: true}>
+                        Send
+                    </button>
                     <button type="button" 
                     className="submitButton"
-                    onClick={handleReset}>Reset</button>
+                    onClick={handleReset}>
+                        Reset
+                    </button>
                 </form>
             </div>
             <div className="rightContainer">
